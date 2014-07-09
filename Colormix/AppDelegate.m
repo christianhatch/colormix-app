@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 #ifndef DEBUG
-    [Flurry startSession:@"353K59ZD8JXYTKDZPYRQ"];
+    [Flurry startSession:FlurryAppID];
 #endif
     return YES;
 }

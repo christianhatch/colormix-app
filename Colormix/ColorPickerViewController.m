@@ -1,12 +1,13 @@
 //
 //  ColorPickerViewController.m
-//  ColorMix
+//  Colormix
 //
 //  Created by Christian Hatch on 2/6/14.
-//  Copyright (c) 2014 Acacia Interactive. All rights reserved.
+//  Copyright (c) 2014 Commodoreftp. All rights reserved.
 //
 
-typedef NS_ENUM(NSInteger, SliderName){
+typedef NS_ENUM(NSInteger, SliderName)
+{
     SliderNameHue = 1,
     SliderNameSaturation,
     SliderNameBrightness,
@@ -269,7 +270,7 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 - (void)logEvent:(NSString *)event
 {
     [Flurry logEvent:event];
-    NSLog(@"event %@", event);
+    DebugLog(@"event %@", event);
 }
 
 
