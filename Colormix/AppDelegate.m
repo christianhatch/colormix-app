@@ -7,12 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import <FlurrySDK/Flurry.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+#ifndef DEBUG
+    [Flurry startSession:@"353K59ZD8JXYTKDZPYRQ"];
+#endif
     return YES;
 }
 							

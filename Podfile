@@ -1,11 +1,9 @@
 platform :ios, '7.1'
 
 
-#internal
-pod 'CocoaLumberjack'
-pod 'pop'
+
+pod 'FlurrySDK'
 
 
 #debug only
-pod 'Tweaks'
 
