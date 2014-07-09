@@ -1,0 +1,12 @@
+PODS:
+  - FlurrySDK (5.2.0):
+    - FlurrySDK/FlurrySDK
+  - FlurrySDK/FlurrySDK (5.2.0)
+
+DEPENDENCIES:
+  - FlurrySDK
+
+SPEC CHECKSUMS:
+  FlurrySDK: 5322b9eb0d0b538f1a1983a6717f3a2e2ba03047
+
+COCOAPODS: 0.33.1
