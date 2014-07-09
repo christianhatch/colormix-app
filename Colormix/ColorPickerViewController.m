@@ -15,13 +15,44 @@ typedef NS_ENUM(NSInteger, SliderName){
     SliderNameBlue
 };
 
+static inline NSString * SliderNameString(NSInteger sliderID)
+{
+    NSString *sliderNameString;
+    
+    switch (sliderID) {
+        case SliderNameHue:
+            sliderNameString = @"Hue";
+            break;
+        case SliderNameSaturation:
+            sliderNameString = @"Saturation";
+            break;
+        case SliderNameBrightness:
+            sliderNameString = @"Brightness";
+            break;
+        case SliderNameRed:
+            sliderNameString = @"Red";
+            break;
+        case SliderNameGreen:
+            sliderNameString = @"Green";
+            break;
+        case SliderNameBlue:
+            sliderNameString = @"Blue";
+            break;
+    }
+    return sliderNameString;
+}
+
+
+
 #define HUE_SCALE 360
 #define SAT_SCALE 100
 #define BRIGHT_SCALE 100
 #define RGB_SCALE 255
+
 #define CORNER_RADIUS 10
 
 #import "ColorPickerViewController.h"
+#import <FlurrySDK/Flurry.h>
 
 @import QuartzCore;
 
@@ -58,13 +89,50 @@ typedef NS_ENUM(NSInteger, SliderName){
 
 @implementation ColorPickerViewController
 
+#pragma mark - View Lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureView];
+    [self setUpViews];
 }
 
-- (void)configureView
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.view.backgroundColor = [self randomColor];
+    
+    [self syncSlidersToColor];
+}
+
+#pragma mark - IBActions
+
+- (IBAction)sliderValueChanged:(id)sender {
+    
+    NSInteger tag = [(UISlider *)sender tag];
+    
+    switch (tag) {
+        case SliderNameHue:
+        case SliderNameSaturation:
+        case SliderNameBrightness:{
+            [self hslDidSlide];
+        }break;
+        case SliderNameRed:
+        case SliderNameGreen:
+        case SliderNameBlue:{
+            [self rgbDidSlide];
+        }break;
+    }
+    
+    [self logEvent:[NSString stringWithFormat:@"%@ Slider Moved", SliderNameString(tag)]];
+    
+    [self syncSlidersToColor];
+}
+
+#pragma mark - Main Methods
+
+- (void)setUpViews
 {
     UIColor *clear = [UIColor clearColor];
     
@@ -99,36 +167,26 @@ typedef NS_ENUM(NSInteger, SliderName){
     
     self.hsbContainer.layer.cornerRadius = CORNER_RADIUS;
     self.rgbContainer.layer.cornerRadius = CORNER_RADIUS;
+    self.hexValueLabel.layer.cornerRadius = CORNER_RADIUS/2;
 }
 
-- (void)viewDidAppear:(BOOL)animated
+
+- (void)rgbDidSlide
 {
-    [super viewDidAppear:animated];
-    
-    self.view.backgroundColor = [self randomColor];
-    
-    [self syncSlidersToColor];
+    self.view.backgroundColor = [UIColor colorWithRed:self.redSlider.value/RGB_SCALE
+                                                green:self.greenSlider.value/RGB_SCALE
+                                                 blue:self.blueSlider.value/RGB_SCALE
+                                                alpha:1];
 }
 
-- (IBAction)sliderValueChanged:(id)sender {
-    
-    NSInteger tag = [(UISlider *)sender tag];
-    
-    switch (tag) {
-        case SliderNameHue:
-        case SliderNameSaturation:
-        case SliderNameBrightness:
-            self.view.backgroundColor = [UIColor colorWithHue:self.hueSlider.value/HUE_SCALE saturation:self.saturationSlider.value/SAT_SCALE brightness:self.brightnessSlider.value/BRIGHT_SCALE alpha:1];
-            break;
-        case SliderNameRed:
-        case SliderNameGreen:
-        case SliderNameBlue:
-            self.view.backgroundColor = [UIColor colorWithRed:self.redSlider.value/RGB_SCALE green:self.greenSlider.value/RGB_SCALE blue:self.blueSlider.value/RGB_SCALE alpha:1];
-            break;
-    }
-    
-    [self syncSlidersToColor];
+- (void)hslDidSlide
+{
+    self.view.backgroundColor = [UIColor colorWithHue:self.hueSlider.value/HUE_SCALE
+                                           saturation:self.saturationSlider.value/SAT_SCALE
+                                           brightness:self.brightnessSlider.value/BRIGHT_SCALE
+                                                alpha:1];
 }
+
 
 - (void)syncSlidersToColor
 {
@@ -166,7 +224,57 @@ typedef NS_ENUM(NSInteger, SliderName){
     self.hueGradient.colors = [self hueGradientColors];
 }
 
+#pragma mark - Utility Methods
+
+- (NSString *)hexStringOfColor:(UIColor *)color
+{
+    CGFloat rFloat,gFloat,bFloat,aFloat;
+    [color getRed:&rFloat green:&gFloat blue:&bFloat alpha:&aFloat];
+    
+    int r,g,b;
+    
+    r = (int)(255.0 * rFloat);
+    g = (int)(255.0 * gFloat);
+    b = (int)(255.0 * bFloat);
+    
+    NSString *hex = [NSString stringWithFormat:@"%02X%02X%02X",r,g,b];
+    
+    return [@"#" stringByAppendingString:hex];
+}
+
+- (UIColor *)randomColor
+{
+    //    CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
+    
+    srand48(time(0));
+    CGFloat hue = drand48();
+    
+    //    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+    //    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+    return [UIColor colorWithHue:hue saturation:.7 brightness:1 alpha:1];
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
+{
+    UIGraphicsBeginImageContext(size);
+    UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size.width, size.height) cornerRadius:CORNER_RADIUS];
+    roundedRect.lineWidth = 3;
+    [color setStroke];
+    [roundedRect stroke];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+- (void)logEvent:(NSString *)event
+{
+    [Flurry logEvent:event];
+    NSLog(@"event %@", event);
+}
+
+
 #pragma mark - Getters
+
 - (CAGradientLayer *)hueGradient
 {
     if (!_hueGradient) {
@@ -266,7 +374,7 @@ typedef NS_ENUM(NSInteger, SliderName){
     
     CGFloat hue = 0;
     
-    for (int stepCounter = 0; stepCounter < 10; stepCounter++) {
+    for (int numberOfColors = 0; numberOfColors < 10; numberOfColors++) {
         
         UIColor *color = [UIColor colorWithHue:hue saturation:[self saturation] brightness:[self brightness] alpha:1];
         [hues addObject:(id)color.CGColor];
@@ -277,7 +385,6 @@ typedef NS_ENUM(NSInteger, SliderName){
     NSArray *hueColors = [NSArray arrayWithArray:hues];
     return hueColors;
 }
-
 
 - (NSArray *)saturationGradientColors
 {
@@ -296,46 +403,6 @@ typedef NS_ENUM(NSInteger, SliderName){
 }
 
 
-#pragma mark - Utility Methods
-- (NSString *)hexStringOfColor:(UIColor *)color
-{
-    CGFloat rFloat,gFloat,bFloat,aFloat;
-    [color getRed:&rFloat green:&gFloat blue:&bFloat alpha:&aFloat];
-    
-    int r,g,b;
-    
-    r = (int)(255.0 * rFloat);
-    g = (int)(255.0 * gFloat);
-    b = (int)(255.0 * bFloat);
-    
-    NSString *hex = [NSString stringWithFormat:@"%02X%02X%02X",r,g,b];
-    
-    return [@"#" stringByAppendingString:hex];
-}
-
-- (UIColor *)randomColor
-{
-    //    CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
-    
-    srand48(time(0));
-    CGFloat hue = drand48();
-    
-    //    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
-    //    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
-    return [UIColor colorWithHue:hue saturation:.7 brightness:1 alpha:1];
-}
-
-- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
-{
-    UIGraphicsBeginImageContext(size);
-    UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size.width, size.height) cornerRadius:CORNER_RADIUS];
-    roundedRect.lineWidth = 3;
-    [color setStroke];
-    [roundedRect stroke];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
-}
 
 
 
