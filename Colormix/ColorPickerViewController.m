@@ -155,16 +155,16 @@ static inline NSString * SliderNameString(NSInteger sliderID)
     [self.brightnessSlider setThumbImage:thumb forState:UIControlStateNormal];
     
     self.redSlider.maximumValue = RGB_SCALE;
-    self.redSlider.minimumTrackTintColor = [UIColor redColor];
-    self.redSlider.maximumTrackTintColor = [UIColor redColor];
+//    self.redSlider.minimumTrackTintColor = [UIColor redColor];
+//    self.redSlider.maximumTrackTintColor = [UIColor redColor];
     
     self.greenSlider.maximumValue = RGB_SCALE;
-    self.greenSlider.minimumTrackTintColor = [UIColor greenColor];
-    self.greenSlider.maximumTrackTintColor = [UIColor greenColor];
+//    self.greenSlider.minimumTrackTintColor = [UIColor greenColor];
+//    self.greenSlider.maximumTrackTintColor = [UIColor greenColor];
     
     self.blueSlider.maximumValue = RGB_SCALE;
-    self.blueSlider.minimumTrackTintColor = [UIColor blueColor];
-    self.blueSlider.maximumTrackTintColor = [UIColor blueColor];
+//    self.blueSlider.minimumTrackTintColor = [UIColor blueColor];
+//    self.blueSlider.maximumTrackTintColor = [UIColor blueColor];
     
     self.hsbContainer.layer.cornerRadius = CORNER_RADIUS;
     self.rgbContainer.layer.cornerRadius = CORNER_RADIUS;
