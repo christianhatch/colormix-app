@@ -8,8 +8,8 @@ Colormix is a simple slider-based color picker that I built so that I could bett
 
 
 
-**The MIT License (MIT)**
-_________________________
+**MIT License (MIT)**
+
 **Copyright (c) 2014 Christian Hatch**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
