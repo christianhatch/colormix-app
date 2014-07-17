@@ -4,12 +4,14 @@ Colormix
 A simple color mixer that allows you to see firsthand how RGB and HSL color spaces interact.
 
 
-Colormix is a simple slider-based color picker that I built so that I could better understand how the RGB and HSL color spaces interact.Originally I built this component when I was learning about color spaces; I wanted to see how changing values in one color space changed the other, to better understand what exactly was going on when generating colors from 3 float values. It also helped me to understand how numbers are converted to hex values, because I could watch how the hex value changed as I moved the sliders.
+Colormix is a simple slider-based color picker that I built so that I could better understand how the RGB and HSL color spaces interact. Originally I built this component when I was learning about color spaces; I wanted to see how changing values in one color space changed the other, to better understand what exactly was going on when generating colors from 3 float values. It also helped me to understand how numbers are converted to hex values, because I could watch how the hex value changed as I moved the sliders.
 
 
 
-**The MIT License (MIT)
-Copyright (c) 2014 Christian Hatch
+**The MIT License (MIT)**
+_________________________
+**Copyright (c) 2014 Christian Hatch**
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
