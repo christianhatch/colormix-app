@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		451CA33E19787C9B0016A3D8 /* ColormixKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColormixKit.h; sourceTree = "<group>"; };
 		453D2D93196D1E3000F3CFDE /* ColormixConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColormixConstants.h; sourceTree = "<group>"; };
 		45FD1281196CA8CA00777132 /* Colormix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colormix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FD1284196CA8CA00777132 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -122,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				453D2D93196D1E3000F3CFDE /* ColormixConstants.h */,
+				451CA33E19787C9B0016A3D8 /* ColormixKit.h */,
 				45FD1293196CA8CA00777132 /* AppDelegate.h */,
 				45FD1294196CA8CA00777132 /* AppDelegate.m */,
 				45FD1296196CA8CA00777132 /* Main_iPhone.storyboard */,
