@@ -10,8 +10,9 @@
 
 @interface UIColor (Colormix)
 
-
 + (UIColor *)randomColor;
+
++ (NSString *)hexStringOfColor:(UIColor *)color;
 
 @property (nonatomic, readonly) CGFloat hue;
 @property (nonatomic, readonly) CGFloat saturation;

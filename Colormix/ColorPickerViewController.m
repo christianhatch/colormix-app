@@ -171,6 +171,12 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 }
 
 
+
+
+#pragma mark - Private Methods
+
+#pragma mark - UI-related
+
 - (void)syncSlidersToColor
 {
     [self.hueSlider setValue:self.view.backgroundColor.hue * HUE_SCALE
@@ -202,7 +208,7 @@ static inline NSString * SliderNameString(NSInteger sliderID)
     self.greenLabel.text = [NSString stringWithFormat:@"%f", self.greenSlider.value];
     self.blueLabel.text = [NSString stringWithFormat:@"%f", self.blueSlider.value];
     
-    NSString *hex = [self hexStringOfColor:self.view.backgroundColor];
+    NSString *hex = [UIColor hexStringOfColor:self.view.backgroundColor];
     self.hexValueLabel.text = hex;
 }
 
@@ -212,47 +218,6 @@ static inline NSString * SliderNameString(NSInteger sliderID)
     self.brightnessGradient.colors = [self brightnessGradientColors];
     self.hueGradient.colors = [self hueGradientColors];
 }
-
-
-
-#pragma mark - Private Methods
-
-- (NSString *)hexStringOfColor:(UIColor *)color
-{
-    CGFloat rFloat,gFloat,bFloat,aFloat;
-    [color getRed:&rFloat green:&gFloat blue:&bFloat alpha:&aFloat];
-    
-    int r,g,b;
-    
-    r = (int)(255.0 * rFloat);
-    g = (int)(255.0 * gFloat);
-    b = (int)(255.0 * bFloat);
-    
-    NSString *hex = [NSString stringWithFormat:@"%02X%02X%02X",r,g,b];
-    
-    return [@"#" stringByAppendingString:hex];
-}
-
-
-- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
-{
-    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0f);
-    UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size.width, size.height)
-                                                           cornerRadius:CORNER_RADIUS];
-    roundedRect.lineWidth = 2.5;
-    [color setStroke];
-    [roundedRect stroke];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
-}
-
-- (void)logEvent:(NSString *)event
-{
-    [Flurry logEvent:event];
-    DebugLog(@"event %@", event);
-}
-
 
 - (void)setUpViews
 {
@@ -290,6 +255,26 @@ static inline NSString * SliderNameString(NSInteger sliderID)
     self.hsbContainer.layer.cornerRadius = CORNER_RADIUS;
     self.rgbContainer.layer.cornerRadius = CORNER_RADIUS;
     self.hexValueLabel.layer.cornerRadius = CORNER_RADIUS/2;
+}
+
+#pragma mark - Other
+- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
+{
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0f);
+    UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size.width, size.height)
+                                                           cornerRadius:CORNER_RADIUS];
+    roundedRect.lineWidth = 2.5;
+    [color setStroke];
+    [roundedRect stroke];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+- (void)logEvent:(NSString *)event
+{
+    [Flurry logEvent:event];
+    DebugLog(@"event %@", event);
 }
 
 

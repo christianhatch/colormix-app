@@ -10,6 +10,23 @@
 
 @implementation UIColor (Colormix)
 
++ (NSString *)hexStringOfColor:(UIColor *)color
+{
+    CGFloat rFloat,gFloat,bFloat,aFloat;
+    [color getRed:&rFloat green:&gFloat blue:&bFloat alpha:&aFloat];
+    
+    int r,g,b;
+    
+    r = (int)(255.0 * rFloat);
+    g = (int)(255.0 * gFloat);
+    b = (int)(255.0 * bFloat);
+    
+    NSString *hex = [NSString stringWithFormat:@"%02X%02X%02X",r,g,b];
+    
+    return [@"#" stringByAppendingString:hex];
+}
+
+
 + (UIColor *)randomColor
 {
     srand48(time(0));
