@@ -207,13 +207,13 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 
 - (void)syncSlidersToColor
 {
-    [self.hueSlider setValue:self.view.backgroundColor.hue * HUE_SCALE];
-    [self.saturationSlider setValue:self.view.backgroundColor.saturation * SAT_BRIGHT_SCALE];
-    [self.brightnessSlider setValue:self.view.backgroundColor.brightness * SAT_BRIGHT_SCALE];
+    [self.hueSlider setValue:self.view.backgroundColor.hue * HUE_SCALE animated:YES];
+    [self.saturationSlider setValue:self.view.backgroundColor.saturation * SAT_BRIGHT_SCALE animated:YES];
+    [self.brightnessSlider setValue:self.view.backgroundColor.brightness * SAT_BRIGHT_SCALE animated:YES];
     
-    [self.redSlider setValue:self.view.backgroundColor.red * RGB_SCALE];
-    [self.greenSlider setValue:self.view.backgroundColor.green * RGB_SCALE];
-    [self.blueSlider setValue:self.view.backgroundColor.blue * RGB_SCALE];
+    [self.redSlider setValue:self.view.backgroundColor.red * RGB_SCALE animated:YES];
+    [self.greenSlider setValue:self.view.backgroundColor.green * RGB_SCALE animated:YES];
+    [self.blueSlider setValue:self.view.backgroundColor.blue * RGB_SCALE animated:YES];
 }
 
 - (void)updateLabels
