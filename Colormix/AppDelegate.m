@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <FlurrySDK/Flurry.h>
+#import <Tweaks/FBTweakShakeWindow.h>
 
 @implementation AppDelegate
 
@@ -45,5 +46,23 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (UIWindow *)window
+{
+    if (!_window) {
+#ifdef DEBUG
+        _window = [[FBTweakShakeWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+#else
+        _window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+#endif
+    }
+    return _window;
+}
+
+
+
+
+
+
 
 @end

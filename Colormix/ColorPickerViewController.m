@@ -44,6 +44,9 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 }
 
 
+#define FetchPlaybackViewStrokeSpeed       FBTweakValue(@"Playback", @"Speed", @"Stroke", 0.05, 0.01, 1.0)
+#define FetchPlaybackViewPagePauseLength   FBTweakValue(@"Playback", @"Speed", @"Page Pause", 1.0, 0.0, 10.0)
+
 
 #define HUE_SCALE 360
 #define SAT_BRIGHT_SCALE 100
@@ -148,7 +151,7 @@ static inline NSString * SliderNameString(NSInteger sliderID)
         }break;
     }
     
-    [self updateUI];
+    [self updateUIAnimated:NO];
 
     [self logEvent:[NSString stringWithFormat:@"%@ Slider Moved", SliderNameString(tag)]];
 }
@@ -176,9 +179,23 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 
 - (void)applyRandomBGColor
 {
-    self.view.backgroundColor = [UIColor randomColor];
+    POPSpringAnimation *bg = [POPSpringAnimation animationWithPropertyNamed:kPOPViewBackgroundColor];
+    bg.toValue = (id)[UIColor randomColor].CGColor;
+    [self.view pop_addAnimation:bg forKey:@"changeBGColor"];
     
-    [self updateUI];
+    [UIView animateWithDuration:0.5f
+                          delay:0.0f
+     //         usingSpringWithDamping:0.7f
+     //          initialSpringVelocity:1.0f
+                        options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionTransitionCrossDissolve
+                     animations:^
+     {
+         self.view.backgroundColor = [UIColor randomColor];
+     }
+                     completion:nil];
+
+    
+    [self updateUIAnimated:YES];
 }
 
 
@@ -186,34 +203,37 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 
 #pragma mark - UI-related
 
-- (void)updateUI
+- (void)updateUIAnimated:(BOOL)animated
 {
     [UIView animateWithDuration:0.5f
                           delay:0.0f
 //         usingSpringWithDamping:0.7f
 //          initialSpringVelocity:1.0f
-                        options:UIViewAnimationOptionAllowUserInteraction
+                        options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionTransitionCrossDissolve
                      animations:^
     {
-        [self syncSlidersToColor];
+        [self syncSlidersToColorAnimated:animated];
         [self updateGradients];
         [self updateLabels];
     }
-                     completion:^(BOOL finished)
-    {
-        
-    }];
+                     completion:nil];
 }
 
-- (void)syncSlidersToColor
+- (void)syncSlidersToColorAnimated:(BOOL)animated
 {
-    [self.hueSlider setValue:self.view.backgroundColor.hue * HUE_SCALE animated:YES];
-    [self.saturationSlider setValue:self.view.backgroundColor.saturation * SAT_BRIGHT_SCALE animated:YES];
-    [self.brightnessSlider setValue:self.view.backgroundColor.brightness * SAT_BRIGHT_SCALE animated:YES];
+    [self.hueSlider setValue:self.view.backgroundColor.hue * HUE_SCALE
+                    animated:animated];
+    [self.saturationSlider setValue:self.view.backgroundColor.saturation * SAT_BRIGHT_SCALE
+                           animated:animated];
+    [self.brightnessSlider setValue:self.view.backgroundColor.brightness * SAT_BRIGHT_SCALE
+                           animated:animated];
     
-    [self.redSlider setValue:self.view.backgroundColor.red * RGB_SCALE animated:YES];
-    [self.greenSlider setValue:self.view.backgroundColor.green * RGB_SCALE animated:YES];
-    [self.blueSlider setValue:self.view.backgroundColor.blue * RGB_SCALE animated:YES];
+    [self.redSlider setValue:self.view.backgroundColor.red * RGB_SCALE
+                    animated:animated];
+    [self.greenSlider setValue:self.view.backgroundColor.green * RGB_SCALE
+                      animated:animated];
+    [self.blueSlider setValue:self.view.backgroundColor.blue * RGB_SCALE
+                     animated:animated];
 }
 
 - (void)updateLabels

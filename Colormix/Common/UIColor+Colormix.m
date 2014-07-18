@@ -31,7 +31,10 @@
     srand48(time(0));
     CGFloat hue = drand48();
     
-    return [UIColor colorWithHue:hue saturation:.7 brightness:1 alpha:1];
+    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+
+    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
 }
 
 - (UIColor *)contrastingColor
