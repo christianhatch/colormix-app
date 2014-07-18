@@ -46,8 +46,7 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 
 
 #define HUE_SCALE 360
-#define SAT_SCALE 100
-#define BRIGHT_SCALE 100
+#define SAT_BRIGHT_SCALE 100
 #define RGB_SCALE 255
 
 #define CORNER_RADIUS 10
@@ -55,11 +54,17 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 #import "ColorPickerViewController.h"
 #import <FlurrySDK/Flurry.h>
 #import "UIColor+Colormix.h"
+#import <pop/POP.h>
 
 @import QuartzCore;
 
 
 @interface ColorPickerViewController ()
+
+@property (strong, nonatomic) IBOutletCollection(UISlider) NSArray *sliderCollection;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labelCollection;
+
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapRecognizer;
 
 @property (strong, nonatomic) IBOutlet UIView *hsbContainer;
 @property (strong, nonatomic) IBOutlet UIView *rgbContainer;
@@ -97,16 +102,14 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setUpViews];
+    [self setupUI];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    self.view.backgroundColor = [UIColor randomColor];
-    
-    [self syncSlidersToColor];
+    [self applyRandomBGColor];
 }
 
 - (void)viewDidLayoutSubviews
@@ -145,12 +148,15 @@ static inline NSString * SliderNameString(NSInteger sliderID)
         }break;
     }
     
-    [self syncSlidersToColor];
+    [self updateUI];
 
     [self logEvent:[NSString stringWithFormat:@"%@ Slider Moved", SliderNameString(tag)]];
 }
 
-#pragma mark - Main Methods
+- (void)tapGestureHandler:(UITapGestureRecognizer *)tapper
+{
+    [self applyRandomBGColor];
+}
 
 - (void)rgbDidSlide
 {
@@ -163,37 +169,51 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 - (void)hslDidSlide
 {
     self.view.backgroundColor = [UIColor colorWithHue:self.hueSlider.value/HUE_SCALE
-                                           saturation:self.saturationSlider.value/SAT_SCALE
-                                           brightness:self.brightnessSlider.value/BRIGHT_SCALE
+                                           saturation:self.saturationSlider.value/SAT_BRIGHT_SCALE
+                                           brightness:self.brightnessSlider.value/SAT_BRIGHT_SCALE
                                                 alpha:1];
 }
 
-
+- (void)applyRandomBGColor
+{
+    self.view.backgroundColor = [UIColor randomColor];
+    
+    [self updateUI];
+}
 
 
 #pragma mark - Private Methods
 
 #pragma mark - UI-related
 
+- (void)updateUI
+{
+    [UIView animateWithDuration:0.5f
+                          delay:0.0f
+//         usingSpringWithDamping:0.7f
+//          initialSpringVelocity:1.0f
+                        options:UIViewAnimationOptionAllowUserInteraction
+                     animations:^
+    {
+        [self syncSlidersToColor];
+        [self updateGradients];
+        [self updateLabels];
+    }
+                     completion:^(BOOL finished)
+    {
+        
+    }];
+}
+
 - (void)syncSlidersToColor
 {
-    [self.hueSlider setValue:self.view.backgroundColor.hue * HUE_SCALE
-                    animated:YES];
-    [self.saturationSlider setValue:self.view.backgroundColor.saturation * SAT_SCALE
-                           animated:YES];
-    [self.brightnessSlider setValue:self.view.backgroundColor.brightness * BRIGHT_SCALE
-                           animated:YES];
+    [self.hueSlider setValue:self.view.backgroundColor.hue * HUE_SCALE];
+    [self.saturationSlider setValue:self.view.backgroundColor.saturation * SAT_BRIGHT_SCALE];
+    [self.brightnessSlider setValue:self.view.backgroundColor.brightness * SAT_BRIGHT_SCALE];
     
-    [self.redSlider setValue:self.view.backgroundColor.red * RGB_SCALE
-                    animated:YES];
-    [self.greenSlider setValue:self.view.backgroundColor.green * RGB_SCALE
-                      animated:YES];
-    [self.blueSlider setValue:self.view.backgroundColor.blue * RGB_SCALE
-                     animated:YES];
-    
-    [self updateGradients];
-    
-    [self updateLabels];
+    [self.redSlider setValue:self.view.backgroundColor.red * RGB_SCALE];
+    [self.greenSlider setValue:self.view.backgroundColor.green * RGB_SCALE];
+    [self.blueSlider setValue:self.view.backgroundColor.blue * RGB_SCALE];
 }
 
 - (void)updateLabels
@@ -210,6 +230,11 @@ static inline NSString * SliderNameString(NSInteger sliderID)
     
     NSString *hex = [UIColor hexStringOfColor:self.view.backgroundColor];
     self.hexValueLabel.text = hex;
+    
+    for (UILabel *label in self.labelCollection)
+    {
+        [label setTextColor:self.view.backgroundColor.contrastingColor];
+    }
 }
 
 - (void)updateGradients
@@ -219,43 +244,30 @@ static inline NSString * SliderNameString(NSInteger sliderID)
     self.hueGradient.colors = [self hueGradientColors];
 }
 
-- (void)setUpViews
+- (void)setupUI
 {
-    UIColor *clear = [UIColor clearColor];
-    
     UIImage *thumb = [self imageWithColor:[UIColor blackColor]
                                      size:CGSizeMake(self.hueSlider.bounds.size.height, self.hueSlider.bounds.size.height)];
+    UIImage *clear = [self imageWithColor:[UIColor clearColor]
+                                     size:CGSizeMake(self.hueSlider.bounds.size.width, self.hueSlider.bounds.size.height)];
     
-    self.hueSlider.maximumValue = HUE_SCALE;
-    self.hueSlider.minimumTrackTintColor = clear;
-    self.hueSlider.maximumTrackTintColor = clear;
-    [self.hueSlider setThumbImage:thumb forState:UIControlStateNormal];
+    for (UISlider *slider in self.sliderCollection)
+    {
+        
+        [slider setThumbImage:thumb forState:UIControlStateNormal];
+        [slider setMinimumTrackImage:clear forState:UIControlStateNormal];
+        [slider setMaximumTrackImage:clear forState:UIControlStateNormal];
+    }
     
-    self.saturationSlider.maximumValue = SAT_SCALE;
-    self.saturationSlider.minimumTrackTintColor = clear;
-    self.saturationSlider.maximumTrackTintColor = clear;
-    [self.saturationSlider setThumbImage:thumb forState:UIControlStateNormal];
-    
-    self.brightnessSlider.maximumValue = BRIGHT_SCALE;
-    self.brightnessSlider.minimumTrackTintColor = clear;
-    self.brightnessSlider.maximumTrackTintColor = clear;
-    [self.brightnessSlider setThumbImage:thumb forState:UIControlStateNormal];
-    
-    self.redSlider.maximumValue = RGB_SCALE;
-    [self.redSlider setThumbImage:thumb forState:UIControlStateNormal];
-
-    self.greenSlider.maximumValue = RGB_SCALE;
-    [self.greenSlider setThumbImage:thumb forState:UIControlStateNormal];
-
-    self.blueSlider.maximumValue = RGB_SCALE;
-    [self.blueSlider setThumbImage:thumb forState:UIControlStateNormal];
-
     self.hsbContainer.layer.cornerRadius = CORNER_RADIUS;
     self.rgbContainer.layer.cornerRadius = CORNER_RADIUS;
     self.hexValueLabel.layer.cornerRadius = CORNER_RADIUS/2;
+    
+    [self.tapRecognizer addTarget:self action:@selector(tapGestureHandler:)];
 }
 
 #pragma mark - Other
+
 - (UIImage *)imageWithColor:(UIColor *)color
                        size:(CGSize)size
 {
@@ -387,9 +399,6 @@ static inline NSString * SliderNameString(NSInteger sliderID)
     NSArray *brightColors = @[(id)startBright.CGColor, (id)endBright.CGColor];
     return brightColors;
 }
-
-
-
 
 
 @end
