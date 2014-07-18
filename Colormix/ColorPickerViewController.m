@@ -54,8 +54,10 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 
 #import "ColorPickerViewController.h"
 #import <FlurrySDK/Flurry.h>
+#import "UIColor+Colormix.h"
 
 @import QuartzCore;
+
 
 @interface ColorPickerViewController ()
 
@@ -102,16 +104,28 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 {
     [super viewDidAppear:animated];
     
-    self.view.backgroundColor = [self randomColor];
+    self.view.backgroundColor = [UIColor randomColor];
     
     [self syncSlidersToColor];
 }
 
 - (void)viewDidLayoutSubviews
 {
+//    [super viewDidLayoutSubviews];
+    
+    [self.hueGradient removeFromSuperlayer];
+    [self.saturationGradient removeFromSuperlayer];
+    [self.brightnessGradient removeFromSuperlayer];
+    
+    self.hueGradient = nil;
+    self.saturationGradient = nil;
+    self.brightnessGradient = nil;
+
+    [self.hueSlider.layer insertSublayer:self.hueGradient atIndex:0];
+    [self.saturationSlider.layer insertSublayer:self.saturationGradient atIndex:0];
+    [self.brightnessSlider.layer insertSublayer:self.brightnessGradient atIndex:0];
+    
     [super viewDidLayoutSubviews];
-    
-    
 }
 
 #pragma mark - IBActions
@@ -133,9 +147,9 @@ static inline NSString * SliderNameString(NSInteger sliderID)
         }break;
     }
     
-    [self logEvent:[NSString stringWithFormat:@"%@ Slider Moved", SliderNameString(tag)]];
-    
     [self syncSlidersToColor];
+
+    [self logEvent:[NSString stringWithFormat:@"%@ Slider Moved", SliderNameString(tag)]];
 }
 
 #pragma mark - Main Methods
@@ -159,13 +173,19 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 
 - (void)syncSlidersToColor
 {
-    [self.hueSlider setValue:[self hue] * HUE_SCALE animated:YES];
-    [self.saturationSlider setValue:[self saturation] * SAT_SCALE animated:YES];
-    [self.brightnessSlider setValue:[self brightness] * BRIGHT_SCALE animated:YES];
+    [self.hueSlider setValue:self.view.backgroundColor.hue * HUE_SCALE
+                    animated:YES];
+    [self.saturationSlider setValue:self.view.backgroundColor.saturation * SAT_SCALE
+                           animated:YES];
+    [self.brightnessSlider setValue:self.view.backgroundColor.brightness * BRIGHT_SCALE
+                           animated:YES];
     
-    [self.redSlider setValue:[self red] * RGB_SCALE animated:YES];
-    [self.greenSlider setValue:[self green] * RGB_SCALE animated:YES];
-    [self.blueSlider setValue:[self blue] * RGB_SCALE animated:YES];
+    [self.redSlider setValue:self.view.backgroundColor.red * RGB_SCALE
+                    animated:YES];
+    [self.greenSlider setValue:self.view.backgroundColor.green * RGB_SCALE
+                      animated:YES];
+    [self.blueSlider setValue:self.view.backgroundColor.blue * RGB_SCALE
+                     animated:YES];
     
     [self updateGradients];
     
@@ -213,13 +233,6 @@ static inline NSString * SliderNameString(NSInteger sliderID)
     return [@"#" stringByAppendingString:hex];
 }
 
-- (UIColor *)randomColor
-{
-    srand48(time(0));
-    CGFloat hue = drand48();
-    
-    return [UIColor colorWithHue:hue saturation:.7 brightness:1 alpha:1];
-}
 
 - (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
 {
@@ -293,8 +306,6 @@ static inline NSString * SliderNameString(NSInteger sliderID)
         _hueGradient.endPoint = CGPointMake(1, 0);
         
         _hueGradient.colors = [self hueGradientColors];
-        
-        [self.hueSlider.layer insertSublayer:_hueGradient atIndex:0];
     }
     return _hueGradient;
 }
@@ -310,8 +321,6 @@ static inline NSString * SliderNameString(NSInteger sliderID)
         _saturationGradient.endPoint = CGPointMake(1, 0);
         
         _saturationGradient.colors = [self saturationGradientColors];
-        
-        [self.saturationSlider.layer insertSublayer:_saturationGradient atIndex:0];
     }
     return _saturationGradient;
 }
@@ -327,52 +336,8 @@ static inline NSString * SliderNameString(NSInteger sliderID)
         _brightnessGradient.endPoint = CGPointMake(1, 0);
         
         _brightnessGradient.colors = [self brightnessGradientColors];
-        
-        [self.brightnessSlider.layer insertSublayer:_brightnessGradient atIndex:0];
     }
     return _brightnessGradient;
-}
-
-- (CGFloat)hue
-{
-    CGFloat hFloat,sFloat,bFloat;
-    [self.view.backgroundColor getHue:&hFloat saturation:&sFloat brightness:&bFloat alpha:nil];
-    return hFloat;
-}
-
-- (CGFloat)saturation
-{
-    CGFloat hFloat,sFloat,bFloat;
-    [self.view.backgroundColor getHue:&hFloat saturation:&sFloat brightness:&bFloat alpha:nil];
-    return sFloat;
-}
-
-- (CGFloat)brightness
-{
-    CGFloat hFloat,sFloat,bFloat;
-    [self.view.backgroundColor getHue:&hFloat saturation:&sFloat brightness:&bFloat alpha:nil];
-    return bFloat;
-}
-
-- (CGFloat)red
-{
-    CGFloat rFloat,gFloat,bFloat;
-    [self.view.backgroundColor getRed:&rFloat green:&gFloat blue:&bFloat alpha:nil];
-    return rFloat;
-}
-
-- (CGFloat)green
-{
-    CGFloat rFloat,gFloat,bFloat;
-    [self.view.backgroundColor getRed:&rFloat green:&gFloat blue:&bFloat alpha:nil];
-    return gFloat;
-}
-
-- (CGFloat)blue
-{
-    CGFloat rFloat,gFloat,bFloat;
-    [self.view.backgroundColor getRed:&rFloat green:&gFloat blue:&bFloat alpha:nil];
-    return bFloat;
 }
 
 
@@ -385,7 +350,11 @@ static inline NSString * SliderNameString(NSInteger sliderID)
     
     for (int numberOfColors = 0; numberOfColors < 10; numberOfColors++) {
         
-        UIColor *color = [UIColor colorWithHue:hue saturation:[self saturation] brightness:[self brightness] alpha:1];
+        UIColor *color = [UIColor colorWithHue:hue
+                                    saturation:self.view.backgroundColor.saturation
+                                    brightness:self.view.backgroundColor.brightness
+                                         alpha:1];
+        
         [hues addObject:(id)color.CGColor];
         
         hue = hue + 0.1;
@@ -397,16 +366,32 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 
 - (NSArray *)saturationGradientColors
 {
-    UIColor *startSat = [UIColor colorWithHue:[self hue] saturation:0 brightness:[self brightness] alpha:1];
-    UIColor *endSat = [UIColor colorWithHue:[self hue] saturation:1 brightness:[self brightness] alpha:1];
+    UIColor *startSat = [UIColor colorWithHue:self.view.backgroundColor.hue
+                                   saturation:0
+                                   brightness:self.view.backgroundColor.brightness
+                                        alpha:1];
+    
+    UIColor *endSat = [UIColor colorWithHue:self.view.backgroundColor.hue
+                                 saturation:1
+                                 brightness:self.view.backgroundColor.brightness
+                                      alpha:1];
+    
     NSArray *satColors = @[(id)startSat.CGColor, (id)endSat.CGColor];
     return satColors;
 }
 
 - (NSArray *)brightnessGradientColors
 {
-    UIColor *startBright = [UIColor colorWithHue:[self hue] saturation:[self saturation] brightness:0 alpha:1];
-    UIColor *endBright = [UIColor colorWithHue:[self hue] saturation:[self saturation] brightness:1 alpha:1];
+    UIColor *startBright = [UIColor colorWithHue:self.view.backgroundColor.hue
+                                      saturation:self.view.backgroundColor.saturation
+                                      brightness:0
+                                           alpha:1];
+    
+    UIColor *endBright = [UIColor colorWithHue:self.view.backgroundColor.hue
+                                    saturation:self.view.backgroundColor.saturation
+                                    brightness:1
+                                         alpha:1];
+    
     NSArray *brightColors = @[(id)startBright.CGColor, (id)endBright.CGColor];
     return brightColors;
 }
