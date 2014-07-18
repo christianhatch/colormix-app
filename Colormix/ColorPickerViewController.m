@@ -198,13 +198,15 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 
 - (void)updateLabels
 {
-    self.hueLabel.text = [NSString stringWithFormat:@"%f", self.hueSlider.value];
-    self.saturationLabel.text = [NSString stringWithFormat:@"%f", self.saturationSlider.value];
-    self.brightnessLabel.text = [NSString stringWithFormat:@"%f", self.brightnessSlider.value];
+    NSString *formatString = @"%.2f";
     
-    self.redLabel.text = [NSString stringWithFormat:@"%f", self.redSlider.value];
-    self.greenLabel.text = [NSString stringWithFormat:@"%f", self.greenSlider.value];
-    self.blueLabel.text = [NSString stringWithFormat:@"%f", self.blueSlider.value];
+    self.hueLabel.text = [NSString stringWithFormat:formatString, self.hueSlider.value];
+    self.saturationLabel.text = [NSString stringWithFormat:formatString, self.saturationSlider.value];
+    self.brightnessLabel.text = [NSString stringWithFormat:formatString, self.brightnessSlider.value];
+    
+    self.redLabel.text = [NSString stringWithFormat:formatString, self.redSlider.value];
+    self.greenLabel.text = [NSString stringWithFormat:formatString, self.greenSlider.value];
+    self.blueLabel.text = [NSString stringWithFormat:formatString, self.blueSlider.value];
     
     NSString *hex = [UIColor hexStringOfColor:self.view.backgroundColor];
     self.hexValueLabel.text = hex;

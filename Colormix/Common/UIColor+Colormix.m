@@ -26,13 +26,17 @@
     return [@"#" stringByAppendingString:hex];
 }
 
-
 + (UIColor *)randomColor
 {
     srand48(time(0));
     CGFloat hue = drand48();
     
     return [UIColor colorWithHue:hue saturation:.7 brightness:1 alpha:1];
+}
+
+- (UIColor *)contrastingColor
+{
+    return (self.luminance > 0.5f) ? [UIColor blackColor] : [UIColor whiteColor];
 }
 
 - (CGFloat)hue
@@ -84,5 +88,32 @@
     return alpha;
 }
 
+
+#pragma mark - Private
+
+- (CGFloat) luminance
+{
+    NSAssert(self.canProvideRGBComponents, @"Must be a RGB color to use -luminance");
+    
+    CGFloat r, g, b;
+    if (![self getRed: &r green: &g blue: &b alpha:NULL])
+        return 0.0f;
+    
+    // http://en.wikipedia.org/wiki/Luma_(video)
+    // Y = 0.2126 R + 0.7152 G + 0.0722 B
+    return r * 0.2126f + g * 0.7152f + b * 0.0722f;
+}
+
+- (BOOL) canProvideRGBComponents
+{
+    switch (CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)))
+    {
+        case kCGColorSpaceModelRGB:
+        case kCGColorSpaceModelMonochrome:
+            return YES;
+        default:
+            return NO;
+    }
+}
 
 @end

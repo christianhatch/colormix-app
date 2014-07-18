@@ -14,6 +14,8 @@
 
 + (NSString *)hexStringOfColor:(UIColor *)color;
 
+- (UIColor *)contrastingColor; 
+
 @property (nonatomic, readonly) CGFloat hue;
 @property (nonatomic, readonly) CGFloat saturation;
 @property (nonatomic, readonly) CGFloat brightness;

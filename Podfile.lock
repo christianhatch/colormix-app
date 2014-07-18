@@ -2,11 +2,17 @@ PODS:
   - FlurrySDK (5.2.0):
     - FlurrySDK/FlurrySDK
   - FlurrySDK/FlurrySDK (5.2.0)
+  - pop (1.0.6)
+  - Tweaks (1.1.0)
 
 DEPENDENCIES:
   - FlurrySDK
+  - pop
+  - Tweaks
 
 SPEC CHECKSUMS:
   FlurrySDK: 5322b9eb0d0b538f1a1983a6717f3a2e2ba03047
+  pop: e518794da38942c05255eb64b36d894e70cb4f00
+  Tweaks: 05b197d4a1247288f576587546bc1932189d8c98
 
 COCOAPODS: 0.33.1
