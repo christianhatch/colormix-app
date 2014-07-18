@@ -111,12 +111,12 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 
 - (void)viewDidLayoutSubviews
 {
-//    [super viewDidLayoutSubviews];
-    
     [self.hueGradient removeFromSuperlayer];
     [self.saturationGradient removeFromSuperlayer];
     [self.brightnessGradient removeFromSuperlayer];
     
+    [super viewDidLayoutSubviews];
+
     self.hueGradient = nil;
     self.saturationGradient = nil;
     self.brightnessGradient = nil;
@@ -124,8 +124,6 @@ static inline NSString * SliderNameString(NSInteger sliderID)
     [self.hueSlider.layer insertSublayer:self.hueGradient atIndex:0];
     [self.saturationSlider.layer insertSublayer:self.saturationGradient atIndex:0];
     [self.brightnessSlider.layer insertSublayer:self.brightnessGradient atIndex:0];
-    
-    [super viewDidLayoutSubviews];
 }
 
 #pragma mark - IBActions
@@ -223,7 +221,8 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 {
     UIColor *clear = [UIColor clearColor];
     
-    UIImage *thumb = [self imageWithColor:[UIColor blackColor] size:CGSizeMake(self.hueSlider.bounds.size.height, self.hueSlider.bounds.size.height)];
+    UIImage *thumb = [self imageWithColor:[UIColor blackColor]
+                                     size:CGSizeMake(self.hueSlider.bounds.size.height, self.hueSlider.bounds.size.height)];
     
     self.hueSlider.maximumValue = HUE_SCALE;
     self.hueSlider.minimumTrackTintColor = clear;
@@ -241,31 +240,37 @@ static inline NSString * SliderNameString(NSInteger sliderID)
     [self.brightnessSlider setThumbImage:thumb forState:UIControlStateNormal];
     
     self.redSlider.maximumValue = RGB_SCALE;
-    //    self.redSlider.minimumTrackTintColor = [UIColor redColor];
-    //    self.redSlider.maximumTrackTintColor = [UIColor redColor];
-    
+    [self.redSlider setThumbImage:thumb forState:UIControlStateNormal];
+
     self.greenSlider.maximumValue = RGB_SCALE;
-    //    self.greenSlider.minimumTrackTintColor = [UIColor greenColor];
-    //    self.greenSlider.maximumTrackTintColor = [UIColor greenColor];
-    
+    [self.greenSlider setThumbImage:thumb forState:UIControlStateNormal];
+
     self.blueSlider.maximumValue = RGB_SCALE;
-    //    self.blueSlider.minimumTrackTintColor = [UIColor blueColor];
-    //    self.blueSlider.maximumTrackTintColor = [UIColor blueColor];
-    
+    [self.blueSlider setThumbImage:thumb forState:UIControlStateNormal];
+
     self.hsbContainer.layer.cornerRadius = CORNER_RADIUS;
     self.rgbContainer.layer.cornerRadius = CORNER_RADIUS;
     self.hexValueLabel.layer.cornerRadius = CORNER_RADIUS/2;
 }
 
 #pragma mark - Other
-- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
+- (UIImage *)imageWithColor:(UIColor *)color
+                       size:(CGSize)size
 {
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0f);
-    UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size.width, size.height)
-                                                           cornerRadius:CORNER_RADIUS];
-    roundedRect.lineWidth = 2.5;
+
+    UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, size.width, size.height)];
+    
+    [roundedRect moveToPoint:CGPointMake(roundedRect.bounds.size.width/2, 0)];
+    [roundedRect addLineToPoint:CGPointMake(roundedRect.bounds.size.width/2, roundedRect.bounds.size.height)];
+    
+    [roundedRect moveToPoint:CGPointMake(0, roundedRect.bounds.size.height/2)];
+    [roundedRect addLineToPoint:CGPointMake(roundedRect.bounds.size.width, roundedRect.bounds.size.height/2)];
+    
+    roundedRect.lineWidth = 1;
     [color setStroke];
     [roundedRect stroke];
+    
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
