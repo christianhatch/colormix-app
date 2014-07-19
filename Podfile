@@ -11,5 +11,5 @@ pod 'Tweaks'
 
 post_install do | installer |
     require 'fileutils'
-    FileUtils.cp_r('Pods/Pods-Acknowledgements.plist', '/Users/chatch/Dropbox/YHL/YHL/iOS Projects/ColormixProject/Colormix/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+    FileUtils.cp_r('Pods/Pods-Acknowledgements.plist', '/Users/chatch/Dropbox/Business/YHL/iOS Projects/ColormixProject/Colormix/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
 end
