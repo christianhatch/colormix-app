@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <FlurrySDK/Flurry.h>
 #import <Tweaks/FBTweakShakeWindow.h>
+#import "ColormixConstants.h"
 
 @implementation AppDelegate
 
