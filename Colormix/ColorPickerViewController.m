@@ -17,7 +17,7 @@
 
 @interface ColorPickerViewController () <ColorPickerViewDelegate>
 
-@property (weak, nonatomic) IBOutlet ColorPickerView *colorPickerView;
+@property (weak, nonatomic) ColorPickerView *colorPickerView;
 
 @end
 
@@ -41,19 +41,16 @@
 
 - (void)colorPickerViewDidSlideHSB:(ColorPickerView *)colorPickerView
 {
-    NSLog(@"did slide hsb");
     [self hslDidSlide];
 }
 
 - (void)colorPickerViewDidSlideRGB:(ColorPickerView *)colorPickerView
 {
-    NSLog(@"did slide rgb");
     [self rgbDidSlide];
 }
 
 - (void)colorPickerViewMainButtonTapped:(ColorPickerView *)colorPickerView
 {
-    NSLog(@"did tap main button");
     [self applyRandomBGColor];
 }
 
@@ -61,7 +58,6 @@
 {
     return self.view.backgroundColor;
 }
-
 
 
 
@@ -83,9 +79,9 @@
 
 - (void)applyRandomBGColor
 {
-    POPSpringAnimation *bg = [POPSpringAnimation animationWithPropertyNamed:kPOPViewBackgroundColor];
-    bg.toValue = (id)[UIColor randomColor].CGColor;
-    [self.view pop_addAnimation:bg forKey:@"changeBGColor"];
+//    POPSpringAnimation *bg = [POPSpringAnimation animationWithPropertyNamed:kPOPViewBackgroundColor];
+//    bg.toValue = (id)[UIColor randomColor].CGColor;
+//    [self.view pop_addAnimation:bg forKey:@"changeBGColor"];
     
     [UIView animateWithDuration:0.5f
                           delay:0.0f
@@ -102,6 +98,58 @@
     [self.colorPickerView updateUIAnimated:YES];
 }
 
+- (ColorPickerView *)colorPickerView
+{
+    if (!_colorPickerView) {
+        _colorPickerView = [ColorPickerView colorPickerViewWithFrame:self.view.frame
+                                                            delegate:self];
+        
+        
+        _colorPickerView.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.view addSubview:_colorPickerView];
+        
+        UIEdgeInsets padding = UIEdgeInsetsMake(0, 0, 0, 0);
+        
+        [self.view addConstraints:@[
+                                    [NSLayoutConstraint constraintWithItem:_colorPickerView
+                                                                 attribute:NSLayoutAttributeTop
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:self.view
+                                                                 attribute:NSLayoutAttributeTop
+                                                                multiplier:1.0
+                                                                  constant:padding.top],
+                                    
+                                    [NSLayoutConstraint constraintWithItem:_colorPickerView
+                                                                 attribute:NSLayoutAttributeLeft
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:self.view
+                                                                 attribute:NSLayoutAttributeLeft
+                                                                multiplier:1.0
+                                                                  constant:padding.left],
+                                    
+                                    [NSLayoutConstraint constraintWithItem:_colorPickerView
+                                                                 attribute:NSLayoutAttributeBottom
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:self.view
+                                                                 attribute:NSLayoutAttributeBottom
+                                                                multiplier:1.0
+                                                                  constant:-padding.bottom],
+                                    
+                                    [NSLayoutConstraint constraintWithItem:_colorPickerView
+                                                                 attribute:NSLayoutAttributeRight
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:self.view
+                                                                 attribute:NSLayoutAttributeRight
+                                                                multiplier:1
+                                                                  constant:-padding.right],
+                                    
+                                    ]];
+
+        
+        [self.view addSubview:_colorPickerView];
+    }
+    return _colorPickerView; 
+}
 
 
 @end

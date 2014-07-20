@@ -23,38 +23,26 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 @end
 
+
 @implementation ColorPickerView
 
--(id)initWithCoder:(NSCoder *)aDecoder
++ (instancetype)colorPickerViewWithFrame:(CGRect)frame
+                                delegate:(id<ColorPickerViewDelegate>)delegate
 {
-    self = [super initWithCoder:aDecoder];
-    if (self)
-    {
-        if (self.subviews.count == 0) {
-            UINib *nib = [UINib nibWithNibName:NSStringFromClass([self class]) bundle:nil];
-            UIView *subview = [[nib instantiateWithOwner:self options:nil] objectAtIndex:0];
-            subview.frame = self.bounds;
-            [self addSubview:subview];
-            self.backgroundColor = [UIColor clearColor];
-        }
-    }
-    return self;
+    ColorPickerView *picker = [[NSBundle mainBundle] loadNibNamed:@"ColorPickerView" owner:self options:nil].firstObject;
+    picker.frame = frame;
+    picker.delegate = delegate;
+    return picker;
 }
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    
-//    [self setupUI];
-//    [self refreshGradients];`
-}
-
-- (void)setFrame:(CGRect)frame
-{
-    [super setFrame:frame];
-    
+    [self setupUI];
     [self refreshGradients];
 }
+
+
 
 
 
@@ -101,6 +89,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
      {
          [self syncSlidersToColorAnimated:animated];
          [self updateGradients];
+         [self refreshGradients];
          [self updateLabels];
      }
                      completion:nil];
@@ -197,7 +186,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
 - (void)logEvent:(NSString *)event
 {
     [Flurry logEvent:event];
-    DebugLog(@"event %@", event);
+//    DebugLog(@"event %@", event);
 }
 
 
@@ -323,9 +312,9 @@ CGFloat const kColorPickerViewRGBScale = 255;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     
-    NSLog(@"call selector %@", NSStringFromSelector(selector));
+//    NSLog(@"call selector %@", NSStringFromSelector(selector));
     
-    if ([self.delegate respondsToSelector:selector])
+    if (self.delegate && [self.delegate respondsToSelector:selector])
     {
         [self.delegate performSelector:selector withObject:self];
     }

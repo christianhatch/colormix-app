@@ -71,14 +71,10 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 
 @interface ColorPickerView : UIView
 
-
 @property (weak, nonatomic) IBOutlet id <ColorPickerViewDelegate> delegate;
 
 @property (strong, nonatomic) IBOutletCollection(UISlider) NSArray *sliderCollection;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labelCollection;
-
-@property (strong, nonatomic) IBOutlet UIView *hsbContainer;
-@property (strong, nonatomic) IBOutlet UIView *rgbContainer;
 
 @property (strong, nonatomic) IBOutlet UISlider *hueSlider;
 @property (strong, nonatomic) IBOutlet UISlider *saturationSlider;
@@ -97,6 +93,11 @@ static inline NSString * SliderNameString(NSInteger sliderID)
 @property (strong, nonatomic) IBOutlet UILabel *blueLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *hexValueLabel;
+
+
+
++ (instancetype)colorPickerViewWithFrame:(CGRect)frame
+                                delegate:(id <ColorPickerViewDelegate>)delegate;
 
 - (void)updateUIAnimated:(BOOL)animated;
 
