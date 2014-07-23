@@ -1,6 +1,6 @@
 #include "Pods-FlurrySDK.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/FlurrySDK" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/FlurrySDK" "${PODS_ROOT}/Headers/Tweaks" "${PODS_ROOT}/Headers/pop"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/FlurrySDK" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/Bolts" "${PODS_ROOT}/Headers/Facebook-iOS-SDK" "${PODS_ROOT}/Headers/Facebook-iOS-SDK/FacebookSDK" "${PODS_ROOT}/Headers/FlurrySDK" "${PODS_ROOT}/Headers/Parse-iOS-SDK" "${PODS_ROOT}/Headers/Tweaks" "${PODS_ROOT}/Headers/pop"
 LIBRARY_SEARCH_PATHS = ${PODS_FLURRYSDK_LIBRARY_SEARCH_PATHS}
 OTHER_LDFLAGS = -ObjC ${PODS_FLURRYSDK_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}

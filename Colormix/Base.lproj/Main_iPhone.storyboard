@@ -15,11 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="psm-wA-yWK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFK-q0-MkW">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="yFK-q0-MkW" secondAttribute="centerX" id="C9X-A7-BQr"/>
+                            <constraint firstAttribute="trailing" secondItem="yFK-q0-MkW" secondAttribute="trailing" id="VmL-rB-pJb"/>
+                            <constraint firstItem="yFK-q0-MkW" firstAttribute="top" secondItem="K0n-yh-5F1" secondAttribute="bottom" id="dmc-6M-eA9"/>
+                            <constraint firstItem="1Ye-9g-9qf" firstAttribute="top" secondItem="yFK-q0-MkW" secondAttribute="bottom" id="u9Q-EW-sdJ"/>
+                            <constraint firstItem="yFK-q0-MkW" firstAttribute="leading" secondItem="psm-wA-yWK" secondAttribute="leading" id="w4u-dp-VqA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rDI-PF-VWh"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="colorPickerContainerView" destination="yFK-q0-MkW" id="q5j-90-qZP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQU-G2-1KC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

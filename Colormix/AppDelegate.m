@@ -7,17 +7,22 @@
 //
 
 #import "AppDelegate.h"
-#import <FlurrySDK/Flurry.h>
-#import <Tweaks/FBTweakShakeWindow.h>
 #import "ColormixConstants.h"
+
+#import <Tweaks/FBTweakShakeWindow.h>
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-#ifndef DEBUG
-    [Flurry startSession:FlurryAppID];
-#endif
+    [Parse setApplicationId:kColorMixParseAppID
+                  clientKey:kColorMixParseClientKey];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    [Crashlytics startWithAPIKey:kColorMixCrashlyticsAPIKey];
+    
     return YES;
 }
 							

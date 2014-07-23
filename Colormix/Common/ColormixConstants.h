@@ -9,5 +9,6 @@
 
 #pragma mark - Constants
 
-#define FlurryAppID @"353K59ZD8JXYTKDZPYRQ"
-
+#define kColorMixParseAppID             @"FLhfZpqIakC2m76PvpxnTcY4aLdgnugIAFzwI42k"
+#define kColorMixParseClientKey         @"Lnm52Dr3NiMPvc55b9kLE2byguUvmI2SAazZCGXu"
+#define kColorMixCrashlyticsAPIKey      @"36aebc5d6093c8a7cc64fae3d769bf41933d7919"

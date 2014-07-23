@@ -11,6 +11,7 @@
 		451CA34E1978A27E0016A3D8 /* UIColor+Colormix.m in Sources */ = {isa = PBXBuildFile; fileRef = 451CA34C1978A27E0016A3D8 /* UIColor+Colormix.m */; };
 		451CA3501978D9950016A3D8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 451CA34F1978D9950016A3D8 /* Settings.bundle */; };
 		451CA3511978D9950016A3D8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 451CA34F1978D9950016A3D8 /* Settings.bundle */; };
+		459ADD84197DBEC20029AE3E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459ADD83197DBEC20029AE3E /* Crashlytics.framework */; };
 		45FD1285196CA8CA00777132 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1284196CA8CA00777132 /* Foundation.framework */; };
 		45FD1287196CA8CA00777132 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1286196CA8CA00777132 /* CoreGraphics.framework */; };
 		45FD1289196CA8CA00777132 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1288196CA8CA00777132 /* UIKit.framework */; };
@@ -49,6 +50,7 @@
 		451CA34C1978A27E0016A3D8 /* UIColor+Colormix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Colormix.m"; sourceTree = "<group>"; };
 		451CA34F1978D9950016A3D8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		453D2D93196D1E3000F3CFDE /* ColormixConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColormixConstants.h; sourceTree = "<group>"; };
+		459ADD83197DBEC20029AE3E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		45FD1281196CA8CA00777132 /* Colormix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colormix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FD1284196CA8CA00777132 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45FD1286196CA8CA00777132 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -84,6 +86,7 @@
 				45FD1287196CA8CA00777132 /* CoreGraphics.framework in Frameworks */,
 				45FD1289196CA8CA00777132 /* UIKit.framework in Frameworks */,
 				45FD1285196CA8CA00777132 /* Foundation.framework in Frameworks */,
+				459ADD84197DBEC20029AE3E /* Crashlytics.framework in Frameworks */,
 				B099CCD384BB40C5A2DCD09C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +138,7 @@
 		45FD1283196CA8CA00777132 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				459ADD83197DBEC20029AE3E /* Crashlytics.framework */,
 				45FD1284196CA8CA00777132 /* Foundation.framework */,
 				45FD1286196CA8CA00777132 /* CoreGraphics.framework */,
 				45FD1288196CA8CA00777132 /* UIKit.framework */,
@@ -221,6 +225,7 @@
 				45FD127E196CA8CA00777132 /* Frameworks */,
 				45FD127F196CA8CA00777132 /* Resources */,
 				60D91D4711704F5981B2B525 /* Copy Pods Resources */,
+				459ADD82197DBEA30029AE3E /* Install Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -317,6 +322,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		459ADD82197DBEA30029AE3E /* Install Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Install Crashlytics";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 36aebc5d6093c8a7cc64fae3d769bf41933d7919 216458b4f171c912dd83c54e976d100f7fe247d329693e1b32de3c10e1740bb1";
+		};
 		60D91D4711704F5981B2B525 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,6 +521,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
 				INFOPLIST_FILE = "Colormix/Supporting Files/Colormix-Info.plist";
@@ -519,6 +542,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
 				INFOPLIST_FILE = "Colormix/Supporting Files/Colormix-Info.plist";

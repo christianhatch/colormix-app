@@ -1,8 +1,8 @@
 CLANG_CXX_LANGUAGE_STANDARD = c++11
 CLANG_CXX_LIBRARY = libc++
+FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Parse-iOS-SDK"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/FlurrySDK" "${PODS_ROOT}/Headers/Tweaks" "${PODS_ROOT}/Headers/pop"
-LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/FlurrySDK/Flurry"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers" -isystem "${PODS_ROOT}/Headers/FlurrySDK" -isystem "${PODS_ROOT}/Headers/Tweaks" -isystem "${PODS_ROOT}/Headers/pop"
-OTHER_LDFLAGS = -ObjC -lFlurry_5.2.0 -lc++ -lz -framework CoreGraphics -framework Foundation -framework MediaPlayer -framework MessageUI -framework Security -framework SystemConfiguration -framework UIKit -weak_framework AdSupport -weak_framework StoreKit
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/Bolts" "${PODS_ROOT}/Headers/Facebook-iOS-SDK" "${PODS_ROOT}/Headers/Facebook-iOS-SDK/FacebookSDK" "${PODS_ROOT}/Headers/Parse-iOS-SDK" "${PODS_ROOT}/Headers/Tweaks" "${PODS_ROOT}/Headers/pop"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers" -isystem "${PODS_ROOT}/Headers/Bolts" -isystem "${PODS_ROOT}/Headers/Facebook-iOS-SDK" -isystem "${PODS_ROOT}/Headers/Facebook-iOS-SDK/FacebookSDK" -isystem "${PODS_ROOT}/Headers/Parse-iOS-SDK" -isystem "${PODS_ROOT}/Headers/Tweaks" -isystem "${PODS_ROOT}/Headers/pop"
+OTHER_LDFLAGS = -ObjC -lc++ -lsqlite3 -lz -framework AudioToolbox -framework CFNetwork -framework CoreGraphics -framework CoreLocation -framework MessageUI -framework MobileCoreServices -framework Parse -framework QuartzCore -framework Security -framework StoreKit -framework SystemConfiguration -weak_framework Accounts -weak_framework AdSupport -weak_framework Security -weak_framework Social
 PODS_ROOT = ${SRCROOT}/Pods

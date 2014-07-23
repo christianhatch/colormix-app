@@ -1,17 +1,21 @@
 PODS:
-  - FlurrySDK (5.2.0):
-    - FlurrySDK/FlurrySDK
-  - FlurrySDK/FlurrySDK (5.2.0)
+  - Bolts (1.1.0)
+  - Facebook-iOS-SDK (3.16):
+    - Bolts
+  - Parse-iOS-SDK (1.2.19):
+    - Facebook-iOS-SDK (~> 3.7)
   - pop (1.0.6)
   - Tweaks (1.1.0)
 
 DEPENDENCIES:
-  - FlurrySDK
+  - Parse-iOS-SDK
   - pop
   - Tweaks
 
 SPEC CHECKSUMS:
-  FlurrySDK: 5322b9eb0d0b538f1a1983a6717f3a2e2ba03047
+  Bolts: 91c2af8eae1d44e1dd75946a5b0ae04a43ea43e4
+  Facebook-iOS-SDK: 82ad03cb9ce568855057e20a099054cf1e34ef12
+  Parse-iOS-SDK: 5e1f7e649a02f1cc19e73cc95bd43d7778848314
   pop: e518794da38942c05255eb64b36d894e70cb4f00
   Tweaks: 05b197d4a1247288f576587546bc1932189d8c98
 
