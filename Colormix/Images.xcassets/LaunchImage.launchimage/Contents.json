@@ -5,14 +5,14 @@
       "idiom" : "iphone",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
-      "filename" : "iOS Simulator Screen shot Jul 9, 2014, 2.26.48 AM.png",
+      "filename" : "ColorMixLaunch.png",
       "scale" : "2x"
     },
     {
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "retina4",
-      "filename" : "iOS Simulator Screen shot Jul 9, 2014, 2.26.05 AM.png",
+      "filename" : "ColorMixLaunch568.png",
       "minimum-system-version" : "7.0",
       "orientation" : "portrait",
       "scale" : "2x"
@@ -22,7 +22,7 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
-      "filename" : "iOS Simulator Screen shot Jul 9, 2014, 2.36.36 AM.png",
+      "filename" : "ColorMixLaunchIpadPortrait.png",
       "scale" : "1x"
     },
     {
@@ -30,7 +30,7 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
-      "filename" : "iOS Simulator Screen shot Jul 9, 2014, 2.36.38 AM.png",
+      "filename" : "ColorMixLaunchIpadLandscape.png",
       "scale" : "1x"
     },
     {
@@ -38,7 +38,7 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
-      "filename" : "iOS Simulator Screen shot Jul 9, 2014, 2.36.54 AM.png",
+      "filename" : "ColorMixLaunchIpadPortrait@2x.png",
       "scale" : "2x"
     },
     {
@@ -46,7 +46,7 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
-      "filename" : "iOS Simulator Screen shot Jul 9, 2014, 2.36.58 AM.png",
+      "filename" : "ColorMixLaunchIpadLandscape@2x.png",
       "scale" : "2x"
     }
   ],
