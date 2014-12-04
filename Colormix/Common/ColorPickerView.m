@@ -50,6 +50,9 @@ CGFloat const kColorPickerViewHueScale = 360;
 CGFloat const kColorPickerViewSaturationBrightnessScale = 100;
 CGFloat const kColorPickerViewRGBScale = 255;
 
+
+
+
 @interface ColorPickerView ()
 
 @property (nonatomic, strong) CAGradientLayer *saturationGradient;

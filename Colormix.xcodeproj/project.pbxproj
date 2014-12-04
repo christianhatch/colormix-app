@@ -11,6 +11,10 @@
 		451CA34E1978A27E0016A3D8 /* UIColor+Colormix.m in Sources */ = {isa = PBXBuildFile; fileRef = 451CA34C1978A27E0016A3D8 /* UIColor+Colormix.m */; };
 		451CA3501978D9950016A3D8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 451CA34F1978D9950016A3D8 /* Settings.bundle */; };
 		451CA3511978D9950016A3D8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 451CA34F1978D9950016A3D8 /* Settings.bundle */; };
+		453DF5D61A237D7B005A006B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453DF5D51A237D7B005A006B /* AppDelegate.swift */; };
+		453DF5D71A237D7B005A006B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453DF5D51A237D7B005A006B /* AppDelegate.swift */; };
+		4566B4CA1A2FEDE40035D654 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */; };
+		4566B4CB1A2FEDE40035D654 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */; };
 		459ADD84197DBEC20029AE3E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459ADD83197DBEC20029AE3E /* Crashlytics.framework */; };
 		45FD1285196CA8CA00777132 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1284196CA8CA00777132 /* Foundation.framework */; };
 		45FD1287196CA8CA00777132 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1286196CA8CA00777132 /* CoreGraphics.framework */; };
@@ -50,6 +54,11 @@
 		451CA34C1978A27E0016A3D8 /* UIColor+Colormix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Colormix.m"; sourceTree = "<group>"; };
 		451CA34F1978D9950016A3D8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		453D2D93196D1E3000F3CFDE /* ColormixConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColormixConstants.h; sourceTree = "<group>"; };
+		453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colormix-Bridging-Header.h"; sourceTree = "<group>"; };
+		453DF5D41A237D7A005A006B /* ColormixTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColormixTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		453DF5D51A237D7B005A006B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		453DF5D81A238711005A006B /* ColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		459ADD83197DBEC20029AE3E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		45FD1281196CA8CA00777132 /* Colormix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colormix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FD1284196CA8CA00777132 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -154,12 +163,16 @@
 				451CA345197887A10016A3D8 /* Common */,
 				45FD1293196CA8CA00777132 /* AppDelegate.h */,
 				45FD1294196CA8CA00777132 /* AppDelegate.m */,
+				453DF5D51A237D7B005A006B /* AppDelegate.swift */,
+				4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */,
 				45FD1296196CA8CA00777132 /* Main_iPhone.storyboard */,
 				45FD1299196CA8CA00777132 /* Main_iPad.storyboard */,
 				45FD129C196CA8CA00777132 /* ColorPickerViewController.h */,
 				45FD129D196CA8CA00777132 /* ColorPickerViewController.m */,
 				45FD129F196CA8CA00777132 /* Images.xcassets */,
 				45FD128B196CA8CA00777132 /* Supporting Files */,
+				453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */,
+				453DF5D41A237D7A005A006B /* ColormixTests-Bridging-Header.h */,
 			);
 			path = Colormix;
 			sourceTree = "<group>";
@@ -208,6 +221,7 @@
 			children = (
 				45FD99CC197AF731001F1D34 /* ColorPickerView.h */,
 				45FD99CD197AF731001F1D34 /* ColorPickerView.m */,
+				453DF5D81A238711005A006B /* ColorPickerView.swift */,
 				45FD99D2197AF78A001F1D34 /* ColorPickerView.xib */,
 			);
 			name = Views;
@@ -305,6 +319,7 @@
 				451CA3501978D9950016A3D8 /* Settings.bundle in Resources */,
 				45FD1298196CA8CA00777132 /* Main_iPhone.storyboard in Resources */,
 				45FD99D3197AF78A001F1D34 /* ColorPickerView.xib in Resources */,
+				4566B4CA1A2FEDE40035D654 /* Storyboard.storyboard in Resources */,
 				45FD128F196CA8CA00777132 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				451CA3511978D9950016A3D8 /* Settings.bundle in Resources */,
+				4566B4CB1A2FEDE40035D654 /* Storyboard.storyboard in Resources */,
 				45FD99D4197AF78A001F1D34 /* ColorPickerView.xib in Resources */,
 				45FD12B1196CA8CA00777132 /* InfoPlist.strings in Resources */,
 			);
@@ -373,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				453DF5D61A237D7B005A006B /* AppDelegate.swift in Sources */,
 				45FD129E196CA8CA00777132 /* ColorPickerViewController.m in Sources */,
 				45FD99CE197AF731001F1D34 /* ColorPickerView.m in Sources */,
 				45FD1295196CA8CA00777132 /* AppDelegate.m in Sources */,
@@ -385,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				453DF5D71A237D7B005A006B /* AppDelegate.swift in Sources */,
 				451CA34E1978A27E0016A3D8 /* UIColor+Colormix.m in Sources */,
 				45FD12B3196CA8CA00777132 /* ColormixTests.m in Sources */,
 				45FD99CF197AF731001F1D34 /* ColorPickerView.m in Sources */,
@@ -519,6 +537,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -528,8 +547,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
 				INFOPLIST_FILE = "Colormix/Supporting Files/Colormix-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "75F160EF-A864-4BB3-B053-3A3E625BB596";
+				SWIFT_OBJC_BRIDGING_HEADER = "Colormix/Colormix-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -540,6 +562,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -549,8 +572,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
 				INFOPLIST_FILE = "Colormix/Supporting Files/Colormix-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "75F160EF-A864-4BB3-B053-3A3E625BB596";
+				SWIFT_OBJC_BRIDGING_HEADER = "Colormix/Colormix-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -559,6 +584,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Colormix.app/Colormix";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -571,7 +597,10 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ColormixTests/Supporting Files/ColormixTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Colormix/ColormixTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -581,6 +610,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Colormix.app/Colormix";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -589,7 +619,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
 				INFOPLIST_FILE = "ColormixTests/Supporting Files/ColormixTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Colormix/ColormixTests-Bridging-Header.h";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
