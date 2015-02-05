@@ -8,8 +8,6 @@
 
 //imports
 #import <Tweaks/FBTweakInline.h> 
-#import <Parse/Parse.h>
-
 
 
 #pragma mark - Macros

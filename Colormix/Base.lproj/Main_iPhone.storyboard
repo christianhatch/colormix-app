@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iSC-Cb-Kf8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iSC-Cb-Kf8">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Color Picker View Controller-->
+        <!--Color Picker View Controller ObjC-->
         <scene sceneID="NZk-ZK-sKN">
             <objects>
-                <viewController storyboardIdentifier="ColorPickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iSC-Cb-Kf8" customClass="ColorPickerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorPickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iSC-Cb-Kf8" customClass="ColorPickerViewControllerObjC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K0n-yh-5F1"/>
                         <viewControllerLayoutGuide type="bottom" id="1Ye-9g-9qf"/>

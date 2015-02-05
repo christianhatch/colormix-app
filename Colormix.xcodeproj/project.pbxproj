@@ -11,11 +11,25 @@
 		451CA34E1978A27E0016A3D8 /* UIColor+Colormix.m in Sources */ = {isa = PBXBuildFile; fileRef = 451CA34C1978A27E0016A3D8 /* UIColor+Colormix.m */; };
 		451CA3501978D9950016A3D8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 451CA34F1978D9950016A3D8 /* Settings.bundle */; };
 		451CA3511978D9950016A3D8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 451CA34F1978D9950016A3D8 /* Settings.bundle */; };
-		453DF5D61A237D7B005A006B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453DF5D51A237D7B005A006B /* AppDelegate.swift */; };
-		453DF5D71A237D7B005A006B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453DF5D51A237D7B005A006B /* AppDelegate.swift */; };
 		4566B4CA1A2FEDE40035D654 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */; };
 		4566B4CB1A2FEDE40035D654 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */; };
+		457D2D671A82FF730056EDCA /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D2D661A82FF730056EDCA /* ColorPickerViewController.swift */; };
 		459ADD84197DBEC20029AE3E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459ADD83197DBEC20029AE3E /* Crashlytics.framework */; };
+		45DC34BF1A814C9F006B4714 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34BD1A814C9F006B4714 /* Bolts.framework */; };
+		45DC34C01A814C9F006B4714 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34BD1A814C9F006B4714 /* Bolts.framework */; };
+		45DC34C11A814C9F006B4714 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34BE1A814C9F006B4714 /* Parse.framework */; };
+		45DC34C21A814C9F006B4714 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34BE1A814C9F006B4714 /* Parse.framework */; };
+		45DC34C61A814D23006B4714 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34C31A814D23006B4714 /* AudioToolbox.framework */; };
+		45DC34C71A814D23006B4714 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34C41A814D23006B4714 /* CFNetwork.framework */; };
+		45DC34C81A814D23006B4714 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34C51A814D23006B4714 /* CoreLocation.framework */; };
+		45DC34CA1A814D2D006B4714 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34C91A814D2D006B4714 /* MobileCoreServices.framework */; };
+		45DC34D01A814D53006B4714 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34CB1A814D53006B4714 /* QuartzCore.framework */; };
+		45DC34D11A814D53006B4714 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34CC1A814D53006B4714 /* Security.framework */; };
+		45DC34D21A814D53006B4714 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34CD1A814D53006B4714 /* Social.framework */; };
+		45DC34D41A814D53006B4714 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34CF1A814D53006B4714 /* SystemConfiguration.framework */; };
+		45DC34D61A814D59006B4714 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34D51A814D59006B4714 /* Accounts.framework */; };
+		45DC34D81A814D64006B4714 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34D71A814D64006B4714 /* libz.dylib */; };
+		45DC34DA1A814D6E006B4714 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34D91A814D6E006B4714 /* libsqlite3.dylib */; };
 		45FD1285196CA8CA00777132 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1284196CA8CA00777132 /* Foundation.framework */; };
 		45FD1287196CA8CA00777132 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1286196CA8CA00777132 /* CoreGraphics.framework */; };
 		45FD1289196CA8CA00777132 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1288196CA8CA00777132 /* UIKit.framework */; };
@@ -24,15 +38,15 @@
 		45FD1295196CA8CA00777132 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD1294196CA8CA00777132 /* AppDelegate.m */; };
 		45FD1298196CA8CA00777132 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FD1296196CA8CA00777132 /* Main_iPhone.storyboard */; };
 		45FD129B196CA8CA00777132 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FD1299196CA8CA00777132 /* Main_iPad.storyboard */; };
-		45FD129E196CA8CA00777132 /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD129D196CA8CA00777132 /* ColorPickerViewController.m */; };
+		45FD129E196CA8CA00777132 /* ColorPickerViewControllerObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD129D196CA8CA00777132 /* ColorPickerViewControllerObjC.m */; };
 		45FD12A0196CA8CA00777132 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FD129F196CA8CA00777132 /* Images.xcassets */; };
 		45FD12A7196CA8CA00777132 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD12A6196CA8CA00777132 /* XCTest.framework */; };
 		45FD12A8196CA8CA00777132 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1284196CA8CA00777132 /* Foundation.framework */; };
 		45FD12A9196CA8CA00777132 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1288196CA8CA00777132 /* UIKit.framework */; };
 		45FD12B1196CA8CA00777132 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45FD12AF196CA8CA00777132 /* InfoPlist.strings */; };
 		45FD12B3196CA8CA00777132 /* ColormixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD12B2196CA8CA00777132 /* ColormixTests.m */; };
-		45FD99CE197AF731001F1D34 /* ColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD99CD197AF731001F1D34 /* ColorPickerView.m */; };
-		45FD99CF197AF731001F1D34 /* ColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD99CD197AF731001F1D34 /* ColorPickerView.m */; };
+		45FD99CE197AF731001F1D34 /* ColorPickerViewObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD99CD197AF731001F1D34 /* ColorPickerViewObjC.m */; };
+		45FD99CF197AF731001F1D34 /* ColorPickerViewObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD99CD197AF731001F1D34 /* ColorPickerViewObjC.m */; };
 		45FD99D3197AF78A001F1D34 /* ColorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45FD99D2197AF78A001F1D34 /* ColorPickerView.xib */; };
 		45FD99D4197AF78A001F1D34 /* ColorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45FD99D2197AF78A001F1D34 /* ColorPickerView.xib */; };
 		B099CCD384BB40C5A2DCD09C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A036573136C4B7D8490C4EA /* libPods.a */; };
@@ -49,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B564616CB91228E7EEBAEA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		451CA33E19787C9B0016A3D8 /* ColormixKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColormixKit.h; sourceTree = "<group>"; };
 		451CA34B1978A27E0016A3D8 /* UIColor+Colormix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Colormix.h"; sourceTree = "<group>"; };
 		451CA34C1978A27E0016A3D8 /* UIColor+Colormix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Colormix.m"; sourceTree = "<group>"; };
@@ -56,10 +71,23 @@
 		453D2D93196D1E3000F3CFDE /* ColormixConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColormixConstants.h; sourceTree = "<group>"; };
 		453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colormix-Bridging-Header.h"; sourceTree = "<group>"; };
 		453DF5D41A237D7A005A006B /* ColormixTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColormixTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		453DF5D51A237D7B005A006B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		453DF5D81A238711005A006B /* ColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		457D2D661A82FF730056EDCA /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		459ADD83197DBEC20029AE3E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		45DC34BD1A814C9F006B4714 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		45DC34BE1A814C9F006B4714 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		45DC34C31A814D23006B4714 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		45DC34C41A814D23006B4714 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		45DC34C51A814D23006B4714 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		45DC34C91A814D2D006B4714 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		45DC34CB1A814D53006B4714 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		45DC34CC1A814D53006B4714 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		45DC34CD1A814D53006B4714 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		45DC34CF1A814D53006B4714 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		45DC34D51A814D59006B4714 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		45DC34D71A814D64006B4714 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		45DC34D91A814D6E006B4714 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		45FD1281196CA8CA00777132 /* Colormix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colormix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FD1284196CA8CA00777132 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45FD1286196CA8CA00777132 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,19 +100,19 @@
 		45FD1294196CA8CA00777132 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		45FD1297196CA8CA00777132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		45FD129A196CA8CA00777132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		45FD129C196CA8CA00777132 /* ColorPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
-		45FD129D196CA8CA00777132 /* ColorPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
+		45FD129C196CA8CA00777132 /* ColorPickerViewControllerObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewControllerObjC.h; sourceTree = "<group>"; };
+		45FD129D196CA8CA00777132 /* ColorPickerViewControllerObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewControllerObjC.m; sourceTree = "<group>"; };
 		45FD129F196CA8CA00777132 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		45FD12A5196CA8CA00777132 /* ColormixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColormixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FD12A6196CA8CA00777132 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		45FD12AE196CA8CA00777132 /* ColormixTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ColormixTests-Info.plist"; sourceTree = "<group>"; };
 		45FD12B0196CA8CA00777132 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45FD12B2196CA8CA00777132 /* ColormixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColormixTests.m; sourceTree = "<group>"; };
-		45FD99CC197AF731001F1D34 /* ColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerView.h; sourceTree = "<group>"; };
-		45FD99CD197AF731001F1D34 /* ColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerView.m; sourceTree = "<group>"; };
+		45FD99CC197AF731001F1D34 /* ColorPickerViewObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewObjC.h; sourceTree = "<group>"; };
+		45FD99CD197AF731001F1D34 /* ColorPickerViewObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewObjC.m; sourceTree = "<group>"; };
 		45FD99D2197AF78A001F1D34 /* ColorPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerView.xib; sourceTree = "<group>"; };
 		6A036573136C4B7D8490C4EA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A7F533224B74F6088932FED /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		CAD8FC95EABB733275C9018B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +120,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45DC34DA1A814D6E006B4714 /* libsqlite3.dylib in Frameworks */,
+				45DC34D81A814D64006B4714 /* libz.dylib in Frameworks */,
+				45DC34D61A814D59006B4714 /* Accounts.framework in Frameworks */,
+				45DC34D01A814D53006B4714 /* QuartzCore.framework in Frameworks */,
+				45DC34D11A814D53006B4714 /* Security.framework in Frameworks */,
+				45DC34D21A814D53006B4714 /* Social.framework in Frameworks */,
+				45DC34D41A814D53006B4714 /* SystemConfiguration.framework in Frameworks */,
+				45DC34CA1A814D2D006B4714 /* MobileCoreServices.framework in Frameworks */,
+				45DC34C61A814D23006B4714 /* AudioToolbox.framework in Frameworks */,
+				45DC34C71A814D23006B4714 /* CFNetwork.framework in Frameworks */,
+				45DC34C81A814D23006B4714 /* CoreLocation.framework in Frameworks */,
 				45FD1287196CA8CA00777132 /* CoreGraphics.framework in Frameworks */,
 				45FD1289196CA8CA00777132 /* UIKit.framework in Frameworks */,
 				45FD1285196CA8CA00777132 /* Foundation.framework in Frameworks */,
+				45DC34C11A814C9F006B4714 /* Parse.framework in Frameworks */,
+				45DC34BF1A814C9F006B4714 /* Bolts.framework in Frameworks */,
 				459ADD84197DBEC20029AE3E /* Crashlytics.framework in Frameworks */,
 				B099CCD384BB40C5A2DCD09C /* libPods.a in Frameworks */,
 			);
@@ -107,6 +148,8 @@
 				45FD12A7196CA8CA00777132 /* XCTest.framework in Frameworks */,
 				45FD12A9196CA8CA00777132 /* UIKit.framework in Frameworks */,
 				45FD12A8196CA8CA00777132 /* Foundation.framework in Frameworks */,
+				45DC34C01A814C9F006B4714 /* Bolts.framework in Frameworks */,
+				45DC34C21A814C9F006B4714 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +174,7 @@
 				45FD12AC196CA8CA00777132 /* ColormixTests */,
 				45FD1283196CA8CA00777132 /* Frameworks */,
 				45FD1282196CA8CA00777132 /* Products */,
-				7A7F533224B74F6088932FED /* Pods.xcconfig */,
+				4CFDD0623CDD460ADABF8B7E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +190,19 @@
 		45FD1283196CA8CA00777132 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45DC34D91A814D6E006B4714 /* libsqlite3.dylib */,
+				45DC34D71A814D64006B4714 /* libz.dylib */,
+				45DC34D51A814D59006B4714 /* Accounts.framework */,
+				45DC34CB1A814D53006B4714 /* QuartzCore.framework */,
+				45DC34CC1A814D53006B4714 /* Security.framework */,
+				45DC34CD1A814D53006B4714 /* Social.framework */,
+				45DC34CF1A814D53006B4714 /* SystemConfiguration.framework */,
+				45DC34C91A814D2D006B4714 /* MobileCoreServices.framework */,
+				45DC34C31A814D23006B4714 /* AudioToolbox.framework */,
+				45DC34C41A814D23006B4714 /* CFNetwork.framework */,
+				45DC34C51A814D23006B4714 /* CoreLocation.framework */,
+				45DC34BD1A814C9F006B4714 /* Bolts.framework */,
+				45DC34BE1A814C9F006B4714 /* Parse.framework */,
 				459ADD83197DBEC20029AE3E /* Crashlytics.framework */,
 				45FD1284196CA8CA00777132 /* Foundation.framework */,
 				45FD1286196CA8CA00777132 /* CoreGraphics.framework */,
@@ -163,12 +219,12 @@
 				451CA345197887A10016A3D8 /* Common */,
 				45FD1293196CA8CA00777132 /* AppDelegate.h */,
 				45FD1294196CA8CA00777132 /* AppDelegate.m */,
-				453DF5D51A237D7B005A006B /* AppDelegate.swift */,
+				45FD129C196CA8CA00777132 /* ColorPickerViewControllerObjC.h */,
+				45FD129D196CA8CA00777132 /* ColorPickerViewControllerObjC.m */,
+				457D2D661A82FF730056EDCA /* ColorPickerViewController.swift */,
 				4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */,
 				45FD1296196CA8CA00777132 /* Main_iPhone.storyboard */,
 				45FD1299196CA8CA00777132 /* Main_iPad.storyboard */,
-				45FD129C196CA8CA00777132 /* ColorPickerViewController.h */,
-				45FD129D196CA8CA00777132 /* ColorPickerViewController.m */,
 				45FD129F196CA8CA00777132 /* Images.xcassets */,
 				45FD128B196CA8CA00777132 /* Supporting Files */,
 				453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */,
@@ -219,12 +275,21 @@
 		45FD99D1197AF76F001F1D34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				45FD99CC197AF731001F1D34 /* ColorPickerView.h */,
-				45FD99CD197AF731001F1D34 /* ColorPickerView.m */,
+				45FD99CC197AF731001F1D34 /* ColorPickerViewObjC.h */,
+				45FD99CD197AF731001F1D34 /* ColorPickerViewObjC.m */,
 				453DF5D81A238711005A006B /* ColorPickerView.swift */,
 				45FD99D2197AF78A001F1D34 /* ColorPickerView.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		4CFDD0623CDD460ADABF8B7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAD8FC95EABB733275C9018B /* Pods.debug.xcconfig */,
+				1B564616CB91228E7EEBAEA2 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +345,9 @@
 					45FD1280196CA8CA00777132 = {
 						DevelopmentTeam = YWKER65N63;
 						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
 							com.apple.iCloud = {
 								enabled = 0;
 							};
@@ -364,7 +432,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC84590A4D6C4B43A0757DD5 /* Check Pods Manifest.lock */ = {
@@ -389,9 +457,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				453DF5D61A237D7B005A006B /* AppDelegate.swift in Sources */,
-				45FD129E196CA8CA00777132 /* ColorPickerViewController.m in Sources */,
-				45FD99CE197AF731001F1D34 /* ColorPickerView.m in Sources */,
+				45FD129E196CA8CA00777132 /* ColorPickerViewControllerObjC.m in Sources */,
+				45FD99CE197AF731001F1D34 /* ColorPickerViewObjC.m in Sources */,
+				457D2D671A82FF730056EDCA /* ColorPickerViewController.swift in Sources */,
 				45FD1295196CA8CA00777132 /* AppDelegate.m in Sources */,
 				451CA34D1978A27E0016A3D8 /* UIColor+Colormix.m in Sources */,
 				45FD1291196CA8CA00777132 /* main.m in Sources */,
@@ -402,10 +470,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				453DF5D71A237D7B005A006B /* AppDelegate.swift in Sources */,
 				451CA34E1978A27E0016A3D8 /* UIColor+Colormix.m in Sources */,
 				45FD12B3196CA8CA00777132 /* ColormixTests.m in Sources */,
-				45FD99CF197AF731001F1D34 /* ColorPickerView.m in Sources */,
+				45FD99CF197AF731001F1D34 /* ColorPickerViewObjC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,13 +600,13 @@
 		};
 		45FD12B7196CA8CA00777132 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A7F533224B74F6088932FED /* Pods.xcconfig */;
+			baseConfigurationReference = CAD8FC95EABB733275C9018B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -547,9 +614,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
 				INFOPLIST_FILE = "Colormix/Supporting Files/Colormix-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "75F160EF-A864-4BB3-B053-3A3E625BB596";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Colormix/Colormix-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
@@ -558,13 +626,13 @@
 		};
 		45FD12B8196CA8CA00777132 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A7F533224B74F6088932FED /* Pods.xcconfig */;
+			baseConfigurationReference = 1B564616CB91228E7EEBAEA2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -572,9 +640,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
 				INFOPLIST_FILE = "Colormix/Supporting Files/Colormix-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "75F160EF-A864-4BB3-B053-3A3E625BB596";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Colormix/Colormix-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
@@ -589,6 +658,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
@@ -615,6 +685,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";

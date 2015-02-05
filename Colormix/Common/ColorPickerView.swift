@@ -12,14 +12,21 @@ protocol ColorPickerViewDelegate {
     func colorPickerViewMainButtonTapped(view: ColorPickerView)
     func colorPickerViewPickedColorDidChange(pickedColor: UIColor, colorPickerView: ColorPickerView)
 }
-    
+
+
 let kColorPickerViewHueScale: CGFloat = 360
 let kColorPickerViewSaturationBrightnessScale: CGFloat = 100
 let kColorPickerViewRGBScale: CGFloat = 255
 
 
-
-
+enum SliderName {
+    case SliderNameHue
+    case SliderNameSaturation
+    case SliderNameBrightness
+    case SliderNameRed
+    case SliderNameGreen
+    case SliderNameGreen
+}
 
 
 
@@ -41,7 +48,6 @@ class ColorPickerView: UIView {
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
-    
     
     @IBOutlet weak var redLabel: UILabel!
     @IBOutlet weak var greenLabel: UILabel!
@@ -74,7 +80,8 @@ class ColorPickerView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        self.setUpUI()
+        self.setUpUI()
+        self.refreshGradients()
     }
     
     func setUpUI() {
@@ -92,7 +99,35 @@ class ColorPickerView: UIView {
     func updateUI(animated: Bool) {
         
     }
+    
+    
+    func refreshGradients() {
+        
+        self.hueGradient.removeFromSuperlayer()
+        self.saturationGradient.removeFromSuperlayer()
+        self.brightnessGradient.removeFromSuperlayer()
+        
+        self.hueGradient = nil
+        self.saturationGradient = nil
+        self.brightnessGradient = nil
+        
+        self.hueSlider.layer.insertSublayer(self.hueGradient, 0)
+        self.saturationSlider.layer.insertSublayer(self.saturationGradient, 0)
+        self.brightnessSlider.layer.insertSublayer(self.brightnessGradient, 0)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

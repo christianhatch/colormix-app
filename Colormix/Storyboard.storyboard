@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9xR-YG-xhj">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Color Picker View Controller-->
+        <!--Color Picker View Controller ObjC-->
         <scene sceneID="Psb-gX-blc">
             <objects>
-                <viewController storyboardIdentifier="ColorPickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9xR-YG-xhj" customClass="ColorPickerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorPickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9xR-YG-xhj" customClass="ColorPickerViewControllerObjC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qYR-3O-Qxp"/>
                         <viewControllerLayoutGuide type="bottom" id="HEp-lk-qb2"/>
@@ -30,6 +29,9 @@
                             <constraint firstItem="ipr-yK-Fx3" firstAttribute="top" secondItem="UGS-5z-esM" secondAttribute="top" id="zSz-54-RtB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="colorPickerContainerView" destination="ipr-yK-Fx3" id="DBC-gz-oBj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vic-dI-C6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

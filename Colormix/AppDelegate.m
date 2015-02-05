@@ -12,6 +12,9 @@
 #import <Tweaks/FBTweakShakeWindow.h>
 #import <Crashlytics/Crashlytics.h>
 
+#import <Parse/Parse.h>
+
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
