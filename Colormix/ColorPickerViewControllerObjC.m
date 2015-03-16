@@ -78,7 +78,7 @@
 {
     if (!_colorPickerView) {
         _colorPickerView = [ColorPickerViewObjC colorPickerViewWithFrame:self.view.frame
-                                                            delegate:self];
+                                                                delegate:self];
         
         _colorPickerView.translatesAutoresizingMaskIntoConstraints = NO;
         [self.colorPickerContainerView addSubview:_colorPickerView];

@@ -7,24 +7,34 @@
 //
 
 import UIKit
-import ColorPickerView
 
-class ColorPickerViewController: UIViewController {
 
+class ColorPickerViewController: UIViewController, ColorPickerViewDelegate {
+
+    //MARK: variables
     @IBOutlet weak var colorPickerContainerView: UIView!
-    var colorPickerView: ColorPickerView
+    let colorPickerView: ColorPickerViewObjC!
     
+    //MARK: init
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.colorPickerView = self.createColorPickerView()
+        self.colorPickerContainerView.addSubview(self.colorPickerContainerView)
+    }
     
+    //MARK: view lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.applyRandomColor()
+        super.viewDidAppear(animated)
+        self.applyRandomBGColor()
     }
     
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        self.colorPickerView.setPickedColor(self.colorPickerView.pickedColor, animated: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,26 +42,87 @@ class ColorPickerViewController: UIViewController {
     }
     
     
-    func applyRandomColor() {
+    //MARK: custom functions
+    func applyRandomBGColor() {
         UIView.animateWithDuration(0.5,
             delay: 0.0,
             usingSpringWithDamping: 0.7,
             initialSpringVelocity: 0.0,
-            options: .AllowUserInteration | .TransitionCrossDissolve,
-            animations: { () -> Void in
-            self.colo
-        }, completion: nil)
+            options: .AllowUserInteraction | .TransitionCrossDissolve,
+            animations:
+        { () -> Void in
+                self.colorPickerView.setPickedColor(UIColor.randomColor(), animated: true)
+                self.view.backgroundColor = self.colorPickerView.pickedColor
+        },
+            completion: nil)
     }
     
+    
+    func createColorPickerView() -> ColorPickerViewObjC {
+        var colorPickerViewVar: ColorPickerViewObjC = ColorPickerViewObjC.colorPickerViewWithFrame(self.view.frame, delegate: self)
+        colorPickerViewVar.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
+        let padding: UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        
+        let top: NSLayoutConstraint = NSLayoutConstraint(
+            item: self.colorPickerView,
+            attribute: .Top,
+            relatedBy: .Equal,
+            toItem: self.colorPickerContainerView,
+            attribute: .Top,
+            multiplier: 1.0,
+            constant: padding.top)
+        
+        let bottom: NSLayoutConstraint = NSLayoutConstraint(
+            item: self.colorPickerView,
+            attribute: .Bottom,
+            relatedBy: .Equal,
+            toItem: self.colorPickerContainerView,
+            attribute: .Bottom,
+            multiplier: 1.0,
+            constant: -padding.top)
+        
+        let left: NSLayoutConstraint = NSLayoutConstraint(
+            item: self.colorPickerView,
+            attribute: .Left,
+            relatedBy: .Equal,
+            toItem: self.colorPickerContainerView,
+            attribute: .Left,
+            multiplier: 1.0,
+            constant: padding.top)
 
-    /*
-    // MARK: - Navigation
+        let right: NSLayoutConstraint = NSLayoutConstraint(
+            item: self.colorPickerView,
+            attribute: .Right,
+            relatedBy: .Equal,
+            toItem: self.colorPickerContainerView,
+            attribute: .Right,
+            multiplier: 1.0,
+            constant: -padding.top)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        self.view.addConstraints([top, bottom, left, right])
+        
+        return colorPickerViewVar
     }
-    */
-
+    
+    
+    //MARK: colorpicker view delegate
+    
+    func colorPickerViewMainButtonTapped(colorPickerView: ColorPickerViewObjC!) {
+        self.applyRandomBGColor()
+    }
+    
+    func colorPickerView(view: ColorPickerViewObjC!, pickedColorDidChange color: UIColor!) {
+        UIView.animateWithDuration(0.5,
+            delay: 0.0,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 0.0,
+            options: .AllowUserInteraction | .TransitionCrossDissolve,
+            animations:
+            { () -> Void in
+                self.view.backgroundColor = self.colorPickerView.pickedColor
+            },
+            completion: nil)
+    }
 }

@@ -9,8 +9,8 @@
 import UIKit
 
 protocol ColorPickerViewDelegate {
-    func colorPickerViewMainButtonTapped(view: ColorPickerView)
-    func colorPickerViewPickedColorDidChange(pickedColor: UIColor, colorPickerView: ColorPickerView)
+    func colorPickerViewMainButtonTapped(view: ColorPickerView!)
+    func colorPickerViewPickedColorDidChange(pickedColor: UIColor!, colorPickerView: ColorPickerView!)
 }
 
 
@@ -31,7 +31,7 @@ enum SliderName {
 
 
 
-class ColorPickerView: UIView {
+public class ColorPickerView: UIView {
 
     //public
     var delegate: ColorPickerViewDelegate
@@ -59,12 +59,23 @@ class ColorPickerView: UIView {
     
     @IBOutlet weak var hexLabel: UILabel!
     
-    
     //private
-    private var saturationGradient: CAGradientLayer
+    private var saturationGradient: CAGradientLayer {
+        get {
+            let sat: CAGradientLayer = CAGradientLayer.layer
+            sat.frame = self.saturationSlider.frame
+            
+            sat.startPoint = CGPointZero
+            sat.endPoint = cgpointmak
+            
+            return sat
+        }
+    }
     private var brightnessGradient: CAGradientLayer
     private var hueGradient: CAGradientLayer
     
+    
+    //MARK: view lifecycle
     
 //    required init(coder aDecoder: NSCoder) {
 //        
@@ -88,6 +99,8 @@ class ColorPickerView: UIView {
         
     }
     
+    
+    //MARK: UI methods
     func rgbDidSlide() {
         
     }
@@ -100,8 +113,40 @@ class ColorPickerView: UIView {
         
     }
     
+    func syncSlidersToColor(animated: Bool) {
+        
+    }
     
-    func refreshGradients() {
+    func updateLabels() {
+        
+    }
+    
+    func updateGradients() {
+        
+    }
+    
+    
+    //MARK: getters
+    
+    func hueGradientColors() -> NSArray {
+        
+    }
+    
+    func saturationGradientColors() -> NSArray {
+        
+//        let satStart: UIColor = UIColor(hue: self.pickedColor.hue, saturation:0, brightness:self.pickedColor.brightness, alpha:1)
+        
+//        let satStart = UIColor(hue
+        
+    }
+    
+    func brightnessGradientColors() -> NSArray {
+        
+    }
+    
+    
+    //MARK: private
+    private func refreshGradients() {
         
         self.hueGradient.removeFromSuperlayer()
         self.saturationGradient.removeFromSuperlayer()
@@ -135,7 +180,7 @@ class ColorPickerView: UIView {
 
 
 
-
+/*
 extension UIColor {
     class func randomColor() -> UIColor {
         
@@ -207,7 +252,7 @@ extension UIColor {
         return r * 0.2126 + g * 0.7152 + b * 0.0722
     }
 }
-
+*/
 
 
 

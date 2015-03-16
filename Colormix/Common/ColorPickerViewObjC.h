@@ -23,6 +23,12 @@
 
 
 
+
+
+
+
+
+
 @interface ColorPickerViewObjC : UIView
 
 ///The color picked by the user.
