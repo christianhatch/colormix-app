@@ -42,6 +42,10 @@
 
 
 #pragma mark - View Lifecycle
+- (IBAction)screenTapped:(id)sender
+{
+    [self applyColor:[UIColor randomColor]];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -54,9 +58,8 @@
 {
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     
-    [self applyColor:self.colorPickerView.pickedColor];
+//    [self applyColor:self.colorPickerView.pickedColor];
 }
-
 
 #pragma mark - ColorPickerViewDelegate
 

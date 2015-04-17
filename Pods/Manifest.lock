@@ -1,0 +1,13 @@
+PODS:
+  - SparkInspector (1.3.4)
+  - Tweaks (1.1.0)
+
+DEPENDENCIES:
+  - SparkInspector
+  - Tweaks
+
+SPEC CHECKSUMS:
+  SparkInspector: 0c34a98a39bfabb0a45fdf2658d091a7958fc0b0
+  Tweaks: fea40672d34a7185051b7786be0d587cd76d253c
+
+COCOAPODS: 0.36.4

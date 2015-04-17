@@ -6,6 +6,34 @@
 //  Copyright (c) 2014 Commodoreftp. All rights reserved.
 //
 
+@implementation UILabel (Clipboard)
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)copy:(id)sender
+{
+    NSLog(@"Copy handler, label: “%@”.", self.text);
+    [[UIPasteboard generalPasteboard] setString:self.text];
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    return (action == @selector(copy:));
+}
+
+- (void)handleTap:(UIGestureRecognizer*) recognizer
+{
+    [self becomeFirstResponder];
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    [menu setTargetRect:self.frame inView:self.superview];
+    [menu setMenuVisible:YES animated:YES];
+}
+
+@end
+
 #import "ColorPickerViewObjC.h"
 #import "UIColor+Colormix.h"
 #import <Parse/Parse.h>
@@ -90,8 +118,6 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 - (IBAction)sliderValueChangedContinuous:(id)sender;
 
-- (IBAction)mainButtonTapped:(id)sender;
-
 
 @end
 
@@ -112,7 +138,8 @@ CGFloat const kColorPickerViewRGBScale = 255;
 {
     [super awakeFromNib];
     [self setupUI];
-    [self refreshGradients];
+    [self refreshGradientUI];
+    [self configureTapToCopyLabel];
 }
 
 
@@ -136,8 +163,6 @@ CGFloat const kColorPickerViewRGBScale = 255;
         }
             break;
     }
-    
-//    [self updateUIAnimated:NO];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerView:pickedColorDidChange:)])
     {
@@ -175,7 +200,6 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 - (void)rgbDidSlide
 {
-    
     UIColor *color = [UIColor colorWithRed:self.redSlider.value/kColorPickerViewRGBScale
                                     green:self.greenSlider.value/kColorPickerViewRGBScale
                                     blue:self.blueSlider.value/kColorPickerViewRGBScale
@@ -205,12 +229,13 @@ CGFloat const kColorPickerViewRGBScale = 255;
                      animations:^
      {
          [self syncSlidersToColorAnimated:animated];
-         [self updateGradients];
-         [self refreshGradients];
+         [self refreshGradientUI];
          [self updateLabels];
      }
                      completion:nil];
 }
+
+#pragma mark - Private Methods
 
 - (void)syncSlidersToColorAnimated:(BOOL)animated
 {
@@ -250,11 +275,21 @@ CGFloat const kColorPickerViewRGBScale = 255;
     }
 }
 
-- (void)updateGradients
+- (void)refreshGradientUI
 {
-    self.saturationGradient.colors = [self saturationGradientColors];
-    self.brightnessGradient.colors = [self brightnessGradientColors];
-    self.hueGradient.colors = [self hueGradientColors];
+    [self updateGradientModel];
+
+    [self.hueGradient removeFromSuperlayer];
+    [self.saturationGradient removeFromSuperlayer];
+    [self.brightnessGradient removeFromSuperlayer];
+    
+    self.hueGradient = nil;
+    self.saturationGradient = nil;
+    self.brightnessGradient = nil;
+    
+    [self.hueSlider.layer insertSublayer:self.hueGradient atIndex:0];
+    [self.saturationSlider.layer insertSublayer:self.saturationGradient atIndex:0];
+    [self.brightnessSlider.layer insertSublayer:self.brightnessGradient atIndex:0];
 }
 
 - (void)setupUI
@@ -274,6 +309,12 @@ CGFloat const kColorPickerViewRGBScale = 255;
         [slider setMinimumTrackImage:clear forState:UIControlStateNormal];
         [slider setMaximumTrackImage:clear forState:UIControlStateNormal];
     }
+}
+
+- (void)configureTapToCopyLabel
+{
+    UIGestureRecognizer *touchy = [[UITapGestureRecognizer alloc] initWithTarget:self.hexValueLabel action:@selector(handleTap:)];
+    [self.hexValueLabel addGestureRecognizer:touchy];
 }
 
 #pragma mark - Other
@@ -298,6 +339,15 @@ CGFloat const kColorPickerViewRGBScale = 255;
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+}
+
+#pragma mark - Model Calculations
+
+- (void)updateGradientModel
+{
+    self.saturationGradient.colors = [self saturationGradientColors];
+    self.brightnessGradient.colors = [self brightnessGradientColors];
+    self.hueGradient.colors = [self hueGradientColors];
 }
 
 #pragma mark - Getters
@@ -397,25 +447,5 @@ CGFloat const kColorPickerViewRGBScale = 255;
     NSArray *brightColors = @[(id)startBright.CGColor, (id)endBright.CGColor];
     return brightColors;
 }
-
-
-
-#pragma mark - Private
-
-- (void)refreshGradients
-{
-    [self.hueGradient removeFromSuperlayer];
-    [self.saturationGradient removeFromSuperlayer];
-    [self.brightnessGradient removeFromSuperlayer];
-    
-    self.hueGradient = nil;
-    self.saturationGradient = nil;
-    self.brightnessGradient = nil;
-    
-    [self.hueSlider.layer insertSublayer:self.hueGradient atIndex:0];
-    [self.saturationSlider.layer insertSublayer:self.saturationGradient atIndex:0];
-    [self.brightnessSlider.layer insertSublayer:self.brightnessGradient atIndex:0];
-}
-
 
 @end

@@ -18,6 +18,23 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipr-yK-Fx3" userLabel="ColorPickerContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyI-p4-RO2">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="screenTapped:" destination="9xR-YG-xhj" eventType="touchUpInside" id="g5I-Ep-maK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="SyI-p4-RO2" secondAttribute="bottom" id="23i-gz-PhO"/>
+                                    <constraint firstAttribute="trailing" secondItem="SyI-p4-RO2" secondAttribute="trailing" id="JPR-FP-mD5"/>
+                                    <constraint firstItem="SyI-p4-RO2" firstAttribute="leading" secondItem="ipr-yK-Fx3" secondAttribute="leading" id="YqV-E0-kof"/>
+                                    <constraint firstItem="SyI-p4-RO2" firstAttribute="top" secondItem="ipr-yK-Fx3" secondAttribute="top" id="eXg-Tk-bjU"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
