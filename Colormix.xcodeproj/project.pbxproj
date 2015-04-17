@@ -13,7 +13,6 @@
 		451CA3511978D9950016A3D8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 451CA34F1978D9950016A3D8 /* Settings.bundle */; };
 		4566B4CA1A2FEDE40035D654 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */; };
 		4566B4CB1A2FEDE40035D654 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */; };
-		457D2D671A82FF730056EDCA /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D2D661A82FF730056EDCA /* ColorPickerViewController.swift */; };
 		459ADD84197DBEC20029AE3E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459ADD83197DBEC20029AE3E /* Crashlytics.framework */; };
 		45DC34BF1A814C9F006B4714 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34BD1A814C9F006B4714 /* Bolts.framework */; };
 		45DC34C01A814C9F006B4714 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34BD1A814C9F006B4714 /* Bolts.framework */; };
@@ -71,9 +70,7 @@
 		453D2D93196D1E3000F3CFDE /* ColormixConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColormixConstants.h; sourceTree = "<group>"; };
 		453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colormix-Bridging-Header.h"; sourceTree = "<group>"; };
 		453DF5D41A237D7A005A006B /* ColormixTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColormixTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		453DF5D81A238711005A006B /* ColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		457D2D661A82FF730056EDCA /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		459ADD83197DBEC20029AE3E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		45DC34BD1A814C9F006B4714 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		45DC34BE1A814C9F006B4714 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -221,7 +218,6 @@
 				45FD1294196CA8CA00777132 /* AppDelegate.m */,
 				45FD129C196CA8CA00777132 /* ColorPickerViewControllerObjC.h */,
 				45FD129D196CA8CA00777132 /* ColorPickerViewControllerObjC.m */,
-				457D2D661A82FF730056EDCA /* ColorPickerViewController.swift */,
 				4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */,
 				45FD1296196CA8CA00777132 /* Main_iPhone.storyboard */,
 				45FD1299196CA8CA00777132 /* Main_iPad.storyboard */,
@@ -277,7 +273,6 @@
 			children = (
 				45FD99CC197AF731001F1D34 /* ColorPickerViewObjC.h */,
 				45FD99CD197AF731001F1D34 /* ColorPickerViewObjC.m */,
-				453DF5D81A238711005A006B /* ColorPickerView.swift */,
 				45FD99D2197AF78A001F1D34 /* ColorPickerView.xib */,
 			);
 			name = Views;
@@ -459,7 +454,6 @@
 			files = (
 				45FD129E196CA8CA00777132 /* ColorPickerViewControllerObjC.m in Sources */,
 				45FD99CE197AF731001F1D34 /* ColorPickerViewObjC.m in Sources */,
-				457D2D671A82FF730056EDCA /* ColorPickerViewController.swift in Sources */,
 				45FD1295196CA8CA00777132 /* AppDelegate.m in Sources */,
 				451CA34D1978A27E0016A3D8 /* UIColor+Colormix.m in Sources */,
 				45FD1291196CA8CA00777132 /* main.m in Sources */,

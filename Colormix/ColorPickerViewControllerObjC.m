@@ -22,27 +22,51 @@
 
 @implementation ColorPickerViewControllerObjC
 
+
+#pragma mark - Public API
+
+- (void)applyColor:(UIColor *)color
+{
+    [UIView animateWithDuration:0.5f
+                          delay:0.0f
+         usingSpringWithDamping:0.7f
+          initialSpringVelocity:0.0f
+                        options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionTransitionCrossDissolve
+                     animations:^
+     {
+         [self.colorPickerView setPickedColor:color animated:YES];
+         self.view.backgroundColor = self.colorPickerView.pickedColor;
+     }
+                     completion:nil];
+}
+
+
+
+
+
 #pragma mark - View Lifecycle
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    [self applyRandomBGColor];
+    [self applyColor:[UIColor randomColor]];
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     
-    [self.colorPickerView setPickedColor:self.colorPickerView.pickedColor animated:YES];
+    [self applyColor:self.colorPickerView.pickedColor];
+//    [self.colorPickerView setPickedColor:self.colorPickerView.pickedColor animated:YES];
 }
+
 
 #pragma mark - ColorPickerViewDelegate
 
 - (void)colorPickerViewMainButtonTapped:(ColorPickerViewObjC *)colorPickerView
 {
-    [self applyRandomBGColor];
+    [self applyColor:[UIColor randomColor]];
 }
 
 - (void)colorPickerView:(ColorPickerViewObjC *)view pickedColorDidChange:(UIColor *)color
@@ -59,20 +83,7 @@
                      completion:nil];
 }
 
-- (void)applyRandomBGColor
-{
-    [UIView animateWithDuration:0.5f
-                          delay:0.0f
-         usingSpringWithDamping:0.7f
-          initialSpringVelocity:0.0f
-                        options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionTransitionCrossDissolve
-                     animations:^
-     {
-         [self.colorPickerView setPickedColor:[UIColor randomColor] animated:YES];
-         self.view.backgroundColor = self.colorPickerView.pickedColor;
-     }
-                     completion:nil];
-}
+#pragma mark - Getters
 
 - (ColorPickerViewObjC *)colorPickerView
 {
