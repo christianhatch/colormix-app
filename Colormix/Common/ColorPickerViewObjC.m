@@ -86,6 +86,8 @@ CGFloat const kColorPickerViewRGBScale = 255;
 @property (strong, nonatomic) IBOutlet UILabel *hexValueLabel;
 
 
+@property (nonatomic, strong) UIColor *pickedColor;
+
 - (IBAction)sliderValueChangedContinuous:(id)sender;
 
 - (IBAction)mainButtonTapped:(id)sender;
@@ -102,7 +104,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
     ColorPickerViewObjC *picker = [[NSBundle mainBundle] loadNibNamed:@"ColorPickerView" owner:self options:nil].firstObject;
     picker.frame = frame;
     picker.delegate = delegate;
-    picker.pickedColor = [UIColor randomColor];
+    [picker setPickedColor:[UIColor randomColor] animated:NO];
     return picker;
 }
 
@@ -135,7 +137,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
             break;
     }
     
-    [self updateUIAnimated:NO];
+//    [self updateUIAnimated:NO];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerView:pickedColorDidChange:)])
     {
@@ -161,15 +163,6 @@ CGFloat const kColorPickerViewRGBScale = 255;
     }
 }
 
-
-
-
-- (void)setPickedColor:(UIColor *)pickedColor
-{
-    _pickedColor = pickedColor;
-    [self updateUIAnimated:NO];
-}
-
 - (void)setPickedColor:(UIColor *)pickedColor
               animated:(BOOL)animated
 {
@@ -182,19 +175,25 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 - (void)rgbDidSlide
 {
-    self.pickedColor = [UIColor colorWithRed:self.redSlider.value/kColorPickerViewRGBScale
-                                       green:self.greenSlider.value/kColorPickerViewRGBScale
-                                        blue:self.blueSlider.value/kColorPickerViewRGBScale
-                                       alpha:1];
+    
+    UIColor *color = [UIColor colorWithRed:self.redSlider.value/kColorPickerViewRGBScale
+                                    green:self.greenSlider.value/kColorPickerViewRGBScale
+                                    blue:self.blueSlider.value/kColorPickerViewRGBScale
+                                    alpha:1];
+    
+    [self setPickedColor:color animated:NO];
 }
 
 - (void)hslDidSlide
 {
-    self.pickedColor = [UIColor colorWithHue:self.hueSlider.value/kColorPickerViewHueScale
-                                  saturation:MAX(self.saturationSlider.value/kColorPickerViewSaturationBrightnessScale, 0.01)
-                                  brightness:MAX(self.brightnessSlider.value/kColorPickerViewSaturationBrightnessScale, 0.01)
-                                       alpha:1];
+    UIColor *color = [UIColor colorWithHue:self.hueSlider.value/kColorPickerViewHueScale
+                                saturation:MAX(self.saturationSlider.value/kColorPickerViewSaturationBrightnessScale, 0.01)
+                                brightness:MAX(self.brightnessSlider.value/kColorPickerViewSaturationBrightnessScale, 0.01)
+                                    alpha:1];
+    
+    [self setPickedColor:color animated:NO];
 }
+
 
 - (void)updateUIAnimated:(BOOL)animated
 {

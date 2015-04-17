@@ -35,8 +35,6 @@
 		45FD128F196CA8CA00777132 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45FD128D196CA8CA00777132 /* InfoPlist.strings */; };
 		45FD1291196CA8CA00777132 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD1290196CA8CA00777132 /* main.m */; };
 		45FD1295196CA8CA00777132 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD1294196CA8CA00777132 /* AppDelegate.m */; };
-		45FD1298196CA8CA00777132 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FD1296196CA8CA00777132 /* Main_iPhone.storyboard */; };
-		45FD129B196CA8CA00777132 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FD1299196CA8CA00777132 /* Main_iPad.storyboard */; };
 		45FD129E196CA8CA00777132 /* ColorPickerViewControllerObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD129D196CA8CA00777132 /* ColorPickerViewControllerObjC.m */; };
 		45FD12A0196CA8CA00777132 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FD129F196CA8CA00777132 /* Images.xcassets */; };
 		45FD12A7196CA8CA00777132 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD12A6196CA8CA00777132 /* XCTest.framework */; };
@@ -95,8 +93,6 @@
 		45FD1292196CA8CA00777132 /* Colormix-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colormix-Prefix.pch"; sourceTree = "<group>"; };
 		45FD1293196CA8CA00777132 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		45FD1294196CA8CA00777132 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		45FD1297196CA8CA00777132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		45FD129A196CA8CA00777132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		45FD129C196CA8CA00777132 /* ColorPickerViewControllerObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewControllerObjC.h; sourceTree = "<group>"; };
 		45FD129D196CA8CA00777132 /* ColorPickerViewControllerObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewControllerObjC.m; sourceTree = "<group>"; };
 		45FD129F196CA8CA00777132 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -219,8 +215,6 @@
 				45FD129C196CA8CA00777132 /* ColorPickerViewControllerObjC.h */,
 				45FD129D196CA8CA00777132 /* ColorPickerViewControllerObjC.m */,
 				4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */,
-				45FD1296196CA8CA00777132 /* Main_iPhone.storyboard */,
-				45FD1299196CA8CA00777132 /* Main_iPad.storyboard */,
 				45FD129F196CA8CA00777132 /* Images.xcassets */,
 				45FD128B196CA8CA00777132 /* Supporting Files */,
 				453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */,
@@ -377,10 +371,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45FD129B196CA8CA00777132 /* Main_iPad.storyboard in Resources */,
 				45FD12A0196CA8CA00777132 /* Images.xcassets in Resources */,
 				451CA3501978D9950016A3D8 /* Settings.bundle in Resources */,
-				45FD1298196CA8CA00777132 /* Main_iPhone.storyboard in Resources */,
 				45FD99D3197AF78A001F1D34 /* ColorPickerView.xib in Resources */,
 				4566B4CA1A2FEDE40035D654 /* Storyboard.storyboard in Resources */,
 				45FD128F196CA8CA00777132 /* InfoPlist.strings in Resources */,
@@ -487,22 +479,6 @@
 				45FD128E196CA8CA00777132 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		45FD1296196CA8CA00777132 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45FD1297196CA8CA00777132 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		45FD1299196CA8CA00777132 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45FD129A196CA8CA00777132 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		45FD12AF196CA8CA00777132 /* InfoPlist.strings */ = {

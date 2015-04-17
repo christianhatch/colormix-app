@@ -14,8 +14,19 @@
 @protocol ColorPickerViewDelegate <NSObject>
 
 @optional
+/**
+ Called when the user taps the colorPickerView
+ 
+ @param colorPickerView The colorPickerView object that was tapped by the user.
+ */
 - (void)colorPickerViewMainButtonTapped:(ColorPickerViewObjC *)colorPickerView;
 
+/**
+ Called when the picked color changed, whether by the user choosing a new color or by programmatically setting it via setPickedColor:animated:
+ 
+ @param view  The colorPickerView that had the picked color change.
+ @param color The new color that has been picked.
+ */
 - (void)colorPickerView:(ColorPickerViewObjC *)view
    pickedColorDidChange:(UIColor *)color;
 

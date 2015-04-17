@@ -41,9 +41,6 @@
 }
 
 
-
-
-
 #pragma mark - View Lifecycle
 
 - (void)viewDidAppear:(BOOL)animated
@@ -58,7 +55,6 @@
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     
     [self applyColor:self.colorPickerView.pickedColor];
-//    [self.colorPickerView setPickedColor:self.colorPickerView.pickedColor animated:YES];
 }
 
 

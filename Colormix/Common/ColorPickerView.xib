@@ -4,26 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorPickerViewObjC">
-            <connections>
-                <outlet property="blueLabel" destination="Moe-Xf-PI7" id="HTw-11-Lw5"/>
-                <outlet property="blueSlider" destination="qSM-sg-acF" id="C4k-EP-ANk"/>
-                <outlet property="brightnessLabel" destination="y0C-kf-ilc" id="Pne-gf-ohC"/>
-                <outlet property="brightnessSlider" destination="hLZ-X6-qcs" id="msL-fH-942"/>
-                <outlet property="greenLabel" destination="K9F-5r-7bZ" id="aYz-hw-mcO"/>
-                <outlet property="greenSlider" destination="rGf-vH-x5Z" id="kXK-ft-BaW"/>
-                <outlet property="hexLabel" destination="lqg-nT-Sr8" id="2sL-Yd-ZuI"/>
-                <outlet property="hsbContainer" destination="L3n-uV-sPz" id="lzS-6H-UM6"/>
-                <outlet property="hueContainer" destination="oo4-pl-9cD" id="jBx-Sn-M0y"/>
-                <outlet property="hueLabel" destination="xjd-p9-x8i" id="9GC-3J-cjB"/>
-                <outlet property="hueSlider" destination="LJU-DH-paU" id="9E9-hV-xhu"/>
-                <outlet property="redLabel" destination="FMZ-wJ-NpO" id="1rC-wa-AB4"/>
-                <outlet property="redSlider" destination="eas-Jc-jFa" id="wGQ-Vh-1si"/>
-                <outlet property="rgbContainer" destination="QAX-Id-DUU" id="bDj-dM-AZK"/>
-                <outlet property="saturationLabel" destination="slT-x2-9Uo" id="qxn-oh-lV3"/>
-                <outlet property="saturationSlider" destination="6Eq-PZ-zZW" id="tGT-pb-HES"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorPickerViewObjC"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="ColorPickerView" id="EHg-Yy-nOa" customClass="ColorPickerViewObjC">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -361,7 +342,7 @@
             <connections>
                 <outlet property="HSBContainer" destination="L3n-uV-sPz" id="hV7-h5-jwd"/>
                 <outlet property="RGBContainer" destination="QAX-Id-DUU" id="TVW-RZ-VPk"/>
-                <outlet property="blueLabel" destination="Moe-Xf-PI7" id="nij-ND-UeE"/>
+                <outlet property="blueLabel" destination="Moe-Xf-PI7" id="w39-WK-qZZ"/>
                 <outlet property="blueSlider" destination="qSM-sg-acF" id="lrm-Iu-zFZ"/>
                 <outlet property="brightnessLabel" destination="y0C-kf-ilc" id="VA6-Pu-Fgc"/>
                 <outlet property="brightnessSlider" destination="hLZ-X6-qcs" id="eV0-13-xUZ"/>
@@ -394,6 +375,7 @@
                 <outletCollection property="labelCollection" destination="zaN-Ft-CT9" id="05m-Uc-1Vp"/>
                 <outletCollection property="labelCollection" destination="i9X-7P-SDi" id="cD0-Di-FMr"/>
             </connections>
+            <point key="canvasLocation" x="142" y="518"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
