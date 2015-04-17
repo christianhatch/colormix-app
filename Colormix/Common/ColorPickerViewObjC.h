@@ -31,14 +31,24 @@
 
 @interface ColorPickerViewObjC : UIView
 
-///The color picked by the user.
-@property (nonatomic, strong) UIColor *pickedColor;
+/**
+ The color picked by the user or set by calling setPickedColor:animated:
+ */
+@property (nonatomic, readonly) UIColor *pickedColor;
 
+/**
+ Sets the picked color and optionally animates the sliders moving.
+ 
+ @param pickedColor The new color to set as the picked color
+ @param animated    Optionally animate the transition the new color.
+ */
 - (void)setPickedColor:(UIColor *)pickedColor
               animated:(BOOL)animated;
 
 
-///The delegate for delegate callbacks
+/**
+ The delegate to receive callbacks.
+ */
 @property (weak, nonatomic) IBOutlet id <ColorPickerViewDelegate> delegate;
 
 

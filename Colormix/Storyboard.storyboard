@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--Color Picker View Controller-->
+        <!--Color Picker View Controller ObjC-->
         <scene sceneID="Psb-gX-blc">
             <objects>
-                <viewController storyboardIdentifier="ColorPickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9xR-YG-xhj" customClass="ColorPickerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorPickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9xR-YG-xhj" customClass="ColorPickerViewControllerObjC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qYR-3O-Qxp"/>
                         <viewControllerLayoutGuide type="bottom" id="HEp-lk-qb2"/>
@@ -35,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vic-dI-C6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="387" y="366"/>
+            <point key="canvasLocation" x="391" y="366"/>
         </scene>
     </scenes>
 </document>
