@@ -10,6 +10,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5u-18-qgR" userLabel="MainButton">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="mainButtonTapped:" destination="EHg-Yy-nOa" eventType="touchUpInside" id="GBK-bi-bB0"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="QAX-Id-DUU" userLabel="RGB Container">
                     <rect key="frame" x="10" y="371" width="300" height="99"/>
                     <subviews>
@@ -306,15 +315,6 @@
                         <constraint firstItem="PXF-9E-yRn" firstAttribute="top" secondItem="fm9-Q6-Ns4" secondAttribute="bottom" id="luX-HA-ESa"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5u-18-qgR" userLabel="MainButton">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                    <state key="normal">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="mainButtonTapped:" destination="EHg-Yy-nOa" eventType="touchUpInside" id="GBK-bi-bB0"/>
-                    </connections>
-                </button>
                 <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hex Value:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqg-nT-Sr8">
                     <rect key="frame" x="119" y="230" width="82" height="21"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -340,8 +340,6 @@
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="HSBContainer" destination="L3n-uV-sPz" id="hV7-h5-jwd"/>
-                <outlet property="RGBContainer" destination="QAX-Id-DUU" id="TVW-RZ-VPk"/>
                 <outlet property="blueLabel" destination="Moe-Xf-PI7" id="w39-WK-qZZ"/>
                 <outlet property="blueSlider" destination="qSM-sg-acF" id="lrm-Iu-zFZ"/>
                 <outlet property="brightnessLabel" destination="y0C-kf-ilc" id="VA6-Pu-Fgc"/>
