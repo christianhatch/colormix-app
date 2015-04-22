@@ -170,7 +170,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
                   pickedColorDidChange:self.pickedColor];
     }
 
-    DebugLog(@"Name: %@ Value: %f", SliderNameStringFromTag(tag), sender.value);
+//    DebugLog(@"Name: %@ Value: %f", SliderNameStringFromTag(tag), sender.value);
     
 //    if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerView:pickedColorDidChange:)])
 //    {
