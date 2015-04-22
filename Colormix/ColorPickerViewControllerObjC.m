@@ -42,6 +42,7 @@
 
 
 #pragma mark - View Lifecycle
+
 - (IBAction)screenTapped:(id)sender
 {
     [self applyColor:[UIColor randomColor]];

@@ -6,34 +6,6 @@
 //  Copyright (c) 2014 Commodoreftp. All rights reserved.
 //
 
-@implementation UILabel (Clipboard)
-
-- (BOOL)canBecomeFirstResponder
-{
-    return YES;
-}
-
-- (void)copy:(id)sender
-{
-    NSLog(@"Copy handler, label: “%@”.", self.text);
-    [[UIPasteboard generalPasteboard] setString:self.text];
-}
-
-- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
-{
-    return (action == @selector(copy:));
-}
-
-- (void)handleTap:(UIGestureRecognizer*) recognizer
-{
-    [self becomeFirstResponder];
-    UIMenuController *menu = [UIMenuController sharedMenuController];
-    [menu setTargetRect:self.frame inView:self.superview];
-    [menu setMenuVisible:YES animated:YES];
-}
-
-@end
-
 #import "ColorPickerViewObjC.h"
 #import "UIColor+Colormix.h"
 #import <Parse/Parse.h>
@@ -277,8 +249,6 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 - (void)refreshGradientUI
 {
-    [self updateGradientModel];
-
     [self.hueGradient removeFromSuperlayer];
     [self.saturationGradient removeFromSuperlayer];
     [self.brightnessGradient removeFromSuperlayer];
@@ -339,15 +309,6 @@ CGFloat const kColorPickerViewRGBScale = 255;
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
-}
-
-#pragma mark - Model Calculations
-
-- (void)updateGradientModel
-{
-    self.saturationGradient.colors = [self saturationGradientColors];
-    self.brightnessGradient.colors = [self brightnessGradientColors];
-    self.hueGradient.colors = [self hueGradientColors];
 }
 
 #pragma mark - Getters
@@ -449,3 +410,36 @@ CGFloat const kColorPickerViewRGBScale = 255;
 }
 
 @end
+
+
+@implementation UILabel (Clipboard)
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)copy:(id)sender
+{
+//    NSLog(@"Copy handler, label: “%@”.", self.text);
+    [[UIPasteboard generalPasteboard] setString:self.text];
+    
+    [PFAnalytics trackEvent:@"Hex label copied" dimensions:@{@"hex value" : self.text}];
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    return (action == @selector(copy:));
+}
+
+- (void)handleTap:(UIGestureRecognizer*) recognizer
+{
+    [self becomeFirstResponder];
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    [menu setTargetRect:self.frame inView:self.superview];
+    [menu setMenuVisible:YES animated:YES];
+}
+
+@end
+
+
