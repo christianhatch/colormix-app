@@ -422,7 +422,6 @@ CGFloat const kColorPickerViewRGBScale = 255;
 //    NSLog(@"Copy handler, label: “%@”.", self.text);
     [[UIPasteboard generalPasteboard] setString:self.text];
     
-
 //    [PFAnalytics trackEvent:@"Hex label copied" dimensions:@{@"hex value" : self.text}];
 }
 
