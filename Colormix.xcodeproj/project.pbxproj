@@ -14,24 +14,11 @@
 		451CA3511978D9950016A3D8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 451CA34F1978D9950016A3D8 /* Settings.bundle */; };
 		4566B4CA1A2FEDE40035D654 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */; };
 		4566B4CB1A2FEDE40035D654 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */; };
-		459ADD84197DBEC20029AE3E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459ADD83197DBEC20029AE3E /* Crashlytics.framework */; };
-		459AE6EC1AE47D8500823097 /* GradientSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AE6EB1AE47D8500823097 /* GradientSlider.m */; };
-		45DC34BF1A814C9F006B4714 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34BD1A814C9F006B4714 /* Bolts.framework */; };
 		45DC34C01A814C9F006B4714 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34BD1A814C9F006B4714 /* Bolts.framework */; };
-		45DC34C11A814C9F006B4714 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34BE1A814C9F006B4714 /* Parse.framework */; };
 		45DC34C21A814C9F006B4714 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34BE1A814C9F006B4714 /* Parse.framework */; };
-		45DC34C61A814D23006B4714 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34C31A814D23006B4714 /* AudioToolbox.framework */; };
-		45DC34C71A814D23006B4714 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34C41A814D23006B4714 /* CFNetwork.framework */; };
-		45DC34C81A814D23006B4714 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34C51A814D23006B4714 /* CoreLocation.framework */; };
-		45DC34CA1A814D2D006B4714 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34C91A814D2D006B4714 /* MobileCoreServices.framework */; };
 		45DC34D01A814D53006B4714 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34CB1A814D53006B4714 /* QuartzCore.framework */; };
-		45DC34D11A814D53006B4714 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34CC1A814D53006B4714 /* Security.framework */; };
-		45DC34D21A814D53006B4714 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34CD1A814D53006B4714 /* Social.framework */; };
-		45DC34D41A814D53006B4714 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34CF1A814D53006B4714 /* SystemConfiguration.framework */; };
-		45DC34D61A814D59006B4714 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34D51A814D59006B4714 /* Accounts.framework */; };
 		45DC34D81A814D64006B4714 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34D71A814D64006B4714 /* libz.dylib */; };
 		45DC34DA1A814D6E006B4714 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34D91A814D6E006B4714 /* libsqlite3.dylib */; };
-		45FD1285196CA8CA00777132 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1284196CA8CA00777132 /* Foundation.framework */; };
 		45FD1287196CA8CA00777132 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1286196CA8CA00777132 /* CoreGraphics.framework */; };
 		45FD1289196CA8CA00777132 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1288196CA8CA00777132 /* UIKit.framework */; };
 		45FD128F196CA8CA00777132 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45FD128D196CA8CA00777132 /* InfoPlist.strings */; };
@@ -48,7 +35,7 @@
 		45FD99CF197AF731001F1D34 /* ColorPickerViewObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD99CD197AF731001F1D34 /* ColorPickerViewObjC.m */; };
 		45FD99D3197AF78A001F1D34 /* ColorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45FD99D2197AF78A001F1D34 /* ColorPickerView.xib */; };
 		45FD99D4197AF78A001F1D34 /* ColorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45FD99D2197AF78A001F1D34 /* ColorPickerView.xib */; };
-		B099CCD384BB40C5A2DCD09C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A036573136C4B7D8490C4EA /* libPods.a */; };
+		C76996C97E9A6EEFA995243A /* libPods-Colormix.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A1BE58E30B92A60D1E5E62 /* libPods-Colormix.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,19 +49,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B564616CB91228E7EEBAEA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		1E6ADA3F86E537517CD610D4 /* Pods-Colormix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colormix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colormix/Pods-Colormix.release.xcconfig"; sourceTree = "<group>"; };
+		34A1BE58E30B92A60D1E5E62 /* libPods-Colormix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Colormix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		450579FD1AE18EA8007F9021 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "Supporting Files/Launch Screen.xib"; sourceTree = "<group>"; };
 		451CA33E19787C9B0016A3D8 /* ColormixKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColormixKit.h; sourceTree = "<group>"; };
 		451CA34B1978A27E0016A3D8 /* UIColor+Colormix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Colormix.h"; sourceTree = "<group>"; };
 		451CA34C1978A27E0016A3D8 /* UIColor+Colormix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Colormix.m"; sourceTree = "<group>"; };
 		451CA34F1978D9950016A3D8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		453D2D93196D1E3000F3CFDE /* ColormixConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColormixConstants.h; sourceTree = "<group>"; };
 		453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colormix-Bridging-Header.h"; sourceTree = "<group>"; };
 		453DF5D41A237D7A005A006B /* ColormixTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColormixTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		459ADD83197DBEC20029AE3E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		459AE6EA1AE47D8500823097 /* GradientSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientSlider.h; sourceTree = "<group>"; };
-		459AE6EB1AE47D8500823097 /* GradientSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientSlider.m; sourceTree = "<group>"; };
 		45DC34BD1A814C9F006B4714 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		45DC34BE1A814C9F006B4714 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		45DC34C31A814D23006B4714 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -109,8 +94,7 @@
 		45FD99CC197AF731001F1D34 /* ColorPickerViewObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewObjC.h; sourceTree = "<group>"; };
 		45FD99CD197AF731001F1D34 /* ColorPickerViewObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewObjC.m; sourceTree = "<group>"; };
 		45FD99D2197AF78A001F1D34 /* ColorPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerView.xib; sourceTree = "<group>"; };
-		6A036573136C4B7D8490C4EA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAD8FC95EABB733275C9018B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B22A772C508F8B11509B3853 /* Pods-Colormix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colormix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Colormix/Pods-Colormix.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,22 +104,10 @@
 			files = (
 				45DC34DA1A814D6E006B4714 /* libsqlite3.dylib in Frameworks */,
 				45DC34D81A814D64006B4714 /* libz.dylib in Frameworks */,
-				45DC34D61A814D59006B4714 /* Accounts.framework in Frameworks */,
 				45DC34D01A814D53006B4714 /* QuartzCore.framework in Frameworks */,
-				45DC34D11A814D53006B4714 /* Security.framework in Frameworks */,
-				45DC34D21A814D53006B4714 /* Social.framework in Frameworks */,
-				45DC34D41A814D53006B4714 /* SystemConfiguration.framework in Frameworks */,
-				45DC34CA1A814D2D006B4714 /* MobileCoreServices.framework in Frameworks */,
-				45DC34C61A814D23006B4714 /* AudioToolbox.framework in Frameworks */,
-				45DC34C71A814D23006B4714 /* CFNetwork.framework in Frameworks */,
-				45DC34C81A814D23006B4714 /* CoreLocation.framework in Frameworks */,
 				45FD1287196CA8CA00777132 /* CoreGraphics.framework in Frameworks */,
 				45FD1289196CA8CA00777132 /* UIKit.framework in Frameworks */,
-				45FD1285196CA8CA00777132 /* Foundation.framework in Frameworks */,
-				45DC34C11A814C9F006B4714 /* Parse.framework in Frameworks */,
-				45DC34BF1A814C9F006B4714 /* Bolts.framework in Frameworks */,
-				459ADD84197DBEC20029AE3E /* Crashlytics.framework in Frameworks */,
-				B099CCD384BB40C5A2DCD09C /* libPods.a in Frameworks */,
+				C76996C97E9A6EEFA995243A /* libPods-Colormix.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +129,6 @@
 		451CA345197887A10016A3D8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				453D2D93196D1E3000F3CFDE /* ColormixConstants.h */,
 				451CA33E19787C9B0016A3D8 /* ColormixKit.h */,
 				45FD99D0197AF766001F1D34 /* Categories */,
 				45FD99D1197AF76F001F1D34 /* Views */,
@@ -172,7 +143,7 @@
 				45FD12AC196CA8CA00777132 /* ColormixTests */,
 				45FD1283196CA8CA00777132 /* Frameworks */,
 				45FD1282196CA8CA00777132 /* Products */,
-				4CFDD0623CDD460ADABF8B7E /* Pods */,
+				885E237868E07253A5D7D38F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,7 +177,7 @@
 				45FD1286196CA8CA00777132 /* CoreGraphics.framework */,
 				45FD1288196CA8CA00777132 /* UIKit.framework */,
 				45FD12A6196CA8CA00777132 /* XCTest.framework */,
-				6A036573136C4B7D8490C4EA /* libPods.a */,
+				34A1BE58E30B92A60D1E5E62 /* libPods-Colormix.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,18 +244,16 @@
 			children = (
 				45FD99CC197AF731001F1D34 /* ColorPickerViewObjC.h */,
 				45FD99CD197AF731001F1D34 /* ColorPickerViewObjC.m */,
-				459AE6EA1AE47D8500823097 /* GradientSlider.h */,
-				459AE6EB1AE47D8500823097 /* GradientSlider.m */,
 				45FD99D2197AF78A001F1D34 /* ColorPickerView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
 		};
-		4CFDD0623CDD460ADABF8B7E /* Pods */ = {
+		885E237868E07253A5D7D38F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CAD8FC95EABB733275C9018B /* Pods.debug.xcconfig */,
-				1B564616CB91228E7EEBAEA2 /* Pods.release.xcconfig */,
+				B22A772C508F8B11509B3853 /* Pods-Colormix.debug.xcconfig */,
+				1E6ADA3F86E537517CD610D4 /* Pods-Colormix.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -296,12 +265,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45FD12B6196CA8CA00777132 /* Build configuration list for PBXNativeTarget "Colormix" */;
 			buildPhases = (
-				DC84590A4D6C4B43A0757DD5 /* Check Pods Manifest.lock */,
+				782ACF2C60A851D21D7A2C90 /* 📦 Check Pods Manifest.lock */,
 				45FD127D196CA8CA00777132 /* Sources */,
 				45FD127E196CA8CA00777132 /* Frameworks */,
 				45FD127F196CA8CA00777132 /* Resources */,
-				60D91D4711704F5981B2B525 /* Copy Pods Resources */,
 				459ADD82197DBEA30029AE3E /* Install Crashlytics */,
+				4ED58C78996F8BF8A2FD5103 /* 📦 Embed Pods Frameworks */,
+				AB4852AF312FFD5BF958DED9 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,7 +306,7 @@
 		45FD1279196CA8CA00777132 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Commodoreftp;
 				TargetAttributes = {
 					45FD1280196CA8CA00777132 = {
@@ -414,36 +384,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 36aebc5d6093c8a7cc64fae3d769bf41933d7919 216458b4f171c912dd83c54e976d100f7fe247d329693e1b32de3c10e1740bb1";
+			shellScript = "./Fabric.framework/run 36aebc5d6093c8a7cc64fae3d769bf41933d7919 216458b4f171c912dd83c54e976d100f7fe247d329693e1b32de3c10e1740bb1";
 		};
-		60D91D4711704F5981B2B525 /* Copy Pods Resources */ = {
+		4ED58C78996F8BF8A2FD5103 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Colormix/Pods-Colormix-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DC84590A4D6C4B43A0757DD5 /* Check Pods Manifest.lock */ = {
+		782ACF2C60A851D21D7A2C90 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AB4852AF312FFD5BF958DED9 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Colormix/Pods-Colormix-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -455,7 +440,6 @@
 			files = (
 				45FD129E196CA8CA00777132 /* ColorPickerViewControllerObjC.m in Sources */,
 				45FD99CE197AF731001F1D34 /* ColorPickerViewObjC.m in Sources */,
-				459AE6EC1AE47D8500823097 /* GradientSlider.m in Sources */,
 				45FD1295196CA8CA00777132 /* AppDelegate.m in Sources */,
 				451CA34D1978A27E0016A3D8 /* UIColor+Colormix.m in Sources */,
 				45FD1291196CA8CA00777132 /* main.m in Sources */,
@@ -521,6 +505,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -580,7 +565,7 @@
 		};
 		45FD12B7196CA8CA00777132 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAD8FC95EABB733275C9018B /* Pods.debug.xcconfig */;
+			baseConfigurationReference = B22A772C508F8B11509B3853 /* Pods-Colormix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -595,6 +580,7 @@
 				INFOPLIST_FILE = "Colormix/Supporting Files/Colormix-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christianhatch.colormix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Colormix/Colormix-Bridging-Header.h";
@@ -605,7 +591,7 @@
 		};
 		45FD12B8196CA8CA00777132 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B564616CB91228E7EEBAEA2 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 1E6ADA3F86E537517CD610D4 /* Pods-Colormix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -620,6 +606,7 @@
 				INFOPLIST_FILE = "Colormix/Supporting Files/Colormix-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christianhatch.colormix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Colormix/Colormix-Bridging-Header.h";
@@ -646,6 +633,7 @@
 				);
 				INFOPLIST_FILE = "ColormixTests/Supporting Files/ColormixTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.christianhatch.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Colormix/ColormixTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -669,6 +657,7 @@
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
 				INFOPLIST_FILE = "ColormixTests/Supporting Files/ColormixTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.christianhatch.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Colormix/ColormixTests-Bridging-Header.h";
 				TEST_HOST = "$(BUNDLE_LOADER)";

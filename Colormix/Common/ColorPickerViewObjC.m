@@ -8,7 +8,6 @@
 
 #import "ColorPickerViewObjC.h"
 #import "UIColor+Colormix.h"
-#import <Parse/Parse.h>
 
 
 typedef NS_ENUM(NSInteger, SliderName)
@@ -21,32 +20,32 @@ typedef NS_ENUM(NSInteger, SliderName)
     SliderNameBlue
 };
 
-static inline NSString * SliderNameStringFromTag(NSInteger sliderID)
-{
-    NSString *sliderNameString;
-    
-    switch (sliderID) {
-        case SliderNameHue:
-            sliderNameString = @"Hue";
-            break;
-        case SliderNameSaturation:
-            sliderNameString = @"Saturation";
-            break;
-        case SliderNameBrightness:
-            sliderNameString = @"Brightness";
-            break;
-        case SliderNameRed:
-            sliderNameString = @"Red";
-            break;
-        case SliderNameGreen:
-            sliderNameString = @"Green";
-            break;
-        case SliderNameBlue:
-            sliderNameString = @"Blue";
-            break;
-    }
-    return sliderNameString;
-}
+//static inline NSString * SliderNameStringFromTag(NSInteger sliderID)
+//{
+//    NSString *sliderNameString;
+//    
+//    switch (sliderID) {
+//        case SliderNameHue:
+//            sliderNameString = @"Hue";
+//            break;
+//        case SliderNameSaturation:
+//            sliderNameString = @"Saturation";
+//            break;
+//        case SliderNameBrightness:
+//            sliderNameString = @"Brightness";
+//            break;
+//        case SliderNameRed:
+//            sliderNameString = @"Red";
+//            break;
+//        case SliderNameGreen:
+//            sliderNameString = @"Green";
+//            break;
+//        case SliderNameBlue:
+//            sliderNameString = @"Blue";
+//            break;
+//    }
+//    return sliderNameString;
+//}
 
 CGFloat const kColorPickerViewHueScale = 360;
 CGFloat const kColorPickerViewSaturationBrightnessScale = 100;
@@ -152,7 +151,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 - (IBAction)mainButtonTapped:(id)sender
 {
-    [PFAnalytics trackEvent:@"ColorPickerView Main Button Tapped"];
+//    [PFAnalytics trackEvent:@"ColorPickerView Main Button Tapped"];
 
     if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerViewMainButtonTapped:)])
     {
@@ -424,7 +423,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
 //    NSLog(@"Copy handler, label: “%@”.", self.text);
     [[UIPasteboard generalPasteboard] setString:self.text];
     
-    [PFAnalytics trackEvent:@"Hex label copied" dimensions:@{@"hex value" : self.text}];
+//    [PFAnalytics trackEvent:@"Hex label copied" dimensions:@{@"hex value" : self.text}];
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender

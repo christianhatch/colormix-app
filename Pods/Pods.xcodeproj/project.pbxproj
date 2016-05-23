@@ -7,371 +7,219 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03931E3A85628F9AB023D864 /* _FBTweakTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC8612650199CFBE48215AF /* _FBTweakTableViewCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		04D272008D06DB4AF4D0C277 /* FBTweakEnabled.h in Headers */ = {isa = PBXBuildFile; fileRef = A10DD915C70842DCF88276E5 /* FBTweakEnabled.h */; };
-		13B654EA2F7FF763D3B832FD /* _FBTweakCategoryViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DBBB6FCF166E61F25238E3D /* _FBTweakCategoryViewController.h */; };
-		1B023E837CE71A6EB971B17F /* FBTweakShakeWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 271F7ECFB78E28574DCC110E /* FBTweakShakeWindow.h */; };
-		24F40CCDBA108A07B896F195 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E7A2278FADD2DA8D467EC1 /* Foundation.framework */; };
-		28CD43BD4BAA49EAFB41F3C1 /* FBTweakStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C0A8CBEC1642C74CB13450A /* FBTweakStore.h */; };
-		3008543EA081C807154BA995 /* FBTweakCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A2395F9E55F3B00064789E /* FBTweakCategory.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		389A6F2946E3BBD5A0DA5747 /* FBTweakInline.m in Sources */ = {isa = PBXBuildFile; fileRef = 407ACDAB6FC88BC6E1E6B00F /* FBTweakInline.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		40AB26D37DB9FB284D1884BA /* FBTweakViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A2CCDCA13BBBCF6C015314D6 /* FBTweakViewController.h */; };
-		472FBC73AC9B7E1A0182FF46 /* FBTweak.m in Sources */ = {isa = PBXBuildFile; fileRef = 540C9EE7B224CC1C01A7D98B /* FBTweak.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		4D0526DF19DE6692B2E15878 /* FBTweakCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = A69DD6D8C21B821F0E03C824 /* FBTweakCollection.h */; };
-		4F2AAFFAC776F780DDE82E36 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB8C9EB102FACF7C6166DC /* Pods-dummy.m */; };
-		560FBC46049C899F76BB5AFF /* Pods-Tweaks-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D73B37A50AF782DA70A72AF1 /* Pods-Tweaks-dummy.m */; };
-		566DBDAA17AC90A1E58219FD /* FBTweak.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B02328DB4DCB68BB1578644 /* FBTweak.h */; };
-		641F5F05920F568BE1AE70A6 /* _FBTweakBindObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B057B4CAA086B4184DBE5483 /* _FBTweakBindObserver.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		6755B43775743B2A2C947802 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 807F5FAD8CCE973274B42E40 /* MessageUI.framework */; };
-		714F1C9F6022FAEA0B68BF62 /* _FBTweakCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32052859AEAFDCB5D7BDFB72 /* _FBTweakCollectionViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		798B56C89E565A1D300DCC40 /* FBTweakShakeWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F825419BFDC1410BD3428 /* FBTweakShakeWindow.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		7D24FD7C5B2A45EE7C4175B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E7A2278FADD2DA8D467EC1 /* Foundation.framework */; };
-		7DC61F565EF8097394C337F0 /* FBTweakInlineInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = A1FF180F97914A0E0B59F72D /* FBTweakInlineInternal.h */; };
-		832F1AA565F0688901F51A07 /* _FBTweakTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E56DB6F1207EF6745EA5439 /* _FBTweakTableViewCell.h */; };
-		928304302DF228FFC94569F6 /* FBTweakStore.m in Sources */ = {isa = PBXBuildFile; fileRef = BC08359CF541F283A302DB01 /* FBTweakStore.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		9FBB74A2D5FBF62BDE625FF6 /* FBTweakCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = BCFFE01A9BE135E842D963CB /* FBTweakCategory.h */; };
-		A8F6913F80F63EDF5743A0D2 /* FBTweakCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E69C4D075F510A2CAE8710 /* FBTweakCollection.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		AD5F2BE4D212A93385868D7B /* FBTweakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F77E776D7F416FDDEDF450 /* FBTweakViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		C00CC1FA99E0D7EF421B9BE7 /* _FBTweakCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F5A2CB95FE7E6976CA6FD0 /* _FBTweakCategoryViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		CA84D449D9642051FF8EAB4C /* _FBTweakCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 757B27BDF2A33F8D58A5AF4F /* _FBTweakCollectionViewController.h */; };
-		DBB9F331A3601FCF16A36BBE /* FBTweakInline.h in Headers */ = {isa = PBXBuildFile; fileRef = A2B6F87A2FD464A4BB332D82 /* FBTweakInline.h */; };
-		E4815DF3B2009E5D40C12A36 /* _FBTweakBindObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = BCDFA862A98BA799B83F7F6D /* _FBTweakBindObserver.h */; };
+		7F10077A79FBDACBDC56456958A33A97 /* Pods-Colormix-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E4B740619BCFB52A9B6A4A2C98A598 /* Pods-Colormix-dummy.m */; };
+		CDB0F31CE42E2AE04590DA245335BBB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		3C208D4AA93BB96B8458A187 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB01B2255A72569E780EBBDC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1009AFC1DCD61DD8B72758C0;
-			remoteInfo = "Pods-Tweaks";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		012C340403D6F29B5EF3E923 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		09E69C4D075F510A2CAE8710 /* FBTweakCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBTweakCollection.m; path = FBTweak/FBTweakCollection.m; sourceTree = "<group>"; };
-		0B02328DB4DCB68BB1578644 /* FBTweak.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBTweak.h; path = FBTweak/FBTweak.h; sourceTree = "<group>"; };
-		0E56DB6F1207EF6745EA5439 /* _FBTweakTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _FBTweakTableViewCell.h; path = FBTweak/_FBTweakTableViewCell.h; sourceTree = "<group>"; };
-		1C0A8CBEC1642C74CB13450A /* FBTweakStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBTweakStore.h; path = FBTweak/FBTweakStore.h; sourceTree = "<group>"; };
-		222FF20FBE3D2BE2623B5D08 /* Pods-Tweaks.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tweaks.xcconfig"; sourceTree = "<group>"; };
-		271F7ECFB78E28574DCC110E /* FBTweakShakeWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBTweakShakeWindow.h; path = FBTweak/FBTweakShakeWindow.h; sourceTree = "<group>"; };
-		32052859AEAFDCB5D7BDFB72 /* _FBTweakCollectionViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _FBTweakCollectionViewController.m; path = FBTweak/_FBTweakCollectionViewController.m; sourceTree = "<group>"; };
-		3408042FD4FEDD9439AF8CB0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		3B501C326C9BB67E7400A9B3 /* SparkInspector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SparkInspector.framework; sourceTree = "<group>"; };
-		407ACDAB6FC88BC6E1E6B00F /* FBTweakInline.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBTweakInline.m; path = FBTweak/FBTweakInline.m; sourceTree = "<group>"; };
-		41812CECEA1DBE7E284CA0FB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		540C9EE7B224CC1C01A7D98B /* FBTweak.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBTweak.m; path = FBTweak/FBTweak.m; sourceTree = "<group>"; };
-		5DBBB6FCF166E61F25238E3D /* _FBTweakCategoryViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _FBTweakCategoryViewController.h; path = FBTweak/_FBTweakCategoryViewController.h; sourceTree = "<group>"; };
-		60F5A2CB95FE7E6976CA6FD0 /* _FBTweakCategoryViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _FBTweakCategoryViewController.m; path = FBTweak/_FBTweakCategoryViewController.m; sourceTree = "<group>"; };
-		757B27BDF2A33F8D58A5AF4F /* _FBTweakCollectionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _FBTweakCollectionViewController.h; path = FBTweak/_FBTweakCollectionViewController.h; sourceTree = "<group>"; };
-		7AFB8C9EB102FACF7C6166DC /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		807F5FAD8CCE973274B42E40 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
-		8813A94022CFD3F3D8920464 /* libPods-Tweaks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tweaks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B2DF2D494CEB62CE5F37688 /* Pods-Tweaks-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tweaks-Private.xcconfig"; sourceTree = "<group>"; };
-		8BC8612650199CFBE48215AF /* _FBTweakTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _FBTweakTableViewCell.m; path = FBTweak/_FBTweakTableViewCell.m; sourceTree = "<group>"; };
-		90E7A2278FADD2DA8D467EC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		96A2395F9E55F3B00064789E /* FBTweakCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBTweakCategory.m; path = FBTweak/FBTweakCategory.m; sourceTree = "<group>"; };
-		99F77E776D7F416FDDEDF450 /* FBTweakViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBTweakViewController.m; path = FBTweak/FBTweakViewController.m; sourceTree = "<group>"; };
-		9A1E8C926A75D2273C920073 /* Pods-Tweaks-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tweaks-prefix.pch"; sourceTree = "<group>"; };
-		A10DD915C70842DCF88276E5 /* FBTweakEnabled.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBTweakEnabled.h; path = FBTweak/FBTweakEnabled.h; sourceTree = "<group>"; };
-		A1FF180F97914A0E0B59F72D /* FBTweakInlineInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBTweakInlineInternal.h; path = FBTweak/FBTweakInlineInternal.h; sourceTree = "<group>"; };
-		A2B6F87A2FD464A4BB332D82 /* FBTweakInline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBTweakInline.h; path = FBTweak/FBTweakInline.h; sourceTree = "<group>"; };
-		A2CCDCA13BBBCF6C015314D6 /* FBTweakViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBTweakViewController.h; path = FBTweak/FBTweakViewController.h; sourceTree = "<group>"; };
-		A53F825419BFDC1410BD3428 /* FBTweakShakeWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBTweakShakeWindow.m; path = FBTweak/FBTweakShakeWindow.m; sourceTree = "<group>"; };
-		A69DD6D8C21B821F0E03C824 /* FBTweakCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBTweakCollection.h; path = FBTweak/FBTweakCollection.h; sourceTree = "<group>"; };
-		AC28DAD37FD56AB39D13548B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B057B4CAA086B4184DBE5483 /* _FBTweakBindObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _FBTweakBindObserver.m; path = FBTweak/_FBTweakBindObserver.m; sourceTree = "<group>"; };
-		B89D8B6F770790409C04BA51 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		BC08359CF541F283A302DB01 /* FBTweakStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBTweakStore.m; path = FBTweak/FBTweakStore.m; sourceTree = "<group>"; };
-		BCDFA862A98BA799B83F7F6D /* _FBTweakBindObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _FBTweakBindObserver.h; path = FBTweak/_FBTweakBindObserver.h; sourceTree = "<group>"; };
-		BCFFE01A9BE135E842D963CB /* FBTweakCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBTweakCategory.h; path = FBTweak/FBTweakCategory.h; sourceTree = "<group>"; };
-		D73B37A50AF782DA70A72AF1 /* Pods-Tweaks-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tweaks-dummy.m"; sourceTree = "<group>"; };
-		E56C5B0C32A556AF0E14F16B /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		EA4FCE2AABCC978C9BB72E6A /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F88CDB36E7B61DFE64ACA4E8 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		0C073BB2FC315075B9DE90C24FE2C52B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		170B6FE5430FA9D7C9E047483CBFD20A /* Pods-Colormix-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Colormix-frameworks.sh"; sourceTree = "<group>"; };
+		50E4B740619BCFB52A9B6A4A2C98A598 /* Pods-Colormix-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Colormix-dummy.m"; sourceTree = "<group>"; };
+		5158D69D6634576A110E780DCDFDB6F3 /* Pods-Colormix-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Colormix-acknowledgements.plist"; sourceTree = "<group>"; };
+		604E5E8583A01A3E0632BED5978FDF12 /* Pods-Colormix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Colormix.debug.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AD363BC13B20F052ACCB0A2B197BB540 /* Pods-Colormix-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Colormix-resources.sh"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D932802A7EA5C73A54AAA9CA164BDA86 /* Pods-Colormix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Colormix.release.xcconfig"; sourceTree = "<group>"; };
+		E0906F8E9D7340C1444D16FC4F7A22F5 /* Pods-Colormix-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Colormix-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E1B6F2CE97837747A137B7F9EC710EF8 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		F2CDB715CDE505C744A2621A0CEFDD42 /* libPods-Colormix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Colormix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0B1994B175445E6FA984D021 /* Frameworks */ = {
+		FE7223EC210E00898EB964EB56D45B8D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D24FD7C5B2A45EE7C4175B5 /* Foundation.framework in Frameworks */,
-				6755B43775743B2A2C947802 /* MessageUI.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0F1A45D814B67CB38EF7CC0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24F40CCDBA108A07B896F195 /* Foundation.framework in Frameworks */,
+				CDB0F31CE42E2AE04590DA245335BBB5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1142DEADC5862AAFD910EE0A /* Support Files */ = {
+		0FBADD4C4C312933525779355B4A728B /* Crashlytics */ = {
 			isa = PBXGroup;
 			children = (
-				222FF20FBE3D2BE2623B5D08 /* Pods-Tweaks.xcconfig */,
-				8B2DF2D494CEB62CE5F37688 /* Pods-Tweaks-Private.xcconfig */,
-				D73B37A50AF782DA70A72AF1 /* Pods-Tweaks-dummy.m */,
-				9A1E8C926A75D2273C920073 /* Pods-Tweaks-prefix.pch */,
+				5AF2ED3E1B1DF375ACFB148B356F91A5 /* Frameworks */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-Tweaks";
+			path = Crashlytics;
 			sourceTree = "<group>";
 		};
-		2655D9DF3C2C67DEF17F0C8F /* Frameworks */ = {
+		23F124B36981587A4F2E341B8AEC8517 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				364CECAE60C2974C81E09314 /* iOS */,
+				E1B6F2CE97837747A137B7F9EC710EF8 /* Fabric.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		364CECAE60C2974C81E09314 /* iOS */ = {
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				90E7A2278FADD2DA8D467EC1 /* Foundation.framework */,
-				807F5FAD8CCE973274B42E40 /* MessageUI.framework */,
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7F6C80D88AD8CEA9DDA40C35 = {
+		4108BF65B192A6AFCFB9708F90B7A403 /* Pods-Colormix */ = {
 			isa = PBXGroup;
 			children = (
-				EA4FCE2AABCC978C9BB72E6A /* Podfile */,
-				2655D9DF3C2C67DEF17F0C8F /* Frameworks */,
-				A9974304F2E16D3CE0F25B10 /* Pods */,
-				D8FD10EA13385139850034B2 /* Products */,
-				E829CCE7C16C16D27AD92D1E /* Targets Support Files */,
+				E0906F8E9D7340C1444D16FC4F7A22F5 /* Pods-Colormix-acknowledgements.markdown */,
+				5158D69D6634576A110E780DCDFDB6F3 /* Pods-Colormix-acknowledgements.plist */,
+				50E4B740619BCFB52A9B6A4A2C98A598 /* Pods-Colormix-dummy.m */,
+				170B6FE5430FA9D7C9E047483CBFD20A /* Pods-Colormix-frameworks.sh */,
+				AD363BC13B20F052ACCB0A2B197BB540 /* Pods-Colormix-resources.sh */,
+				604E5E8583A01A3E0632BED5978FDF12 /* Pods-Colormix.debug.xcconfig */,
+				D932802A7EA5C73A54AAA9CA164BDA86 /* Pods-Colormix.release.xcconfig */,
 			);
+			name = "Pods-Colormix";
+			path = "Target Support Files/Pods-Colormix";
 			sourceTree = "<group>";
 		};
-		8FB504A5426C5B9E122639FE /* Frameworks */ = {
+		4C01CE7C97A1F4AA2AA6283DCBF4679A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B501C326C9BB67E7400A9B3 /* SparkInspector.framework */,
+				0FBADD4C4C312933525779355B4A728B /* Crashlytics */,
+				BD8B321ABCC17A2AA08C4077E26ECA81 /* Fabric */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5AF2ED3E1B1DF375ACFB148B356F91A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C073BB2FC315075B9DE90C24FE2C52B /* Crashlytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		976A8ED7E251E994C03D11F3 /* Tweaks */ = {
+		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				0B02328DB4DCB68BB1578644 /* FBTweak.h */,
-				540C9EE7B224CC1C01A7D98B /* FBTweak.m */,
-				BCFFE01A9BE135E842D963CB /* FBTweakCategory.h */,
-				96A2395F9E55F3B00064789E /* FBTweakCategory.m */,
-				A69DD6D8C21B821F0E03C824 /* FBTweakCollection.h */,
-				09E69C4D075F510A2CAE8710 /* FBTweakCollection.m */,
-				A10DD915C70842DCF88276E5 /* FBTweakEnabled.h */,
-				A2B6F87A2FD464A4BB332D82 /* FBTweakInline.h */,
-				407ACDAB6FC88BC6E1E6B00F /* FBTweakInline.m */,
-				A1FF180F97914A0E0B59F72D /* FBTweakInlineInternal.h */,
-				271F7ECFB78E28574DCC110E /* FBTweakShakeWindow.h */,
-				A53F825419BFDC1410BD3428 /* FBTweakShakeWindow.m */,
-				1C0A8CBEC1642C74CB13450A /* FBTweakStore.h */,
-				BC08359CF541F283A302DB01 /* FBTweakStore.m */,
-				A2CCDCA13BBBCF6C015314D6 /* FBTweakViewController.h */,
-				99F77E776D7F416FDDEDF450 /* FBTweakViewController.m */,
-				BCDFA862A98BA799B83F7F6D /* _FBTweakBindObserver.h */,
-				B057B4CAA086B4184DBE5483 /* _FBTweakBindObserver.m */,
-				5DBBB6FCF166E61F25238E3D /* _FBTweakCategoryViewController.h */,
-				60F5A2CB95FE7E6976CA6FD0 /* _FBTweakCategoryViewController.m */,
-				757B27BDF2A33F8D58A5AF4F /* _FBTweakCollectionViewController.h */,
-				32052859AEAFDCB5D7BDFB72 /* _FBTweakCollectionViewController.m */,
-				0E56DB6F1207EF6745EA5439 /* _FBTweakTableViewCell.h */,
-				8BC8612650199CFBE48215AF /* _FBTweakTableViewCell.m */,
-				1142DEADC5862AAFD910EE0A /* Support Files */,
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				4C01CE7C97A1F4AA2AA6283DCBF4679A /* Pods */,
+				ACF632FBE3F17A6F9A63CB72A6A18E9B /* Products */,
+				DAB20D2DB012032977EF36CA4FDD71D7 /* Targets Support Files */,
 			);
-			path = Tweaks;
 			sourceTree = "<group>";
 		};
-		A9974304F2E16D3CE0F25B10 /* Pods */ = {
+		ACF632FBE3F17A6F9A63CB72A6A18E9B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C3C6F687DDF42FEE7F5D10FF /* SparkInspector */,
-				976A8ED7E251E994C03D11F3 /* Tweaks */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C3C6F687DDF42FEE7F5D10FF /* SparkInspector */ = {
-			isa = PBXGroup;
-			children = (
-				8FB504A5426C5B9E122639FE /* Frameworks */,
-			);
-			path = SparkInspector;
-			sourceTree = "<group>";
-		};
-		C77AC4F333CC2D0680664CBB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				012C340403D6F29B5EF3E923 /* Pods-acknowledgements.markdown */,
-				B89D8B6F770790409C04BA51 /* Pods-acknowledgements.plist */,
-				7AFB8C9EB102FACF7C6166DC /* Pods-dummy.m */,
-				E56C5B0C32A556AF0E14F16B /* Pods-environment.h */,
-				F88CDB36E7B61DFE64ACA4E8 /* Pods-resources.sh */,
-				41812CECEA1DBE7E284CA0FB /* Pods.debug.xcconfig */,
-				3408042FD4FEDD9439AF8CB0 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			path = "Target Support Files/Pods";
-			sourceTree = "<group>";
-		};
-		D8FD10EA13385139850034B2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AC28DAD37FD56AB39D13548B /* libPods.a */,
-				8813A94022CFD3F3D8920464 /* libPods-Tweaks.a */,
+				F2CDB715CDE505C744A2621A0CEFDD42 /* libPods-Colormix.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E829CCE7C16C16D27AD92D1E /* Targets Support Files */ = {
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C77AC4F333CC2D0680664CBB /* Pods */,
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD8B321ABCC17A2AA08C4077E26ECA81 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				23F124B36981587A4F2E341B8AEC8517 /* Frameworks */,
+			);
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		DAB20D2DB012032977EF36CA4FDD71D7 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4108BF65B192A6AFCFB9708F90B7A403 /* Pods-Colormix */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		DD2D704AC53455F1CC2BBCDB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				566DBDAA17AC90A1E58219FD /* FBTweak.h in Headers */,
-				9FBB74A2D5FBF62BDE625FF6 /* FBTweakCategory.h in Headers */,
-				4D0526DF19DE6692B2E15878 /* FBTweakCollection.h in Headers */,
-				04D272008D06DB4AF4D0C277 /* FBTweakEnabled.h in Headers */,
-				DBB9F331A3601FCF16A36BBE /* FBTweakInline.h in Headers */,
-				7DC61F565EF8097394C337F0 /* FBTweakInlineInternal.h in Headers */,
-				1B023E837CE71A6EB971B17F /* FBTweakShakeWindow.h in Headers */,
-				28CD43BD4BAA49EAFB41F3C1 /* FBTweakStore.h in Headers */,
-				40AB26D37DB9FB284D1884BA /* FBTweakViewController.h in Headers */,
-				E4815DF3B2009E5D40C12A36 /* _FBTweakBindObserver.h in Headers */,
-				13B654EA2F7FF763D3B832FD /* _FBTweakCategoryViewController.h in Headers */,
-				CA84D449D9642051FF8EAB4C /* _FBTweakCollectionViewController.h in Headers */,
-				832F1AA565F0688901F51A07 /* _FBTweakTableViewCell.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		1009AFC1DCD61DD8B72758C0 /* Pods-Tweaks */ = {
+		913F67E40C344D2656CDC67FCCE87F1F /* Pods-Colormix */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E06B6DBAC1031694818B34AB /* Build configuration list for PBXNativeTarget "Pods-Tweaks" */;
+			buildConfigurationList = 33C8CA006095492F7DDB12D9B862AAE9 /* Build configuration list for PBXNativeTarget "Pods-Colormix" */;
 			buildPhases = (
-				CCCE2F84EAF0FAE05B0E7365 /* Sources */,
-				0B1994B175445E6FA984D021 /* Frameworks */,
-				DD2D704AC53455F1CC2BBCDB /* Headers */,
+				5A4A8E615D9B22C1C6686E19E272BC1C /* Sources */,
+				FE7223EC210E00898EB964EB56D45B8D /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-Tweaks";
-			productName = "Pods-Tweaks";
-			productReference = 8813A94022CFD3F3D8920464 /* libPods-Tweaks.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		3E5EE29F51FB76B016DCC0B5 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1CAAE744CC0480BAA86263CB /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				E2B3A95215661FF686AD01F5 /* Sources */,
-				A0F1A45D814B67CB38EF7CC0 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				53330091A9FC6E45C26BA356 /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = AC28DAD37FD56AB39D13548B /* libPods.a */;
+			name = "Pods-Colormix";
+			productName = "Pods-Colormix";
+			productReference = F2CDB715CDE505C744A2621A0CEFDD42 /* libPods-Colormix.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CB01B2255A72569E780EBBDC /* Project object */ = {
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
 			};
-			buildConfigurationList = FE1A6699A2130E7FF7AA1413 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7F6C80D88AD8CEA9DDA40C35;
-			productRefGroup = D8FD10EA13385139850034B2 /* Products */;
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = ACF632FBE3F17A6F9A63CB72A6A18E9B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3E5EE29F51FB76B016DCC0B5 /* Pods */,
-				1009AFC1DCD61DD8B72758C0 /* Pods-Tweaks */,
+				913F67E40C344D2656CDC67FCCE87F1F /* Pods-Colormix */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CCCE2F84EAF0FAE05B0E7365 /* Sources */ = {
+		5A4A8E615D9B22C1C6686E19E272BC1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				472FBC73AC9B7E1A0182FF46 /* FBTweak.m in Sources */,
-				3008543EA081C807154BA995 /* FBTweakCategory.m in Sources */,
-				A8F6913F80F63EDF5743A0D2 /* FBTweakCollection.m in Sources */,
-				389A6F2946E3BBD5A0DA5747 /* FBTweakInline.m in Sources */,
-				798B56C89E565A1D300DCC40 /* FBTweakShakeWindow.m in Sources */,
-				928304302DF228FFC94569F6 /* FBTweakStore.m in Sources */,
-				AD5F2BE4D212A93385868D7B /* FBTweakViewController.m in Sources */,
-				560FBC46049C899F76BB5AFF /* Pods-Tweaks-dummy.m in Sources */,
-				641F5F05920F568BE1AE70A6 /* _FBTweakBindObserver.m in Sources */,
-				C00CC1FA99E0D7EF421B9BE7 /* _FBTweakCategoryViewController.m in Sources */,
-				714F1C9F6022FAEA0B68BF62 /* _FBTweakCollectionViewController.m in Sources */,
-				03931E3A85628F9AB023D864 /* _FBTweakTableViewCell.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2B3A95215661FF686AD01F5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4F2AAFFAC776F780DDE82E36 /* Pods-dummy.m in Sources */,
+				7F10077A79FBDACBDC56456958A33A97 /* Pods-Colormix-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		53330091A9FC6E45C26BA356 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Tweaks";
-			target = 1009AFC1DCD61DD8B72758C0 /* Pods-Tweaks */;
-			targetProxy = 3C208D4AA93BB96B8458A187 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		0618BCC6AEE25384D655E88A /* Release */ = {
+		1BEEC98C6D4ED7F49ACD6471208CD06A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 604E5E8583A01A3E0632BED5978FDF12 /* Pods-Colormix.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7F6E181EAB24280412028ECCB8015D8F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -388,7 +236,10 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -402,10 +253,11 @@
 			};
 			name = Release;
 		};
-		231D4235A125B65ADD523A0A /* Debug */ = {
+		A29D7B4850CDFED870E7CEBE7DAC0E63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -420,10 +272,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
@@ -441,64 +295,21 @@
 			};
 			name = Debug;
 		};
-		390C9F7F68B8CFCB53E4C1F4 /* Release */ = {
+		A949AE2EB733DBD31A954171C7F22B4C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B2DF2D494CEB62CE5F37688 /* Pods-Tweaks-Private.xcconfig */;
+			baseConfigurationReference = D932802A7EA5C73A54AAA9CA164BDA86 /* Pods-Colormix.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tweaks/Pods-Tweaks-prefix.pch";
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		B4ABEAD12474C3080CAB358A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41812CECEA1DBE7E284CA0FB /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		CAF179D30DEDE14E6CBAD237 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B2DF2D494CEB62CE5F37688 /* Pods-Tweaks-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tweaks/Pods-Tweaks-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		E255D771C0E19663BCDE7F4F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3408042FD4FEDD9439AF8CB0 /* Pods.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -508,34 +319,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1CAAE744CC0480BAA86263CB /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B4ABEAD12474C3080CAB358A /* Debug */,
-				E255D771C0E19663BCDE7F4F /* Release */,
+				A29D7B4850CDFED870E7CEBE7DAC0E63 /* Debug */,
+				7F6E181EAB24280412028ECCB8015D8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E06B6DBAC1031694818B34AB /* Build configuration list for PBXNativeTarget "Pods-Tweaks" */ = {
+		33C8CA006095492F7DDB12D9B862AAE9 /* Build configuration list for PBXNativeTarget "Pods-Colormix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CAF179D30DEDE14E6CBAD237 /* Debug */,
-				390C9F7F68B8CFCB53E4C1F4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FE1A6699A2130E7FF7AA1413 /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				231D4235A125B65ADD523A0A /* Debug */,
-				0618BCC6AEE25384D655E88A /* Release */,
+				1BEEC98C6D4ED7F49ACD6471208CD06A /* Debug */,
+				A949AE2EB733DBD31A954171C7F22B4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CB01B2255A72569E780EBBDC /* Project object */;
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 }

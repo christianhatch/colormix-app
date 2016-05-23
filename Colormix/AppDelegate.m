@@ -7,25 +7,16 @@
 //
 
 #import "AppDelegate.h"
-#import "ColormixConstants.h"
-
-#import <Tweaks/FBTweakShakeWindow.h>
+#import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
-
-#import <Parse/Parse.h>
 
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Parse setApplicationId:kColorMixParseAppID
-                  clientKey:kColorMixParseClientKey];
-    
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
-    [Crashlytics startWithAPIKey:kColorMixCrashlyticsAPIKey];
-    
+    [Fabric with:@[[Crashlytics class]]];
+
     return YES;
 }
 							
@@ -55,19 +46,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
-- (UIWindow *)window
-{
-    if (!_window) {
-#ifdef DEBUG
-        _window = [[FBTweakShakeWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-#else
-        _window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-#endif
-    }
-    return _window;
-}
-
 
 
 
