@@ -7,6 +7,6 @@
 //
 
 
-@interface ColorPickerViewControllerObjC : UIViewController
+@interface ColorPickerViewController : UIViewController
 
 @end

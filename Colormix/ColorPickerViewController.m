@@ -7,20 +7,20 @@
 //
 
 
-#import "ColorPickerViewControllerObjC.h"
+#import "ColorPickerViewController.h"
 
 #import "UIColor+Colormix.h"
-#import "ColorPickerViewObjC.h"
+#import "ColorPickerView.h"
 
 
-@interface ColorPickerViewControllerObjC () <ColorPickerViewDelegate>
+@interface ColorPickerViewController () <ColorPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *colorPickerContainerView;
-@property (weak, nonatomic) ColorPickerViewObjC *colorPickerView;
+@property (weak, nonatomic) ColorPickerView *colorPickerView;
 
 @end
 
-@implementation ColorPickerViewControllerObjC
+@implementation ColorPickerViewController
 
 
 #pragma mark - Public API
@@ -64,12 +64,12 @@
 
 #pragma mark - ColorPickerViewDelegate
 
-- (void)colorPickerViewMainButtonTapped:(ColorPickerViewObjC *)colorPickerView
+- (void)colorPickerViewMainButtonTapped:(ColorPickerView *)colorPickerView
 {
     [self applyColor:[UIColor randomColor]];
 }
 
-- (void)colorPickerView:(ColorPickerViewObjC *)view pickedColorDidChange:(UIColor *)color
+- (void)colorPickerView:(ColorPickerView *)view pickedColorDidChange:(UIColor *)color
 {
     [UIView animateWithDuration:0.5f
                           delay:0.0f
@@ -85,10 +85,10 @@
 
 #pragma mark - Getters
 
-- (ColorPickerViewObjC *)colorPickerView
+- (ColorPickerView *)colorPickerView
 {
     if (!_colorPickerView) {
-        _colorPickerView = [ColorPickerViewObjC colorPickerViewWithFrame:self.view.frame
+        _colorPickerView = [ColorPickerView colorPickerViewWithFrame:self.view.frame
                                                                 delegate:self];
         
         _colorPickerView.translatesAutoresizingMaskIntoConstraints = NO;

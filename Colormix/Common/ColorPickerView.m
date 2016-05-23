@@ -6,9 +6,8 @@
 //  Copyright (c) 2014 Commodoreftp. All rights reserved.
 //
 
-#import "ColorPickerViewObjC.h"
+#import "ColorPickerView.h"
 #import "UIColor+Colormix.h"
-
 
 typedef NS_ENUM(NSInteger, SliderName)
 {
@@ -20,32 +19,32 @@ typedef NS_ENUM(NSInteger, SliderName)
     SliderNameBlue
 };
 
-//static inline NSString * SliderNameStringFromTag(NSInteger sliderID)
-//{
-//    NSString *sliderNameString;
-//    
-//    switch (sliderID) {
-//        case SliderNameHue:
-//            sliderNameString = @"Hue";
-//            break;
-//        case SliderNameSaturation:
-//            sliderNameString = @"Saturation";
-//            break;
-//        case SliderNameBrightness:
-//            sliderNameString = @"Brightness";
-//            break;
-//        case SliderNameRed:
-//            sliderNameString = @"Red";
-//            break;
-//        case SliderNameGreen:
-//            sliderNameString = @"Green";
-//            break;
-//        case SliderNameBlue:
-//            sliderNameString = @"Blue";
-//            break;
-//    }
-//    return sliderNameString;
-//}
+static inline NSString * SliderNameStringFromTag(NSInteger sliderID)
+{
+    NSString *sliderNameString;
+    
+    switch (sliderID) {
+        case SliderNameHue:
+            sliderNameString = @"Hue";
+            break;
+        case SliderNameSaturation:
+            sliderNameString = @"Saturation";
+            break;
+        case SliderNameBrightness:
+            sliderNameString = @"Brightness";
+            break;
+        case SliderNameRed:
+            sliderNameString = @"Red";
+            break;
+        case SliderNameGreen:
+            sliderNameString = @"Green";
+            break;
+        case SliderNameBlue:
+            sliderNameString = @"Blue";
+            break;
+    }
+    return sliderNameString;
+}
 
 CGFloat const kColorPickerViewHueScale = 360;
 CGFloat const kColorPickerViewSaturationBrightnessScale = 100;
@@ -54,7 +53,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 
 
-@interface ColorPickerViewObjC ()
+@interface ColorPickerView ()
 
 @property (nonatomic, strong) CAGradientLayer *saturationGradient;
 @property (nonatomic, strong) CAGradientLayer *brightnessGradient;
@@ -93,12 +92,12 @@ CGFloat const kColorPickerViewRGBScale = 255;
 @end
 
 
-@implementation ColorPickerViewObjC
+@implementation ColorPickerView
 
 + (instancetype)colorPickerViewWithFrame:(CGRect)frame
                                 delegate:(id<ColorPickerViewDelegate>)delegate
 {
-    ColorPickerViewObjC *picker = [[NSBundle mainBundle] loadNibNamed:@"ColorPickerView" owner:self options:nil].firstObject;
+    ColorPickerView *picker = [[NSBundle mainBundle] loadNibNamed:@"ColorPickerView" owner:self options:nil].firstObject;
     picker.frame = frame;
     picker.delegate = delegate;
     [picker setPickedColor:[UIColor randomColor] animated:NO];
@@ -141,7 +140,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
                   pickedColorDidChange:self.pickedColor];
     }
 
-//    DebugLog(@"Name: %@ Value: %f", SliderNameStringFromTag(tag), sender.value);
+    DebugLog(@"Name: %@ Value: %f", SliderNameStringFromTag(tag), sender.value);
     
 //    if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerView:pickedColorDidChange:)])
 //    {
@@ -423,6 +422,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
 //    NSLog(@"Copy handler, label: “%@”.", self.text);
     [[UIPasteboard generalPasteboard] setString:self.text];
     
+
 //    [PFAnalytics trackEvent:@"Hex label copied" dimensions:@{@"hex value" : self.text}];
 }
 
@@ -431,7 +431,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
     return (action == @selector(copy:));
 }
 
-- (void)handleTap:(UIGestureRecognizer*) recognizer
+- (void)handleTap:(UIGestureRecognizer *)recognizer
 {
     [self becomeFirstResponder];
     UIMenuController *menu = [UIMenuController sharedMenuController];

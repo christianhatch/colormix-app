@@ -10,7 +10,7 @@
 
 
 
-@class ColorPickerViewObjC;
+@class ColorPickerView;
 @protocol ColorPickerViewDelegate <NSObject>
 
 @optional
@@ -19,7 +19,7 @@
  
  @param colorPickerView The colorPickerView object that was tapped by the user.
  */
-- (void)colorPickerViewMainButtonTapped:(ColorPickerViewObjC *)colorPickerView;
+- (void)colorPickerViewMainButtonTapped:(ColorPickerView *)colorPickerView;
 
 /**
  Called when the picked color changed, whether by the user choosing a new color or by programmatically setting it via setPickedColor:animated:
@@ -27,7 +27,7 @@
  @param view  The colorPickerView that had the picked color change.
  @param color The new color that has been picked.
  */
-- (void)colorPickerView:(ColorPickerViewObjC *)view
+- (void)colorPickerView:(ColorPickerView *)view
    pickedColorDidChange:(UIColor *)color;
 
 @end
@@ -40,7 +40,7 @@
 
 
 
-@interface ColorPickerViewObjC : UIView
+@interface ColorPickerView : UIView
 
 /**
  The color picked by the user or set by calling setPickedColor:animated:

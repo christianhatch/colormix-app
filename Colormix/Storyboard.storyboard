@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Color Picker View Controller ObjC-->
+        <!--Color Picker View Controller-->
         <scene sceneID="Psb-gX-blc">
             <objects>
-                <viewController storyboardIdentifier="ColorPickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9xR-YG-xhj" customClass="ColorPickerViewControllerObjC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorPickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9xR-YG-xhj" customClass="ColorPickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qYR-3O-Qxp"/>
                         <viewControllerLayoutGuide type="bottom" id="HEp-lk-qb2"/>
