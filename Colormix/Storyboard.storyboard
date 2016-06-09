@@ -19,21 +19,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipr-yK-Fx3" userLabel="ColorPickerContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyI-p4-RO2">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="screenTapped:" destination="9xR-YG-xhj" eventType="touchUpInside" id="g5I-Ep-maK"/>
-                                        </connections>
-                                    </button>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#88DEFF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osx-7n-QMg">
+                                        <rect key="frame" x="262" y="289" width="76" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="SyI-p4-RO2" secondAttribute="bottom" id="23i-gz-PhO"/>
-                                    <constraint firstAttribute="trailing" secondItem="SyI-p4-RO2" secondAttribute="trailing" id="JPR-FP-mD5"/>
-                                    <constraint firstItem="SyI-p4-RO2" firstAttribute="leading" secondItem="ipr-yK-Fx3" secondAttribute="leading" id="YqV-E0-kof"/>
-                                    <constraint firstItem="SyI-p4-RO2" firstAttribute="top" secondItem="ipr-yK-Fx3" secondAttribute="top" id="eXg-Tk-bjU"/>
+                                    <constraint firstItem="osx-7n-QMg" firstAttribute="centerY" secondItem="ipr-yK-Fx3" secondAttribute="centerY" id="wFm-5x-OSq"/>
+                                    <constraint firstItem="osx-7n-QMg" firstAttribute="centerX" secondItem="ipr-yK-Fx3" secondAttribute="centerX" id="xbK-ZE-Ynm"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -47,6 +42,7 @@
                     </view>
                     <connections>
                         <outlet property="colorPickerContainerView" destination="ipr-yK-Fx3" id="TaJ-dO-xiS"/>
+                        <outlet property="hexValueLabel" destination="osx-7n-QMg" id="HqU-Zm-Wia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vic-dI-C6D" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,7 +11,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ZJW-Jj-fux">
-                    <rect key="frame" x="10" y="30" width="300" height="99"/>
+                    <rect key="frame" x="20" y="20" width="280" height="99"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="99" id="nlL-Ch-MTF"/>
                     </constraints>
@@ -27,10 +27,10 @@
             <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="eJt-rP-wkV" secondAttribute="bottom" constant="20" id="Bd1-BH-Ff5"/>
-                <constraint firstAttribute="trailing" secondItem="ZJW-Jj-fux" secondAttribute="trailing" constant="10" id="Ony-YD-gaV"/>
+                <constraint firstAttribute="trailing" secondItem="ZJW-Jj-fux" secondAttribute="trailing" constant="20" id="Ony-YD-gaV"/>
                 <constraint firstAttribute="trailing" secondItem="eJt-rP-wkV" secondAttribute="trailing" constant="20" id="R6d-pC-NKq"/>
-                <constraint firstItem="ZJW-Jj-fux" firstAttribute="top" secondItem="EHg-Yy-nOa" secondAttribute="top" constant="30" id="ZCB-1V-tgE"/>
-                <constraint firstItem="ZJW-Jj-fux" firstAttribute="leading" secondItem="EHg-Yy-nOa" secondAttribute="leading" constant="10" id="mxL-4G-MMr"/>
+                <constraint firstItem="ZJW-Jj-fux" firstAttribute="top" secondItem="EHg-Yy-nOa" secondAttribute="top" constant="20" id="ZCB-1V-tgE"/>
+                <constraint firstItem="ZJW-Jj-fux" firstAttribute="leading" secondItem="EHg-Yy-nOa" secondAttribute="leading" constant="20" id="mxL-4G-MMr"/>
                 <constraint firstItem="eJt-rP-wkV" firstAttribute="leading" secondItem="EHg-Yy-nOa" secondAttribute="leading" constant="20" id="wMO-QL-JUO"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

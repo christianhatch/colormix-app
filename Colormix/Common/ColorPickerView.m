@@ -21,33 +21,6 @@ typedef NS_ENUM(NSInteger, SliderName)
     SliderNameBlue
 };
 
-static inline NSString * SliderNameStringFromTag(NSInteger sliderID)
-{
-    NSString *sliderNameString;
-    
-    switch (sliderID) {
-        case SliderNameHue:
-            sliderNameString = @"Hue";
-            break;
-        case SliderNameSaturation:
-            sliderNameString = @"Saturation";
-            break;
-        case SliderNameBrightness:
-            sliderNameString = @"Brightness";
-            break;
-        case SliderNameRed:
-            sliderNameString = @"Red";
-            break;
-        case SliderNameGreen:
-            sliderNameString = @"Green";
-            break;
-        case SliderNameBlue:
-            sliderNameString = @"Blue";
-            break;
-    }
-    return sliderNameString;
-}
-
 CGFloat const kColorPickerViewHueScale = 360;
 CGFloat const kColorPickerViewSaturationBrightnessScale = 100;
 CGFloat const kColorPickerViewRGBScale = 255;
@@ -122,30 +95,23 @@ CGFloat const kColorPickerViewRGBScale = 255;
         [self.delegate colorPickerView:self
                   pickedColorDidChange:self.pickedColor];
     }
-
-    DebugLog(@"Name: %@ Value: %f", SliderNameStringFromTag(tag), sender.value);
-    
-//    if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerView:pickedColorDidChange:)])
-//    {
-//        [self.delegate colorPickerView:self didMoveSliderNamed:SliderNameStringFromTag(tag)];
-//    }
 }
 
-- (IBAction)mainButtonTapped:(id)sender
-{
-//    [PFAnalytics trackEvent:@"ColorPickerView Main Button Tapped"];
-
-    if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerViewMainButtonTapped:)])
-    {
-        [self.delegate colorPickerViewMainButtonTapped:self];
-    }
-}
 
 - (void)setPickedColor:(UIColor *)pickedColor
               animated:(BOOL)animated
 {
-    _pickedColor = pickedColor;
-    [self updateUIAnimated:animated]; 
+    if (_pickedColor != pickedColor) {
+        _pickedColor = pickedColor;
+        [self updateUIAnimated:animated];
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerView:pickedColorDidChange:)])
+        {
+            [self.delegate colorPickerView:self
+                      pickedColorDidChange:self.pickedColor];
+        }
+    }
+    
 }
 
 
@@ -218,10 +184,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
     self.redSlider.valueLabel.text = [NSString stringWithFormat:formatString, self.redSlider.slider.value];
     self.greenSlider.valueLabel.text = [NSString stringWithFormat:formatString, self.greenSlider.slider.value];
     self.blueSlider.valueLabel.text = [NSString stringWithFormat:formatString, self.blueSlider.slider.value];
-    
-//    NSString *hex = [UIColor hexStringOfColor:self.pickedColor];
-//    self.hexValueLabel.text = hex;
-    
+        
     for (UILabel *label in @[self.hueSlider.titleLabel, self.hueSlider.valueLabel,
                              self.saturationSlider.titleLabel, self.saturationSlider.valueLabel,
                              self.brightnessSlider.titleLabel, self.brightnessSlider.valueLabel,
@@ -306,20 +269,13 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 }
 
-//- (void)configureTapToCopyLabel
-//{
-//    UIGestureRecognizer *touchy = [[UITapGestureRecognizer alloc] initWithTarget:self.hexValueLabel action:@selector(handleTap:)];
-//    [self.hexValueLabel addGestureRecognizer:touchy];
-//}
-//
-
 #pragma mark - Getters
 
 - (CAGradientLayer *)hueGradient
 {
     if (!_hueGradient) {
         _hueGradient = [CAGradientLayer layer];
-        _hueGradient.frame = self.hueSlider.slider.frame;
+        _hueGradient.frame = CGRectInset(self.hueSlider.slider.frame, 2, 2);
         
         _hueGradient.startPoint = CGPointZero;
         _hueGradient.endPoint = CGPointMake(1, 0);
@@ -333,7 +289,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
 {
     if (!_saturationGradient) {
         _saturationGradient = [CAGradientLayer layer];
-        _saturationGradient.frame = self.saturationSlider.slider.frame;
+        _saturationGradient.frame = CGRectInset(self.saturationSlider.slider.frame, 2, 2);
         
         _saturationGradient.startPoint = CGPointZero;
         _saturationGradient.endPoint = CGPointMake(1, 0);
@@ -347,7 +303,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
 {
     if (!_brightnessGradient) {
         _brightnessGradient = [CAGradientLayer layer];
-        _brightnessGradient.frame = self.brightnessSlider.slider.frame;
+        _brightnessGradient.frame = CGRectInset(self.brightnessSlider.slider.frame, 2, 2);
         
         _brightnessGradient.startPoint = CGPointZero;
         _brightnessGradient.endPoint = CGPointMake(1, 0);
@@ -409,37 +365,6 @@ CGFloat const kColorPickerViewRGBScale = 255;
     
     NSArray *brightColors = @[(id)startBright.CGColor, (id)endBright.CGColor];
     return brightColors;
-}
-
-@end
-
-
-@implementation UILabel (Clipboard)
-
-- (BOOL)canBecomeFirstResponder
-{
-    return YES;
-}
-
-- (void)copy:(id)sender
-{
-//    NSLog(@"Copy handler, label: “%@”.", self.text);
-    [[UIPasteboard generalPasteboard] setString:self.text];
-    
-//    [PFAnalytics trackEvent:@"Hex label copied" dimensions:@{@"hex value" : self.text}];
-}
-
-- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
-{
-    return (action == @selector(copy:));
-}
-
-- (void)handleTap:(UIGestureRecognizer *)recognizer
-{
-    [self becomeFirstResponder];
-    UIMenuController *menu = [UIMenuController sharedMenuController];
-    [menu setTargetRect:self.frame inView:self.superview];
-    [menu setMenuVisible:YES animated:YES];
 }
 
 @end

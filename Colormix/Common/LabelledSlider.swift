@@ -25,15 +25,7 @@ class LabelledSlider: UIView {
 
 
 extension LabelledSlider {
-    
-//    func setupView() {
-//        let thumb = UIImage.squareImageWithColor(.blackColor(), size: CGSize(width: slider.bounds.height, height: slider.bounds.height))
-//        let clear = UIImage.squareImageWithColor(.clearColor(), size: CGSize(width: slider.bounds.width, height: slider.bounds.height))
-//        slider.setThumbImage(thumb, forState: .Normal)
-//        slider.setMinimumTrackImage(clear, forState: .Normal)
-//        slider.setMaximumTrackImage(clear, forState: .Normal)
-//    }
-    
+        
 }
 
 
