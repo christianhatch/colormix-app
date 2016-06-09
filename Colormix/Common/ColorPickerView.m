@@ -9,7 +9,7 @@
 #import "ColorPickerView.h"
 #import "UIColor+Colormix.h"
 #import "UIImage+Colormix.h"
-
+#import "Colormix-Swift.h"
 
 typedef NS_ENUM(NSInteger, SliderName)
 {
@@ -21,38 +21,9 @@ typedef NS_ENUM(NSInteger, SliderName)
     SliderNameBlue
 };
 
-static inline NSString * SliderNameStringFromTag(NSInteger sliderID)
-{
-    NSString *sliderNameString;
-    
-    switch (sliderID) {
-        case SliderNameHue:
-            sliderNameString = @"Hue";
-            break;
-        case SliderNameSaturation:
-            sliderNameString = @"Saturation";
-            break;
-        case SliderNameBrightness:
-            sliderNameString = @"Brightness";
-            break;
-        case SliderNameRed:
-            sliderNameString = @"Red";
-            break;
-        case SliderNameGreen:
-            sliderNameString = @"Green";
-            break;
-        case SliderNameBlue:
-            sliderNameString = @"Blue";
-            break;
-    }
-    return sliderNameString;
-}
-
 CGFloat const kColorPickerViewHueScale = 360;
 CGFloat const kColorPickerViewSaturationBrightnessScale = 100;
 CGFloat const kColorPickerViewRGBScale = 255;
-
-
 
 
 @interface ColorPickerView ()
@@ -61,35 +32,18 @@ CGFloat const kColorPickerViewRGBScale = 255;
 @property (nonatomic, strong) CAGradientLayer *brightnessGradient;
 @property (nonatomic, strong) CAGradientLayer *hueGradient;
 
-@property (strong, nonatomic) IBOutletCollection(UISlider) NSArray *sliderCollection;
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labelCollection;
+@property (strong, nonatomic) IBOutlet UIStackView *hsbContainer;
+@property (nonatomic, strong) LabelledSlider *hueSlider;
+@property (nonatomic, strong) LabelledSlider *saturationSlider;
+@property (nonatomic, strong) LabelledSlider *brightnessSlider;
 
-@property (weak, nonatomic) IBOutlet UIView *HSBContainer;
-@property (weak, nonatomic) IBOutlet UIView *RGBContainer;
 
-@property (strong, nonatomic) IBOutlet UISlider *hueSlider;
-@property (strong, nonatomic) IBOutlet UISlider *saturationSlider;
-@property (strong, nonatomic) IBOutlet UISlider *brightnessSlider;
-
-@property (strong, nonatomic) IBOutlet UISlider *redSlider;
-@property (strong, nonatomic) IBOutlet UISlider *greenSlider;
-@property (strong, nonatomic) IBOutlet UISlider *blueSlider;
-
-@property (strong, nonatomic) IBOutlet UILabel *hueLabel;
-@property (strong, nonatomic) IBOutlet UILabel *saturationLabel;
-@property (strong, nonatomic) IBOutlet UILabel *brightnessLabel;
-
-@property (strong, nonatomic) IBOutlet UILabel *redLabel;
-@property (strong, nonatomic) IBOutlet UILabel *greenLabel;
-@property (strong, nonatomic) IBOutlet UILabel *blueLabel;
-
-@property (strong, nonatomic) IBOutlet UILabel *hexValueLabel;
-
+@property (strong, nonatomic) IBOutlet UIStackView *rgbContainer;
+@property (nonatomic, strong) LabelledSlider *redSlider;
+@property (nonatomic, strong) LabelledSlider *greenSlider;
+@property (nonatomic, strong) LabelledSlider *blueSlider;
 
 @property (nonatomic, strong) UIColor *pickedColor;
-
-- (IBAction)sliderValueChangedContinuous:(id)sender;
-
 
 @end
 
@@ -111,7 +65,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
     [super awakeFromNib];
     [self setupUI];
     [self refreshGradientUI];
-    [self configureTapToCopyLabel];
+//    [self configureTapToCopyLabel];
 }
 
 
@@ -141,30 +95,23 @@ CGFloat const kColorPickerViewRGBScale = 255;
         [self.delegate colorPickerView:self
                   pickedColorDidChange:self.pickedColor];
     }
-
-    DebugLog(@"Name: %@ Value: %f", SliderNameStringFromTag(tag), sender.value);
-    
-//    if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerView:pickedColorDidChange:)])
-//    {
-//        [self.delegate colorPickerView:self didMoveSliderNamed:SliderNameStringFromTag(tag)];
-//    }
 }
 
-- (IBAction)mainButtonTapped:(id)sender
-{
-//    [PFAnalytics trackEvent:@"ColorPickerView Main Button Tapped"];
-
-    if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerViewMainButtonTapped:)])
-    {
-        [self.delegate colorPickerViewMainButtonTapped:self];
-    }
-}
 
 - (void)setPickedColor:(UIColor *)pickedColor
               animated:(BOOL)animated
 {
-    _pickedColor = pickedColor;
-    [self updateUIAnimated:animated]; 
+    if (_pickedColor != pickedColor) {
+        _pickedColor = pickedColor;
+        [self updateUIAnimated:animated];
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(colorPickerView:pickedColorDidChange:)])
+        {
+            [self.delegate colorPickerView:self
+                      pickedColorDidChange:self.pickedColor];
+        }
+    }
+    
 }
 
 
@@ -172,9 +119,9 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 - (void)rgbDidSlide
 {
-    UIColor *color = [UIColor colorWithRed:self.redSlider.value/kColorPickerViewRGBScale
-                                    green:self.greenSlider.value/kColorPickerViewRGBScale
-                                    blue:self.blueSlider.value/kColorPickerViewRGBScale
+    UIColor *color = [UIColor colorWithRed:self.redSlider.slider.value/kColorPickerViewRGBScale
+                                    green:self.greenSlider.slider.value/kColorPickerViewRGBScale
+                                    blue:self.blueSlider.slider.value/kColorPickerViewRGBScale
                                     alpha:1];
     
     [self setPickedColor:color animated:NO];
@@ -182,9 +129,9 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 - (void)hslDidSlide
 {
-    UIColor *color = [UIColor colorWithHue:self.hueSlider.value/kColorPickerViewHueScale
-                                saturation:MAX(self.saturationSlider.value/kColorPickerViewSaturationBrightnessScale, 0.01)
-                                brightness:MAX(self.brightnessSlider.value/kColorPickerViewSaturationBrightnessScale, 0.01)
+    UIColor *color = [UIColor colorWithHue:self.hueSlider.slider.value/kColorPickerViewHueScale
+                                saturation:MAX(self.saturationSlider.slider.value/kColorPickerViewSaturationBrightnessScale, 0.01)
+                                brightness:MAX(self.brightnessSlider.slider.value/kColorPickerViewSaturationBrightnessScale, 0.01)
                                     alpha:1];
     
     [self setPickedColor:color animated:NO];
@@ -211,37 +158,39 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 - (void)syncSlidersToColorAnimated:(BOOL)animated
 {
-    [self.hueSlider setValue:self.pickedColor.hue * kColorPickerViewHueScale
-                    animated:animated];
-    [self.saturationSlider setValue:self.pickedColor.saturation * kColorPickerViewSaturationBrightnessScale
+    [self.hueSlider.slider setValue:self.pickedColor.hue * kColorPickerViewHueScale
                            animated:animated];
-    [self.brightnessSlider setValue:self.pickedColor.brightness * kColorPickerViewSaturationBrightnessScale
-                           animated:animated];
+    [self.saturationSlider.slider setValue:self.pickedColor.saturation * kColorPickerViewSaturationBrightnessScale
+                                  animated:animated];
+    [self.brightnessSlider.slider setValue:self.pickedColor.brightness * kColorPickerViewSaturationBrightnessScale
+                                  animated:animated];
     
-    [self.redSlider setValue:self.pickedColor.red * kColorPickerViewRGBScale
-                    animated:animated];
-    [self.greenSlider setValue:self.pickedColor.green * kColorPickerViewRGBScale
-                      animated:animated];
-    [self.blueSlider setValue:self.pickedColor.blue * kColorPickerViewRGBScale
-                     animated:animated];
+    [self.redSlider.slider setValue:self.pickedColor.red * kColorPickerViewRGBScale
+                           animated:animated];
+    [self.greenSlider.slider setValue:self.pickedColor.green * kColorPickerViewRGBScale
+                             animated:animated];
+    [self.blueSlider.slider setValue:self.pickedColor.blue * kColorPickerViewRGBScale
+                            animated:animated];
 }
 
 - (void)updateLabels
 {
     NSString *formatString = @"%.0f";
     
-    self.hueLabel.text = [NSString stringWithFormat:formatString, self.hueSlider.value];
-    self.saturationLabel.text = [NSString stringWithFormat:formatString, self.saturationSlider.value];
-    self.brightnessLabel.text = [NSString stringWithFormat:formatString, self.brightnessSlider.value];
+    self.hueSlider.valueLabel.text = [NSString stringWithFormat:formatString, self.hueSlider.slider.value];
+    self.saturationSlider.valueLabel.text = [NSString stringWithFormat:formatString, self.saturationSlider.slider.value];
+    self.brightnessSlider.valueLabel.text = [NSString stringWithFormat:formatString, self.brightnessSlider.slider.value];
     
-    self.redLabel.text = [NSString stringWithFormat:formatString, self.redSlider.value];
-    self.greenLabel.text = [NSString stringWithFormat:formatString, self.greenSlider.value];
-    self.blueLabel.text = [NSString stringWithFormat:formatString, self.blueSlider.value];
-    
-    NSString *hex = [UIColor hexStringOfColor:self.pickedColor];
-    self.hexValueLabel.text = hex;
-    
-    for (UILabel *label in self.labelCollection)
+    self.redSlider.valueLabel.text = [NSString stringWithFormat:formatString, self.redSlider.slider.value];
+    self.greenSlider.valueLabel.text = [NSString stringWithFormat:formatString, self.greenSlider.slider.value];
+    self.blueSlider.valueLabel.text = [NSString stringWithFormat:formatString, self.blueSlider.slider.value];
+        
+    for (UILabel *label in @[self.hueSlider.titleLabel, self.hueSlider.valueLabel,
+                             self.saturationSlider.titleLabel, self.saturationSlider.valueLabel,
+                             self.brightnessSlider.titleLabel, self.brightnessSlider.valueLabel,
+                             self.redSlider.titleLabel, self.redSlider.valueLabel,
+                             self.greenSlider.titleLabel, self.greenSlider.valueLabel,
+                             self.blueSlider.titleLabel, self.blueSlider.valueLabel])
     {
         [label setTextColor:self.pickedColor.contrastingColor];
     }
@@ -264,29 +213,61 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 - (void)setupUI
 {
-    UIImage *thumb = [UIImage squareImageWithColor:[UIColor blackColor]
-                                              size:CGSizeMake(self.hueSlider.bounds.size.height, self.hueSlider.bounds.size.height)];
-    UIImage *clear = [UIImage squareImageWithColor:[UIColor clearColor]
-                                              size:CGSizeMake(self.hueSlider.bounds.size.width, self.hueSlider.bounds.size.height)];
+    //setup RGB sliders
+    self.redSlider = [LabelledSlider labelledSlider:@"R"];
+    self.greenSlider = [LabelledSlider labelledSlider:@"G"];
+    self.blueSlider = [LabelledSlider labelledSlider:@"B"];
     
-    for (UISlider *slider in self.sliderCollection)
+    self.redSlider.slider.maximumValue = kColorPickerViewRGBScale;
+    self.greenSlider.slider.maximumValue = kColorPickerViewRGBScale;
+    self.blueSlider.slider.maximumValue = kColorPickerViewRGBScale;
+
+    self.redSlider.slider.tag = SliderNameRed;
+    self.greenSlider.slider.tag = SliderNameGreen;
+    self.blueSlider.slider.tag = SliderNameBlue;
+    
+    self.redSlider.slider.minimumTrackTintColor = [UIColor redColor];
+    self.greenSlider.slider.minimumTrackTintColor = [UIColor greenColor];
+    self.blueSlider.slider.minimumTrackTintColor = [UIColor blueColor];
+    
+    [self.rgbContainer addArrangedSubview:self.redSlider];
+    [self.rgbContainer addArrangedSubview:self.greenSlider];
+    [self.rgbContainer addArrangedSubview:self.blueSlider];
+    
+    //setup HSB sliders
+    self.hueSlider = [LabelledSlider labelledSlider:@"H"];
+    self.saturationSlider = [LabelledSlider labelledSlider:@"S"];
+    self.brightnessSlider = [LabelledSlider labelledSlider:@"B"];
+    
+    self.hueSlider.slider.maximumValue = kColorPickerViewHueScale;
+    self.saturationSlider.slider.maximumValue = kColorPickerViewSaturationBrightnessScale;
+    self.brightnessSlider.slider.maximumValue = kColorPickerViewSaturationBrightnessScale;
+    
+    self.hueSlider.slider.tag = SliderNameHue;
+    self.saturationSlider.slider.tag = SliderNameSaturation;
+    self.brightnessSlider.slider.tag = SliderNameBrightness;
+
+    [self.hsbContainer addArrangedSubview:self.hueSlider];
+    [self.hsbContainer addArrangedSubview:self.saturationSlider];
+    [self.hsbContainer addArrangedSubview:self.brightnessSlider];
+    
+    UIImage *clearTrackImage = [UIImage squareImageWithColor:[UIColor clearColor]
+                                                        size:CGSizeMake(30, 30)];
+    
+    for (UISlider *slider in @[self.hueSlider.slider, self.saturationSlider.slider, self.brightnessSlider.slider])
+    {
+        [slider setMinimumTrackImage:clearTrackImage forState:UIControlStateNormal];
+        [slider setMaximumTrackImage:clearTrackImage forState:UIControlStateNormal];
+    }
+    
+    UIImage *thumb = [UIImage verticalLineImageWithColor:[UIColor blackColor] size:CGSizeMake(33, 33)];
+    for (UISlider *slider in @[self.hueSlider.slider, self.saturationSlider.slider, self.brightnessSlider.slider, self.redSlider.slider, self.greenSlider.slider, self.blueSlider.slider])
     {
         [slider setThumbImage:thumb forState:UIControlStateNormal];
+        [slider addTarget:self action:@selector(sliderValueChangedContinuous:) forControlEvents:UIControlEventValueChanged];
     }
-    
-    for (UISlider *slider in @[self.hueSlider, self.saturationSlider, self.brightnessSlider])
-    {
-        [slider setMinimumTrackImage:clear forState:UIControlStateNormal];
-        [slider setMaximumTrackImage:clear forState:UIControlStateNormal];
-    }
-}
 
-- (void)configureTapToCopyLabel
-{
-    UIGestureRecognizer *touchy = [[UITapGestureRecognizer alloc] initWithTarget:self.hexValueLabel action:@selector(handleTap:)];
-    [self.hexValueLabel addGestureRecognizer:touchy];
 }
-
 
 #pragma mark - Getters
 
@@ -294,7 +275,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
 {
     if (!_hueGradient) {
         _hueGradient = [CAGradientLayer layer];
-        _hueGradient.frame = self.hueSlider.bounds;
+        _hueGradient.frame = CGRectInset(self.hueSlider.slider.frame, 2, 2);
         
         _hueGradient.startPoint = CGPointZero;
         _hueGradient.endPoint = CGPointMake(1, 0);
@@ -308,7 +289,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
 {
     if (!_saturationGradient) {
         _saturationGradient = [CAGradientLayer layer];
-        _saturationGradient.frame = self.saturationSlider.bounds;
+        _saturationGradient.frame = CGRectInset(self.saturationSlider.slider.frame, 2, 2);
         
         _saturationGradient.startPoint = CGPointZero;
         _saturationGradient.endPoint = CGPointMake(1, 0);
@@ -322,7 +303,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
 {
     if (!_brightnessGradient) {
         _brightnessGradient = [CAGradientLayer layer];
-        _brightnessGradient.frame = self.brightnessSlider.bounds;
+        _brightnessGradient.frame = CGRectInset(self.brightnessSlider.slider.frame, 2, 2);
         
         _brightnessGradient.startPoint = CGPointZero;
         _brightnessGradient.endPoint = CGPointMake(1, 0);
@@ -384,37 +365,6 @@ CGFloat const kColorPickerViewRGBScale = 255;
     
     NSArray *brightColors = @[(id)startBright.CGColor, (id)endBright.CGColor];
     return brightColors;
-}
-
-@end
-
-
-@implementation UILabel (Clipboard)
-
-- (BOOL)canBecomeFirstResponder
-{
-    return YES;
-}
-
-- (void)copy:(id)sender
-{
-//    NSLog(@"Copy handler, label: “%@”.", self.text);
-    [[UIPasteboard generalPasteboard] setString:self.text];
-    
-//    [PFAnalytics trackEvent:@"Hex label copied" dimensions:@{@"hex value" : self.text}];
-}
-
-- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
-{
-    return (action == @selector(copy:));
-}
-
-- (void)handleTap:(UIGestureRecognizer *)recognizer
-{
-    [self becomeFirstResponder];
-    UIMenuController *menu = [UIMenuController sharedMenuController];
-    [menu setTargetRect:self.frame inView:self.superview];
-    [menu setMenuVisible:YES animated:YES];
 }
 
 @end

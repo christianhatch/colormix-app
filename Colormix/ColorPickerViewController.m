@@ -8,22 +8,71 @@
 
 
 #import "ColorPickerViewController.h"
-
 #import "UIColor+Colormix.h"
 #import "ColorPickerView.h"
+
+@implementation UILabel (Clipboard)
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)copy:(id)sender
+{
+    [[UIPasteboard generalPasteboard] setString:self.text];
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    return (action == @selector(copy:));
+}
+
+- (void)handleTap:(UIGestureRecognizer *)recognizer
+{
+    [self becomeFirstResponder];
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    [menu setTargetRect:self.frame inView:self.superview];
+    [menu setMenuVisible:YES animated:YES];
+}
+
+@end
+
 
 
 @interface ColorPickerViewController () <ColorPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *colorPickerContainerView;
 @property (weak, nonatomic) ColorPickerView *colorPickerView;
+@property (weak, nonatomic) IBOutlet UILabel *hexValueLabel;
 
 @end
 
+
 @implementation ColorPickerViewController
 
+#pragma mark - View Lifecycle
 
-#pragma mark - Public API
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self configureTapToCopyLabel];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self applyColor:[UIColor randomColor]];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return true;
+}
+
+#pragma mark - Methods
 
 - (void)applyColor:(UIColor *)color
 {
@@ -35,32 +84,19 @@
                      animations:^
      {
          [self.colorPickerView setPickedColor:color animated:YES];
-         self.view.backgroundColor = self.colorPickerView.pickedColor;
      }
                      completion:nil];
 }
 
-
-#pragma mark - View Lifecycle
-
-- (IBAction)screenTapped:(id)sender
+- (void)configureTapToCopyLabel
 {
-    [self applyColor:[UIColor randomColor]];
+    self.hexValueLabel.userInteractionEnabled = YES;
+    UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self.hexValueLabel action:@selector(handleTap:)];
+    [self.hexValueLabel addGestureRecognizer:tap];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    [self applyColor:[UIColor randomColor]];
-}
 
 #pragma mark - ColorPickerViewDelegate
-
-- (void)colorPickerViewMainButtonTapped:(ColorPickerView *)colorPickerView
-{
-//    [self applyColor:[UIColor randomColor]];
-}
 
 - (void)colorPickerView:(ColorPickerView *)view pickedColorDidChange:(UIColor *)color
 {
@@ -71,7 +107,11 @@
                         options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionTransitionCrossDissolve
                      animations:^
      {
-         self.view.backgroundColor = self.colorPickerView.pickedColor;
+         self.view.backgroundColor = color;
+         
+         NSString *hex = [UIColor hexStringOfColor:color];
+         self.hexValueLabel.text = hex;
+         self.hexValueLabel.textColor = color.contrastingColor;
      }
                      completion:nil];
 }
@@ -130,8 +170,6 @@
 
 
 @end
-
-
 
 
 

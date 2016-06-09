@@ -15,13 +15,6 @@
 
 @optional
 /**
- Called when the user taps the colorPickerView
- 
- @param colorPickerView The colorPickerView object that was tapped by the user.
- */
-- (void)colorPickerViewMainButtonTapped:(ColorPickerView *)colorPickerView;
-
-/**
  Called when the picked color changed, whether by the user choosing a new color or by programmatically setting it via setPickedColor:animated:
  
  @param view  The colorPickerView that had the picked color change.

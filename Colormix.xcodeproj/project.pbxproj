@@ -55,12 +55,11 @@
 		1E6ADA3F86E537517CD610D4 /* Pods-Colormix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colormix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colormix/Pods-Colormix.release.xcconfig"; sourceTree = "<group>"; };
 		34A1BE58E30B92A60D1E5E62 /* libPods-Colormix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Colormix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		450579FD1AE18EA8007F9021 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
-		451CA33E19787C9B0016A3D8 /* ColormixKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColormixKit.h; sourceTree = "<group>"; };
 		451CA34B1978A27E0016A3D8 /* UIColor+Colormix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Colormix.h"; sourceTree = "<group>"; };
 		451CA34C1978A27E0016A3D8 /* UIColor+Colormix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Colormix.m"; sourceTree = "<group>"; };
 		451CA34F1978D9950016A3D8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colormix-Bridging-Header.h"; sourceTree = "<group>"; };
-		453DF5D41A237D7A005A006B /* ColormixTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColormixTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Colormix-Bridging-Header.h"; path = "../Colormix-Bridging-Header.h"; sourceTree = "<group>"; };
+		453DF5D41A237D7A005A006B /* ColormixTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ColormixTests-Bridging-Header.h"; path = "../../Colormix/ColormixTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		4567ED601D09C96E00CCCFA5 /* LabelledSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelledSlider.swift; sourceTree = "<group>"; };
 		4567ED621D09CA3D00CCCFA5 /* UIImage+Colormix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Colormix.h"; sourceTree = "<group>"; };
@@ -136,7 +135,6 @@
 		451CA345197887A10016A3D8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				451CA33E19787C9B0016A3D8 /* ColormixKit.h */,
 				45FD99D0197AF766001F1D34 /* Categories */,
 				45FD99D1197AF76F001F1D34 /* Views */,
 			);
@@ -199,8 +197,6 @@
 				45FD129C196CA8CA00777132 /* ColorPickerViewController.h */,
 				45FD129D196CA8CA00777132 /* ColorPickerViewController.m */,
 				45FD128B196CA8CA00777132 /* Supporting Files */,
-				453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */,
-				453DF5D41A237D7A005A006B /* ColormixTests-Bridging-Header.h */,
 			);
 			path = Colormix;
 			sourceTree = "<group>";
@@ -208,6 +204,7 @@
 		45FD128B196CA8CA00777132 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */,
 				450579FD1AE18EA8007F9021 /* Launch Screen.xib */,
 				45FD129F196CA8CA00777132 /* Images.xcassets */,
 				451CA34F1978D9950016A3D8 /* Settings.bundle */,
@@ -231,6 +228,7 @@
 		45FD12AD196CA8CA00777132 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				453DF5D41A237D7A005A006B /* ColormixTests-Bridging-Header.h */,
 				45FD12AE196CA8CA00777132 /* ColormixTests-Info.plist */,
 				45FD12AF196CA8CA00777132 /* InfoPlist.strings */,
 			);
@@ -592,7 +590,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
 				INFOPLIST_FILE = "Colormix/Supporting Files/Colormix-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.christianhatch.colormix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -618,7 +616,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
 				INFOPLIST_FILE = "Colormix/Supporting Files/Colormix-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.christianhatch.colormix;
 				PRODUCT_NAME = "$(TARGET_NAME)";

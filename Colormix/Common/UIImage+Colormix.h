@@ -12,4 +12,7 @@
 + (UIImage *)squareImageWithColor:(UIColor *)color
                              size:(CGSize)size;
 
++ (UIImage *)verticalLineImageWithColor:(UIColor *)color
+                                   size:(CGSize)size;
+
 @end
