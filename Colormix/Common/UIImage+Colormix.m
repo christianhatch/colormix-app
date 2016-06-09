@@ -32,4 +32,23 @@
     return image;
 }
 
++ (UIImage *)verticalLineImageWithColor:(UIColor *)color
+                                   size:(CGSize)size;
+{
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0f);
+    
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:CGPointMake(size.width/2, 0)];
+    [path addLineToPoint:CGPointMake(size.width/2, size.height)];
+    
+    path.lineWidth = 1;
+    [color setStroke];
+    [path stroke];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+
 @end

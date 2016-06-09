@@ -11,12 +11,13 @@ import Foundation
 
 class LabelledSlider: UIView {
     
-    @IBOutlet private weak var slider: UISlider!
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var valueLabel: UILabel!
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
     
-    class func labelledSlider() -> LabelledSlider {
+    class func labelledSlider(withTitle: String? = nil) -> LabelledSlider {
         let slider = LabelledSlider.loadFromNib()
+        slider.titleLabel.text = withTitle
         return slider
     }
 }

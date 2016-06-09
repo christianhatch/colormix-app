@@ -592,7 +592,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
 				INFOPLIST_FILE = "Colormix/Supporting Files/Colormix-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.christianhatch.colormix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -618,7 +618,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Colormix/Supporting Files/Colormix-Prefix.pch";
 				INFOPLIST_FILE = "Colormix/Supporting Files/Colormix-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.christianhatch.colormix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
