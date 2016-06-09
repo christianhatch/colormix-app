@@ -8,6 +8,8 @@
 
 #import "ColorPickerView.h"
 #import "UIColor+Colormix.h"
+#import "UIImage+Colormix.h"
+
 
 typedef NS_ENUM(NSInteger, SliderName)
 {
@@ -97,7 +99,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
 + (instancetype)colorPickerViewWithFrame:(CGRect)frame
                                 delegate:(id<ColorPickerViewDelegate>)delegate
 {
-    ColorPickerView *picker = [[NSBundle mainBundle] loadNibNamed:@"ColorPickerView" owner:self options:nil].firstObject;
+    ColorPickerView *picker = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil].firstObject;
     picker.frame = frame;
     picker.delegate = delegate;
     [picker setPickedColor:[UIColor randomColor] animated:NO];
@@ -226,7 +228,7 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 - (void)updateLabels
 {
-    NSString *formatString = @"%.2f";
+    NSString *formatString = @"%.0f";
     
     self.hueLabel.text = [NSString stringWithFormat:formatString, self.hueSlider.value];
     self.saturationLabel.text = [NSString stringWithFormat:formatString, self.saturationSlider.value];
@@ -262,10 +264,10 @@ CGFloat const kColorPickerViewRGBScale = 255;
 
 - (void)setupUI
 {
-    UIImage *thumb = [self imageWithColor:[UIColor blackColor]
-                                     size:CGSizeMake(self.hueSlider.bounds.size.height, self.hueSlider.bounds.size.height)];
-    UIImage *clear = [self imageWithColor:[UIColor clearColor]
-                                     size:CGSizeMake(self.hueSlider.bounds.size.width, self.hueSlider.bounds.size.height)];
+    UIImage *thumb = [UIImage squareImageWithColor:[UIColor blackColor]
+                                              size:CGSizeMake(self.hueSlider.bounds.size.height, self.hueSlider.bounds.size.height)];
+    UIImage *clear = [UIImage squareImageWithColor:[UIColor clearColor]
+                                              size:CGSizeMake(self.hueSlider.bounds.size.width, self.hueSlider.bounds.size.height)];
     
     for (UISlider *slider in self.sliderCollection)
     {
@@ -285,29 +287,6 @@ CGFloat const kColorPickerViewRGBScale = 255;
     [self.hexValueLabel addGestureRecognizer:touchy];
 }
 
-#pragma mark - Other
-
-- (UIImage *)imageWithColor:(UIColor *)color
-                       size:(CGSize)size
-{
-    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0f);
-    
-    UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, size.width, size.height)];
-    
-    [roundedRect moveToPoint:CGPointMake(roundedRect.bounds.size.width/2, 0)];
-    [roundedRect addLineToPoint:CGPointMake(roundedRect.bounds.size.width/2, roundedRect.bounds.size.height)];
-    
-//    [roundedRect moveToPoint:CGPointMake(0, roundedRect.bounds.size.height/2)];
-//    [roundedRect addLineToPoint:CGPointMake(roundedRect.bounds.size.width, roundedRect.bounds.size.height/2)];
-    
-    roundedRect.lineWidth = 1;
-    [color setStroke];
-    [roundedRect stroke];
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
-}
 
 #pragma mark - Getters
 

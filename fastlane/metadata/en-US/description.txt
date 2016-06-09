@@ -1,0 +1,10 @@
+Colormix is a Simple, Clean, and Trustworthy tool that allows you to experience firsthand how the RGB and HSB color spaces interact, and how hexadecimal representations of colors are created.
+
+Simply slide the Hue, Saturation, or Brightness sliders and see what happens to the Red, Green, and Blue sliders and the hex value label. Pretty cool huh? 
+Pro Tip: try tapping on the hex label and see what happens :)
+
+Are you curious to find out how the Red/Green/Blue and the Hue/Saturation/Brightness color spaces really work? 
+Do you want to experience firsthand what happens to one color space when the other is changed? 
+Are you curious about how hexadecimal RGB values are created? 
+
+Want to be awesome? Tweet at @Commodoreftp with suggestions, issues, or just say hi! :)

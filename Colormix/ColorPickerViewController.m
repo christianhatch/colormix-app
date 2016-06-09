@@ -55,18 +55,11 @@
     [self applyColor:[UIColor randomColor]];
 }
 
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
-{
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    
-//    [self applyColor:self.colorPickerView.pickedColor];
-}
-
 #pragma mark - ColorPickerViewDelegate
 
 - (void)colorPickerViewMainButtonTapped:(ColorPickerView *)colorPickerView
 {
-    [self applyColor:[UIColor randomColor]];
+//    [self applyColor:[UIColor randomColor]];
 }
 
 - (void)colorPickerView:(ColorPickerView *)view pickedColorDidChange:(UIColor *)color

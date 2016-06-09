@@ -1,0 +1,91 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "1.91.0"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+    cocoapods
+    
+  end
+
+  desc "Deploy a new version to the App Store"
+  lane :appstore do
+    # match(type: "appstore")
+    # snapshot
+    gym(scheme: "Colormix") # Build your app - more options available
+    deliver(force: true, 
+            submit_for_review: true,
+            automatic_release: true
+            )
+
+    slack(
+      channel: "fastlane",
+      default_payloads: [], # reduce the notification to the minimum
+      message: "Successfully distributed app store build of Colormix! :rocket:",
+      payload: {
+        # "Changes" => changelog
+      }
+    )
+  end
+
+
+ lane :beta do
+    cert(development: true)
+    sigh(development: true)
+    gym
+    crashlytics(
+      api_token: "36aebc5d6093c8a7cc64fae3d769bf41933d7919",
+      build_secret: "216458b4f171c912dd83c54e976d100f7fe247d329693e1b32de3c10e1740bb1",
+      groups: "devs",
+      notes: "Updated build."
+    )
+
+    slack(
+      channel: "fastlane",
+      default_payloads: [], # reduce the notification to the minimum
+      message: "Successfully distributed beta build of Colormix! :rocket:",
+      payload: {
+        # "Changes" => changelog
+      }
+    )
+  end
+
+
+  # You can define as many lanes as you want
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+    slack(
+      message: "Successfully deployed new App Update."
+    )
+  end
+
+  error do |lane, exception|
+    slack(
+      message: exception.message,
+      success: false
+    )
+  end
+end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+
+# fastlane reports which actions are used
+# No personal data is recorded. Learn more at https://github.com/fastlane/enhancer

@@ -1,0 +1,5 @@
++ Now you can tap the hex value to copy it!
++ New, more refined look to the sliders.
++ Support for the iPhone 6/+
+
+Enjoy! Tweet at @Commodoreftp with suggestions, issues, or just say hi! :)

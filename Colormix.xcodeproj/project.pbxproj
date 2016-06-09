@@ -14,6 +14,9 @@
 		451CA3511978D9950016A3D8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 451CA34F1978D9950016A3D8 /* Settings.bundle */; };
 		4566B4CA1A2FEDE40035D654 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */; };
 		4566B4CB1A2FEDE40035D654 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */; };
+		4567ED611D09C96E00CCCFA5 /* LabelledSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567ED601D09C96E00CCCFA5 /* LabelledSlider.swift */; };
+		4567ED641D09CA3D00CCCFA5 /* UIImage+Colormix.m in Sources */ = {isa = PBXBuildFile; fileRef = 4567ED631D09CA3D00CCCFA5 /* UIImage+Colormix.m */; };
+		45CB02D61D09C5C9002FE0D4 /* LabelledSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45CB02D51D09C5C9002FE0D4 /* LabelledSlider.xib */; };
 		45DC34C01A814C9F006B4714 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34BD1A814C9F006B4714 /* Bolts.framework */; };
 		45DC34C21A814C9F006B4714 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34BE1A814C9F006B4714 /* Parse.framework */; };
 		45DC34D01A814D53006B4714 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC34CB1A814D53006B4714 /* QuartzCore.framework */; };
@@ -51,7 +54,7 @@
 /* Begin PBXFileReference section */
 		1E6ADA3F86E537517CD610D4 /* Pods-Colormix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colormix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colormix/Pods-Colormix.release.xcconfig"; sourceTree = "<group>"; };
 		34A1BE58E30B92A60D1E5E62 /* libPods-Colormix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Colormix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		450579FD1AE18EA8007F9021 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "Supporting Files/Launch Screen.xib"; sourceTree = "<group>"; };
+		450579FD1AE18EA8007F9021 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		451CA33E19787C9B0016A3D8 /* ColormixKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColormixKit.h; sourceTree = "<group>"; };
 		451CA34B1978A27E0016A3D8 /* UIColor+Colormix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Colormix.h"; sourceTree = "<group>"; };
 		451CA34C1978A27E0016A3D8 /* UIColor+Colormix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Colormix.m"; sourceTree = "<group>"; };
@@ -59,7 +62,11 @@
 		453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colormix-Bridging-Header.h"; sourceTree = "<group>"; };
 		453DF5D41A237D7A005A006B /* ColormixTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColormixTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		4567ED601D09C96E00CCCFA5 /* LabelledSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelledSlider.swift; sourceTree = "<group>"; };
+		4567ED621D09CA3D00CCCFA5 /* UIImage+Colormix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Colormix.h"; sourceTree = "<group>"; };
+		4567ED631D09CA3D00CCCFA5 /* UIImage+Colormix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Colormix.m"; sourceTree = "<group>"; };
 		459ADD83197DBEC20029AE3E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		45CB02D51D09C5C9002FE0D4 /* LabelledSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelledSlider.xib; sourceTree = "<group>"; };
 		45DC34BD1A814C9F006B4714 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		45DC34BE1A814C9F006B4714 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		45DC34C31A814D23006B4714 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -85,7 +92,7 @@
 		45FD1294196CA8CA00777132 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		45FD129C196CA8CA00777132 /* ColorPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
 		45FD129D196CA8CA00777132 /* ColorPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
-		45FD129F196CA8CA00777132 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		45FD129F196CA8CA00777132 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		45FD12A5196CA8CA00777132 /* ColormixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColormixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FD12A6196CA8CA00777132 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		45FD12AE196CA8CA00777132 /* ColormixTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ColormixTests-Info.plist"; sourceTree = "<group>"; };
@@ -188,11 +195,9 @@
 				451CA345197887A10016A3D8 /* Common */,
 				45FD1293196CA8CA00777132 /* AppDelegate.h */,
 				45FD1294196CA8CA00777132 /* AppDelegate.m */,
+				4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */,
 				45FD129C196CA8CA00777132 /* ColorPickerViewController.h */,
 				45FD129D196CA8CA00777132 /* ColorPickerViewController.m */,
-				4566B4C91A2FEDE40035D654 /* Storyboard.storyboard */,
-				450579FD1AE18EA8007F9021 /* Launch Screen.xib */,
-				45FD129F196CA8CA00777132 /* Images.xcassets */,
 				45FD128B196CA8CA00777132 /* Supporting Files */,
 				453DF5D31A237D7A005A006B /* Colormix-Bridging-Header.h */,
 				453DF5D41A237D7A005A006B /* ColormixTests-Bridging-Header.h */,
@@ -203,6 +208,8 @@
 		45FD128B196CA8CA00777132 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				450579FD1AE18EA8007F9021 /* Launch Screen.xib */,
+				45FD129F196CA8CA00777132 /* Images.xcassets */,
 				451CA34F1978D9950016A3D8 /* Settings.bundle */,
 				45FD128C196CA8CA00777132 /* Colormix-Info.plist */,
 				45FD128D196CA8CA00777132 /* InfoPlist.strings */,
@@ -235,6 +242,8 @@
 			children = (
 				451CA34B1978A27E0016A3D8 /* UIColor+Colormix.h */,
 				451CA34C1978A27E0016A3D8 /* UIColor+Colormix.m */,
+				4567ED621D09CA3D00CCCFA5 /* UIImage+Colormix.h */,
+				4567ED631D09CA3D00CCCFA5 /* UIImage+Colormix.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -245,6 +254,8 @@
 				45FD99CC197AF731001F1D34 /* ColorPickerView.h */,
 				45FD99CD197AF731001F1D34 /* ColorPickerView.m */,
 				45FD99D2197AF78A001F1D34 /* ColorPickerView.xib */,
+				4567ED601D09C96E00CCCFA5 /* LabelledSlider.swift */,
+				45CB02D51D09C5C9002FE0D4 /* LabelledSlider.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -353,6 +364,7 @@
 				451CA3501978D9950016A3D8 /* Settings.bundle in Resources */,
 				45FD99D3197AF78A001F1D34 /* ColorPickerView.xib in Resources */,
 				4566B4CA1A2FEDE40035D654 /* Storyboard.storyboard in Resources */,
+				45CB02D61D09C5C9002FE0D4 /* LabelledSlider.xib in Resources */,
 				45FD128F196CA8CA00777132 /* InfoPlist.strings in Resources */,
 				450579FE1AE18EA8007F9021 /* Launch Screen.xib in Resources */,
 			);
@@ -440,7 +452,9 @@
 			files = (
 				45FD129E196CA8CA00777132 /* ColorPickerViewController.m in Sources */,
 				45FD99CE197AF731001F1D34 /* ColorPickerView.m in Sources */,
+				4567ED641D09CA3D00CCCFA5 /* UIImage+Colormix.m in Sources */,
 				45FD1295196CA8CA00777132 /* AppDelegate.m in Sources */,
+				4567ED611D09C96E00CCCFA5 /* LabelledSlider.swift in Sources */,
 				451CA34D1978A27E0016A3D8 /* UIColor+Colormix.m in Sources */,
 				45FD1291196CA8CA00777132 /* main.m in Sources */,
 			);

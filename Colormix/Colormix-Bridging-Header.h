@@ -4,3 +4,4 @@
 
 #import "ColorPickerView.h"
 #import "UIColor+Colormix.h"
+#import "UIImage+Colormix.h"
