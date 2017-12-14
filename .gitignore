@@ -17,3 +17,11 @@ profile
 DerivedData
 .idea/
 Colormix/ColormixConstants.h
+
+*.cer
+*.mobileprovision
+*.dSYM.zip
+*.ipa
+
+Pods/
+
