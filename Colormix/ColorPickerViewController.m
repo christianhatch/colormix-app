@@ -10,6 +10,7 @@
 #import "ColorPickerViewController.h"
 #import "UIColor+Colormix.h"
 #import "ColorPickerView.h"
+#import <ColorMix/ColorMix.h>
 
 @implementation UILabel (Clipboard)
 
@@ -30,7 +31,6 @@
 
 - (void)handleTap:(UIGestureRecognizer *)recognizer
 {
-    NSLog(@"handle tap!");
     [self becomeFirstResponder];
     UIMenuController *menu = [UIMenuController sharedMenuController];
     [menu setTargetRect:self.frame inView:self.superview];

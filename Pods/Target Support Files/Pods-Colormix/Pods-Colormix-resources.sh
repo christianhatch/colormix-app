@@ -79,6 +79,14 @@ EOM
       ;;
   esac
 }
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "ColorMix/ColorMix/Classes/ColorPickerView.xib"
+  install_resource "ColorMix/ColorMix/Classes/LabelledSlider.xib"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "ColorMix/ColorMix/Classes/ColorPickerView.xib"
+  install_resource "ColorMix/ColorMix/Classes/LabelledSlider.xib"
+fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

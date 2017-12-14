@@ -1,0 +1,1 @@
+../../../ColorMix/ColorMix/Classes/LabelledSlider.h
